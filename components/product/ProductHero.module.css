@@ -101,13 +101,13 @@
   background: var(--color-surface);
 }
 
-:global(:root[data-theme="dark"]) :local(.heroCard),
-:global(:root[data-theme="dark"]) :local(.metaItem),
-:global(:root[data-theme="dark"]) :local(.imageSurface) {
+:global(:root[data-theme="dark"]) .heroCard,
+:global(:root[data-theme="dark"]) .metaItem,
+:global(:root[data-theme="dark"]) .imageSurface {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
-:global(:root[data-theme="dark"]) :local(.brandBadge) {
+:global(:root[data-theme="dark"]) .brandBadge {
   color: #dcfce7;
 }
 

@@ -69,8 +69,8 @@
   gap: 0.6rem;
 }
 
-:global(:root[data-theme="dark"]) :local(.highlightCard),
-:global(:root[data-theme="dark"]) :local(.featuresCard) {
+:global(:root[data-theme="dark"]) .highlightCard,
+:global(:root[data-theme="dark"]) .featuresCard {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
