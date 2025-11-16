@@ -14,7 +14,7 @@
   box-shadow: var(--shadow-soft);
   display: grid;
   gap: 2rem;
-  border: 1px solid rgba(8, 74, 45, 0.08);
+  border: 1px solid var(--color-border-soft);
 }
 
 .ctaContent p {
@@ -47,10 +47,6 @@
   flex-direction: column;
   gap: 0.75rem;
   justify-content: center;
-}
-
-:global(:root[data-theme="dark"]) :local(.ctaCard) {
-  border-color: rgba(255, 255, 255, 0.08);
 }
 
 @media (min-width: 768px) {
