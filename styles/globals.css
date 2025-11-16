@@ -5,7 +5,12 @@
   /* Colors (light theme) */
   --color-bg: #f9fafb;
   --color-surface: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-surface-muted: #f6faf7;
   --color-border: #e5e7eb;
+  --color-border-soft: rgba(8, 74, 45, 0.08);
+  --color-border-strong: rgba(8, 74, 45, 0.12);
+  --color-glow-primary: rgba(8, 74, 45, 0.12);
   --color-primary: #15803d;
   --color-primary-soft: #bbf7d0;
   --color-primary-dark: #166534;
@@ -26,7 +31,7 @@
   /* Radius & shadow */
   --radius-lg: 0.75rem;
   --radius-md: 0.5rem;
-  --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.05);
+  --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
 
   /* Layout */
   --space-section-y: 3rem;
@@ -36,15 +41,22 @@
 :root[data-theme="dark"] {
   --color-bg: #020617;
   --color-surface: #020617;
+  --color-surface-elevated: #0f172a;
+  --color-surface-muted: #0b1220;
   --color-border: #1f2937;
-  --color-text: #e5e7eb;
-  --color-muted: #9ca3af;
-  --color-link: #60a5fa;
+  --color-border-soft: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.12);
+  --color-glow-primary: rgba(21, 128, 61, 0.2);
+  --color-text: #f8fafc;
+  --color-muted: #cbd5f5;
+  --color-link: #93c5fd;
 
   --color-bg-soft: #020617; /* slightly different from main bg if you like */
 
   --hero-bg-start: #064e3b;
   --hero-bg-end: #020617;
+
+  --shadow-soft: 0 35px 65px rgba(2, 6, 23, 0.85);
 }
 
 /* ---------------------------------------------

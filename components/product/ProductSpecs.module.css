@@ -1,0 +1,92 @@
+.specSection {
+  background: linear-gradient(
+      180deg,
+      rgba(8, 74, 45, 0.03),
+      rgba(8, 74, 45, 0)
+    ),
+    var(--color-surface-muted);
+}
+
+.headerRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.highlightGrid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.overline {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-muted);
+  margin: 0 0 0.35rem;
+}
+
+.highlightCard {
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  border: 1px solid var(--color-border-strong);
+  background-color: var(--color-surface-elevated);
+  box-shadow: var(--shadow-soft);
+  color: var(--color-text);
+}
+
+.highlightLabel {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.highlightValue {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.featuresCard {
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  background-color: var(--color-surface-elevated);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-border-soft);
+  color: var(--color-text);
+}
+
+.featuresCard ul {
+  margin: 1rem 0 0;
+  padding-left: 1.5rem;
+  color: var(--color-text);
+  display: grid;
+  gap: 0.6rem;
+}
+
+.featuresCard li {
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .highlightGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .headerRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+@media (min-width: 1024px) {
+  .highlightGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
