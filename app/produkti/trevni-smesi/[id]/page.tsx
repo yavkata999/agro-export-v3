@@ -16,9 +16,8 @@ export function generateStaticParams() {
   return trevniProducts.map((p) => ({ id: p.id }));
 }
 
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
+export async function generateMetadata(pageProps: PageProps): Promise<Metadata> {
+  const params = await pageProps.params;
   const { id } = params;
   const product = getProductById(id);
 
@@ -34,7 +33,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProductPage({ params }: PageProps) {
+export default async function ProductPage(pageProps: PageProps) {
+  const params = await pageProps.params;
   const { id } = params;
   const product = getProductById(id);
   if (!product) return notFound();
