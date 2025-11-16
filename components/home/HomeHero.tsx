@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "@styles/HomeHero.module.css";
+import styles from "@styles/components/home/HomeHero.module.css";
 
 export default function HomeHero() {
   return (

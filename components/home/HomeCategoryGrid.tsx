@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "@styles/HomeCategoryGrid.module.css";
+import styles from "@styles/components/home/HomeCategoryGrid.module.css";
 
 type Category = {
   slug: string;

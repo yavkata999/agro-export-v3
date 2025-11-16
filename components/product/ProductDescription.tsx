@@ -1,4 +1,4 @@
-import styles from "./ProductDescription.module.css";
+import styles from "@styles/components/product/ProductDescription.module.css";
 
 interface ProductDescriptionProps {
   longDescription?: string;

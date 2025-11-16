@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./ProductHero.module.css";
+import styles from "@styles/components/product/ProductHero.module.css";
 
 interface ProductHeroProps {
   productId: string;

@@ -1,4 +1,4 @@
-import styles from "./ProductSpecs.module.css";
+import styles from "@styles/components/product/ProductSpecs.module.css";
 
 interface ProductSpecsProps {
   brand?: string;
