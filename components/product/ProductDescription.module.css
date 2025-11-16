@@ -32,6 +32,6 @@
   color: var(--color-text);
 }
 
-:global(:root[data-theme="dark"]) :local(.descriptionCard) {
+:global(:root[data-theme="dark"]) .descriptionCard {
   border-color: rgba(255, 255, 255, 0.08);
 }
