@@ -1,0 +1,37 @@
+.descriptionSection {
+  background-color: var(--color-surface-muted);
+}
+
+.descriptionCard {
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  background-color: var(--color-surface-elevated);
+  box-shadow: var(--shadow-soft);
+  max-width: 840px;
+  border: 1px solid rgba(8, 74, 45, 0.08);
+  color: var(--color-text);
+}
+
+.overline {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.descriptionCard p {
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+:global(:root[data-theme="dark"]) :local(.descriptionCard) {
+  border-color: rgba(255, 255, 255, 0.08);
+}
