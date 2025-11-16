@@ -16,37 +16,38 @@ const NAV_LINKS = [
   { href: "/kontakti", label: "Контакти" },
 ];
 
+const resolveInitialTheme = (): Theme => {
+  if (typeof window === "undefined") {
+    return "light";
+  }
+
+  const stored = window.localStorage.getItem("theme");
+  if (stored === "light" || stored === "dark") {
+    return stored;
+  }
+
+  const prefersDark = window
+    .matchMedia?.("(prefers-color-scheme: dark)")
+    ?.matches;
+  return prefersDark ? "dark" : "light";
+};
+
 export default function Header() {
   const pathname = usePathname();
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>(resolveInitialTheme);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Init theme from localStorage or system preference
+  // Persist theme choice + sync dataset for CSS selectors
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const stored = window.localStorage.getItem("theme");
-    if (stored === "light" || stored === "dark") {
-      setTheme(stored);
-      document.documentElement.dataset.theme = stored;
-      return;
+    document.documentElement.dataset.theme = theme;
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("theme", theme);
     }
-
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    const initial: Theme = prefersDark ? "dark" : "light";
-    setTheme(initial);
-    document.documentElement.dataset.theme = initial;
-  }, []);
+  }, [theme]);
 
   const toggleTheme = () => {
     const next: Theme = theme === "light" ? "dark" : "light";
     setTheme(next);
-    document.documentElement.dataset.theme = next;
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem("theme", next);
-    }
   };
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
