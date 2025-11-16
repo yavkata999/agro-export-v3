@@ -56,7 +56,7 @@ export default function ContactForm() {
 
       setSuccess("Вашето запитване беше изпратено успешно.");
       setValues(initialValues);
-    } catch (err) {
+    } catch {
       setError("Възникна грешка при изпращане. Моля, опитайте отново.");
     } finally {
       setSubmitting(false);

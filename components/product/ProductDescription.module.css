@@ -1,0 +1,30 @@
+.descriptionSection {
+  background-color: var(--color-surface);
+}
+
+.descriptionCard {
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  background-color: #fff;
+  box-shadow: var(--shadow-soft);
+  max-width: 840px;
+}
+
+.overline {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.descriptionCard p {
+  line-height: 1.8;
+}

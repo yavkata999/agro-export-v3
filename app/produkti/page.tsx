@@ -39,9 +39,7 @@ export default function ProduktiPage() {
         {/* CATEGORY GRID */}
         <div className={styles.grid}>
           {categories.map((category) => {
-            const href =
-              (category as any).rootPath ??
-              `/produkti/${category.slug ?? "unknown"}`;
+            const href = category.rootPath ?? `/produkti/${category.slug}`;
 
             return (
               <Link key={category.slug} href={href} className={styles.card}>
