@@ -1,14 +1,16 @@
 .applicationsSection {
-  background-color: #f6faf7;
+  background-color: var(--color-surface-muted);
 }
 
 .contentCard {
   border-radius: var(--radius-lg);
   padding: 2.5rem;
-  background-color: #fff;
+  background-color: var(--color-surface-elevated);
   box-shadow: var(--shadow-soft);
   display: grid;
   gap: 2rem;
+  color: var(--color-text);
+  border: 1px solid rgba(8, 74, 45, 0.08);
 }
 
 .overline {
@@ -31,6 +33,7 @@
   padding-left: 1.5rem;
   position: relative;
   font-weight: 500;
+  color: var(--color-text);
 }
 
 .applicationList li::before {
@@ -42,7 +45,15 @@
   height: 0.6rem;
   border-radius: 50%;
   background-color: var(--color-primary);
-  box-shadow: 0 0 0 6px rgba(8, 74, 45, 0.1);
+  box-shadow: 0 0 0 6px rgba(8, 74, 45, 0.12);
+}
+
+:global(:root[data-theme="dark"]) :local(.contentCard) {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+:global(:root[data-theme="dark"]) :local(.applicationList li::before) {
+  box-shadow: 0 0 0 6px rgba(21, 128, 61, 0.2);
 }
 
 @media (min-width: 768px) {

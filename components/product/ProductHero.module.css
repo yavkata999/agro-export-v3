@@ -12,8 +12,10 @@
       rgba(8, 74, 45, 0.08),
       rgba(8, 74, 45, 0)
     ),
-    var(--color-surface);
+    var(--color-surface-elevated);
   box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(8, 74, 45, 0.08);
+  color: var(--color-text);
 }
 
 .heroContent {
@@ -26,8 +28,8 @@
   align-self: flex-start;
   padding: 0.35rem 0.9rem;
   border-radius: 999px;
-  background-color: rgba(8, 74, 45, 0.08);
-  color: var(--color-primary);
+  background-color: rgba(21, 128, 61, 0.12);
+  color: var(--color-primary-dark);
   font-weight: 600;
   font-size: 0.85rem;
   letter-spacing: 0.02em;
@@ -46,7 +48,8 @@
 .metaItem {
   padding: 0.85rem 1rem;
   border-radius: var(--radius-md);
-  background-color: rgba(8, 74, 45, 0.06);
+  background-color: var(--color-surface-muted);
+  border: 1px solid rgba(8, 74, 45, 0.08);
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
@@ -61,6 +64,7 @@
 
 .metaValue {
   font-weight: 600;
+  color: var(--color-text);
 }
 
 .heroActions {
@@ -76,14 +80,16 @@
 .imageSurface {
   border-radius: var(--radius-lg);
   background: radial-gradient(
-    circle at 20% 20%,
-    rgba(8, 74, 45, 0.12),
-    transparent 55%
-  );
+      circle at 20% 20%,
+      rgba(8, 74, 45, 0.12),
+      transparent 55%
+    )
+    var(--color-surface-elevated);
   padding: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgba(8, 74, 45, 0.08);
 }
 
 .heroImage {
@@ -92,7 +98,17 @@
   object-fit: contain;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
-  background: #fff;
+  background: var(--color-surface);
+}
+
+:global(:root[data-theme="dark"]) :local(.heroCard),
+:global(:root[data-theme="dark"]) :local(.metaItem),
+:global(:root[data-theme="dark"]) :local(.imageSurface) {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+:global(:root[data-theme="dark"]) :local(.brandBadge) {
+  color: #dcfce7;
 }
 
 @media (min-width: 768px) {

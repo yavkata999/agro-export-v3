@@ -4,7 +4,7 @@
       rgba(8, 74, 45, 0.03),
       rgba(8, 74, 45, 0)
     ),
-    var(--color-surface);
+    var(--color-surface-muted);
 }
 
 .headerRow {
@@ -32,8 +32,9 @@
   border-radius: var(--radius-md);
   padding: 1.25rem;
   border: 1px solid rgba(8, 74, 45, 0.12);
-  background-color: #fff;
+  background-color: var(--color-surface-elevated);
   box-shadow: var(--shadow-soft);
+  color: var(--color-text);
 }
 
 .highlightLabel {
@@ -48,13 +49,16 @@
   margin-top: 0.45rem;
   font-size: 1.1rem;
   font-weight: 600;
+  color: var(--color-text);
 }
 
 .featuresCard {
   border-radius: var(--radius-lg);
   padding: 2rem;
-  background-color: #fff;
+  background-color: var(--color-surface-elevated);
   box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(8, 74, 45, 0.08);
+  color: var(--color-text);
 }
 
 .featuresCard ul {
@@ -63,6 +67,11 @@
   color: var(--color-text);
   display: grid;
   gap: 0.6rem;
+}
+
+:global(:root[data-theme="dark"]) :local(.highlightCard),
+:global(:root[data-theme="dark"]) :local(.featuresCard) {
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .featuresCard li {

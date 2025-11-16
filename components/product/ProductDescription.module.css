@@ -1,13 +1,15 @@
 .descriptionSection {
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-muted);
 }
 
 .descriptionCard {
   border-radius: var(--radius-lg);
   padding: 2.5rem;
-  background-color: #fff;
+  background-color: var(--color-surface-elevated);
   box-shadow: var(--shadow-soft);
   max-width: 840px;
+  border: 1px solid rgba(8, 74, 45, 0.08);
+  color: var(--color-text);
 }
 
 .overline {
@@ -27,4 +29,9 @@
 
 .descriptionCard p {
   line-height: 1.8;
+  color: var(--color-text);
+}
+
+:global(:root[data-theme="dark"]) :local(.descriptionCard) {
+  border-color: rgba(255, 255, 255, 0.08);
 }
