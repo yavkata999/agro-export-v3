@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getCategory, getProductsByCategory } from "@lib/products";
-import ProductCard from "@components/ProductCard";
+import ProductCard from "@components/shared/ProductCard";
 
 const slug = "trevni-smesi";
 

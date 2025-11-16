@@ -1,4 +1,4 @@
-import styles from "@styles/HomeValueProps.module.css";
+import styles from "@styles/components/home/HomeValueProps.module.css";
 
 function BriefcaseIcon() {
   return (

@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { categories } from "@content/categories";
-import styles from "@styles/ProduktiPage.module.css";
+import styles from "@styles/pages/ProduktiPage.module.css";
 
 export const metadata: Metadata = {
   title: "Продукти | Agro Export-Import",

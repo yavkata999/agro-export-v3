@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import styles from "@styles/Header.module.css";
+import styles from "@styles/components/layout/Header.module.css";
 
 type Theme = "light" | "dark";
 

@@ -1,4 +1,4 @@
-import styles from "./ProductCTA.module.css";
+import styles from "@styles/components/product/ProductCTA.module.css";
 
 interface ProductCTAProps {
   productId: string;

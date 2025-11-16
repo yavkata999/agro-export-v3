@@ -1,8 +1,7 @@
-// components/ContactForm.tsx
 "use client";
 
 import { FormEvent, useState } from "react";
-import styles from "@/styles/Kontakti.module.css";
+import styles from "@styles/pages/Kontakti.module.css";
 
 type FormValues = {
   name: string;

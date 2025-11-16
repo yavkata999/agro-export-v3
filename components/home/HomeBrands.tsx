@@ -1,4 +1,4 @@
-import styles from "@styles/HomeBrands.module.css";
+import styles from "@styles/components/home/HomeBrands.module.css";
 
 const STRATEGIC_BRANDS = ["Durpeta", "Soparco", "GlobalGrass", "Florovit"];
 

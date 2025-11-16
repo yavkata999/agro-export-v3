@@ -1,4 +1,4 @@
-import styles from "./ProductApplications.module.css";
+import styles from "@styles/components/product/ProductApplications.module.css";
 
 interface ProductApplicationsProps {
   applications?: string[];

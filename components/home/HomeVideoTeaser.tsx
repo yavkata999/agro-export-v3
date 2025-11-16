@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "@styles/HomeVideoTeaser.module.css";
+import styles from "@styles/components/home/HomeVideoTeaser.module.css";
 
 type VideoItem = {
   slug: string;

@@ -1,8 +1,8 @@
 // app/kontakti/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
-import styles from "@styles/Kontakti.module.css";
-import ContactForm from "@components/ContactForm";
+import styles from "@styles/pages/Kontakti.module.css";
+import ContactForm from "@components/forms/ContactForm";
 
 export const metadata: Metadata = {
   title: "Контакти | Agro Export-Import",

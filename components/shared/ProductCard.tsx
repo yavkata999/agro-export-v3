@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "@styles/ProductCard.module.css";
+import styles from "@styles/components/shared/ProductCard.module.css";
 
 type Props = {
   name: string;
