@@ -1,7 +1,7 @@
 .section {
   padding: 4rem 0;
   /* soft band so the section is clearly framed but still elegant */
-  background-color: rgba(0, 0, 0, 0.015);
+  background-color: var(--color-bg-soft);
 }
 
 .inner {
@@ -51,7 +51,7 @@
 
 .card:hover {
   transform: translateY(-4px);
-  background-color: #f3faf6; /* unified premium hover color */
+  background-color: var(--color-surface-accent);
   border-color: var(--color-primary-soft);
   box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
 }
@@ -84,10 +84,7 @@
 }
 
 /* Dark theme tweaks */
-:root[data-theme="dark"] .section {
-  background-color: rgba(15, 23, 42, 0.6);
-}
-
 :root[data-theme="dark"] .card {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+  border-color: var(--color-border);
 }

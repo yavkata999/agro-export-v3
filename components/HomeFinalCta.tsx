@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "@styles/HomeFinalCTA.module.css";
+import styles from "@styles/HomeFinalCta.module.css";
 
 export default function HomeFinalCTA() {
   return (

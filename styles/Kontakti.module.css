@@ -233,7 +233,7 @@
   border: 1px solid var(--color-border);
   padding: 0.55rem 0.7rem;
   font: inherit;
-  background-color: #ffffff;
+  background-color: var(--color-form-bg);
   outline: none;
   transition: border-color 0.12s ease, box-shadow 0.12s ease,
     background-color 0.12s ease, transform 0.06s ease;
@@ -249,7 +249,7 @@
 .formField textarea:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 1px var(--color-primary-soft);
-  background-color: #f9fffb;
+  background-color: var(--color-form-focus);
   transform: translateY(-1px);
 }
 
@@ -335,6 +335,7 @@
   transform: translateY(-2px);
   box-shadow: 0 18px 34px rgba(15, 23, 42, 0.08);
   border-color: var(--color-primary-soft);
+  background-color: var(--color-surface-accent);
 }
 
 .regionalName {
@@ -368,4 +369,5 @@
 /* Dark mode tweak */
 :root[data-theme="dark"] .regionalCard {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+  border-color: var(--color-border);
 }
