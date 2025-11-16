@@ -1,0 +1,253 @@
+/* Sticky, glassy header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 23, 42, 0.82),
+    rgba(15, 23, 42, 0.85)
+  );
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+/* Light theme override */
+html[data-theme="light"] .header {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* Main bar */
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 0;
+}
+
+/* Brand */
+.logo {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+/* Desktop nav */
+.navDesktop {
+  display: none;
+}
+
+/* Common link styling */
+.navLink {
+  position: relative;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.15s ease-out;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* Active link */
+.navLinkActive {
+  color: var(--color-primary);
+}
+
+.navLinkActive::after {
+  width: 100%;
+}
+
+/* Right side actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Theme toggle */
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background: radial-gradient(circle at top left, #bbf7d0, transparent 55%);
+  color: #0f172a;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    transform 0.05s ease;
+}
+
+.themeToggle:hover {
+  transform: translateY(-1px);
+  border-color: var(--color-primary);
+}
+
+/* Dark theme toggle */
+html[data-theme="dark"] .themeToggle {
+  background: radial-gradient(circle at top left, #15803d, #0b1120 70%);
+  color: #f9fafb;
+  border-color: rgba(148, 163, 184, 0.7);
+}
+
+.themeIcon {
+  font-size: 1.05rem;
+}
+
+/* Hide label on very narrow screens to save space */
+@media (max-width: 360px) {
+  .themeLabel {
+    display: none;
+  }
+}
+
+/* Hamburger */
+.hamburger {
+  display: inline-flex;
+  border: none;
+  background: transparent;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: #0f172a; /* visible on light header */
+}
+
+/* In dark theme make the icon light */
+html[data-theme="dark"] .hamburger {
+  color: #f9fafb; /* or #e5e7eb, any light tone */
+}
+
+.hamburgerLine {
+  width: 20px;
+  height: 2px;
+  background-color: currentColor;
+  position: relative;
+  transition: background-color 0.15s ease;
+}
+
+.hamburgerLine::before,
+.hamburgerLine::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background-color: currentColor;
+  transition: transform 0.2s ease, top 0.2s ease, bottom 0.2s ease;
+}
+
+.hamburgerLine::before {
+  top: -6px;
+}
+
+.hamburgerLine::after {
+  bottom: -6px;
+}
+
+.hamburgerOpen .hamburgerLine {
+  background-color: transparent;
+}
+
+.hamburgerOpen .hamburgerLine::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.hamburgerOpen .hamburgerLine::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+/* Mobile drawer container */
+.navMobileWrapper {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: max-height 0.25s ease, opacity 0.2s ease, transform 0.2s ease;
+  background: rgba(15, 23, 42, 0.96);
+}
+
+/* Light override */
+html[data-theme="light"] .navMobileWrapper {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.navMobileWrapperOpen {
+  max-height: 100vh; /* or 420px / 480px if you prefer a fixed number */
+  opacity: 1;
+  transform: translateY(0);
+  overflow-y: auto; /* allow scrolling if needed */
+}
+
+/* Mobile nav */
+.navMobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 0 1rem;
+}
+
+.navMobileLink {
+  width: 100%;
+  text-align: center;
+  padding: 0.55rem 0;
+  position: relative;
+}
+
+.navMobileLink::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: translateX(-50%);
+  transition: width 0.15s ease-out;
+}
+
+.navMobileLink:hover::after {
+  width: 40%;
+}
+
+.navMobileLinkActive {
+  color: var(--color-primary);
+}
+
+.navMobileLinkActive::after {
+  width: 40%;
+}
+
+/* --------------------------
+   DESKTOP LAYOUT
+--------------------------- */
+@media (min-width: 769px) {
+  .navDesktop {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 1.75rem;
+  }
+
+  .navMobileWrapper,
+  .hamburger {
+    display: none;
+  }
+}

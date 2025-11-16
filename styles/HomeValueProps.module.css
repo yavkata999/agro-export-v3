@@ -1,0 +1,93 @@
+.section {
+  padding: 4rem 0;
+  /* soft band so the section is clearly framed but still elegant */
+  background-color: rgba(0, 0, 0, 0.015);
+}
+
+.inner {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+    gap: 3.5rem;
+    align-items: flex-start;
+  }
+}
+
+/* LEFT COLUMN */
+.left p {
+  max-width: 42rem;
+  margin: 0.85rem 0;
+  line-height: 1.55;
+  font-size: 0.98rem;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+/* RIGHT COLUMN – CARDS */
+.cards {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  border-left: 2px solid var(--color-primary);
+  border-top: 1px solid var(--color-border);
+
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.06);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background-color: #f3faf6; /* unified premium hover color */
+  border-color: var(--color-primary-soft);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+/* CARD HEADER (icon + title) */
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* Paragraph inside cards */
+.card p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--color-muted);
+}
+
+/* Dark theme tweaks */
+:root[data-theme="dark"] .section {
+  background-color: rgba(15, 23, 42, 0.6);
+}
+
+:root[data-theme="dark"] .card {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+}

@@ -1,0 +1,148 @@
+.page {
+  padding: 2.5rem 0 3rem;
+}
+
+/* ---------------------------------------------
+   HEADER
+---------------------------------------------- */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.25rem;
+}
+
+.headerMain {
+  max-width: 44rem;
+}
+
+.title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.96rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+.headerSide {
+  max-width: 22rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: linear-gradient(
+    135deg,
+    rgba(187, 247, 208, 0.32),
+    rgba(249, 250, 251, 0.9)
+  );
+  box-shadow: var(--shadow-soft);
+}
+
+.sideTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.sideText {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+@media (min-width: 880px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+/* ---------------------------------------------
+   CATEGORY GRID
+---------------------------------------------- */
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+/* CARD – whole card is a Link */
+
+.card {
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.14s ease, box-shadow 0.14s ease,
+    border-color 0.14s ease, background-color 0.14s ease;
+}
+
+.cardInner {
+  padding: 1.15rem 1.3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-height: 170px;
+}
+
+.cardHeading {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+  padding-bottom: 0.45rem;
+  margin-bottom: 0.1rem;
+}
+
+.cardTitle {
+  font-size: 1.06rem;
+  font-weight: 600;
+}
+
+.cardText {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* CTA inside card */
+
+.cardCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.2rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.cardArrow {
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform 0.14s ease;
+}
+
+/* Hover state for whole card */
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(22, 163, 74, 0.72);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
+  background-color: rgba(248, 250, 252, 0.98);
+}
+
+.card:hover .cardArrow {
+  transform: translateX(2px);
+}

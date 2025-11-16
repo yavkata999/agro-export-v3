@@ -1,0 +1,12 @@
+.footer {
+  margin-top: 0; /* important: no gap above footer */
+  padding: 0.9rem 0; /* tight but readable */
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.text {
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--color-muted);
+}

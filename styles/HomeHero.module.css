@@ -1,0 +1,97 @@
+.hero {
+  padding-top: 4rem; /* more breathing room */
+  padding-bottom: 4rem;
+  background: radial-gradient(
+    circle at top left,
+    var(--hero-bg-start),
+    var(--hero-bg-end)
+  );
+}
+
+.heroInner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* On larger screens, align text slightly left for a more “pro” feel */
+@media (min-width: 768px) {
+  .heroInner {
+    text-align: left;
+  }
+}
+
+.heroTitle {
+  font-size: clamp(2.1rem, 3.4vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.heroTitleAccent {
+  display: block;
+}
+
+.heroSubtitle {
+  font-size: 0.98rem;
+  color: var(--color-muted);
+  max-width: 40rem;
+  margin: 0 auto 1.7rem;
+  line-height: 1.55; /* better readability for Bulgarian */
+}
+
+@media (min-width: 768px) {
+  .heroSubtitle {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem; /* slightly tighter cluster */
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .heroActions {
+    justify-content: flex-start;
+  }
+}
+
+.heroNote {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* ---------------------------------------------
+   Subtle fade-in animation
+---------------------------------------------- */
+
+.heroAppear {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroFadeIn 500ms ease-out forwards;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .heroAppear {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

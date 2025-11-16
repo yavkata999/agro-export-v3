@@ -1,0 +1,371 @@
+.page {
+  padding: 3.5rem 0 4rem;
+  background-color: var(--color-bg);
+}
+
+/* ---------------------------------------------
+   HERO
+---------------------------------------------- */
+
+.hero {
+  margin: 0 auto 2.6rem;
+  max-width: 50rem;
+}
+
+.heroTitle {
+  margin-bottom: 0.6rem;
+  position: relative;
+}
+
+.heroTitle::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 2px;
+  margin-top: 0.55rem;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-soft)
+  );
+  border-radius: 999px;
+}
+
+.heroText {
+  font-size: 0.98rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+/* ---------------------------------------------
+   MAIN 2-COLUMN LAYOUT
+---------------------------------------------- */
+
+.mainLayout {
+  display: grid;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (min-width: 960px) {
+  .mainLayout {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  }
+}
+
+/* ---------------------------------------------
+   PRIMARY CONTACT CARD (LEFT)
+---------------------------------------------- */
+
+.primaryCard {
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+  padding: 1.5rem 1.6rem 1.4rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.primaryCardInner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* subtle left accent decorative bar */
+.primaryCard::before {
+  content: "";
+  position: absolute;
+  inset-block: 1.2rem;
+  left: 0;
+  width: 4px;
+  border-radius: 0 999px 999px 0;
+  background: linear-gradient(
+    180deg,
+    var(--color-primary-soft),
+    rgba(21, 128, 61, 0.15)
+  );
+}
+
+.primaryCardTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.primaryCardText {
+  font-size: 0.94rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.primaryBlock {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.primaryBlock:first-of-type {
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: none;
+}
+
+.primaryBlockTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.primaryDetails {
+  margin-top: 0.15rem;
+}
+
+.primaryRow {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.primaryRow dt {
+  min-width: 5.3rem;
+  color: var(--color-muted);
+}
+
+.primaryRow dd a {
+  text-decoration: none;
+}
+
+.primaryRow dd a:hover {
+  text-decoration: underline;
+}
+
+.primaryHint {
+  margin-top: 0.4rem;
+  font-size: 0.88rem;
+  color: var(--color-muted);
+}
+
+.contactMapLink {
+  color: var(--color-link);
+  font-size: 0.9rem;
+}
+
+.contactMapLink:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------
+   FORM SECTION (RIGHT)
+---------------------------------------------- */
+
+.formSection {
+  border-radius: 1rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+  padding: 1.6rem 1.5rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.formTitle {
+  margin-bottom: 0.4rem;
+}
+
+.formIntro {
+  font-size: 0.92rem;
+  color: var(--color-muted);
+  margin-bottom: 1.1rem;
+}
+
+.formNote {
+  margin-top: 0.9rem;
+  font-size: 0.84rem;
+  color: var(--color-muted);
+}
+
+/* ---------------------------------------------
+   FORM FIELDS
+---------------------------------------------- */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.formRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+@media (min-width: 640px) {
+  .formRow {
+    flex-direction: row;
+  }
+}
+
+.formField {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.formField label {
+  font-weight: 500;
+}
+
+.formField input,
+.formField select,
+.formField textarea {
+  border-radius: 0.6rem;
+  border: 1px solid var(--color-border);
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease,
+    background-color 0.12s ease, transform 0.06s ease;
+}
+
+.formField textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+.formField input:focus,
+.formField select:focus,
+.formField textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary-soft);
+  background-color: #f9fffb;
+  transform: translateY(-1px);
+}
+
+.formError {
+  font-size: 0.86rem;
+  color: #b91c1c;
+}
+
+.formSuccess {
+  font-size: 0.86rem;
+  color: var(--color-primary-dark);
+}
+
+.contactSubmit {
+  margin-top: 0.3rem;
+}
+
+/* ---------------------------------------------
+   REGIONAL CONTACTS — premium & compact
+---------------------------------------------- */
+
+.regionalSection {
+  margin-top: 3rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.regionalHeader {
+  max-width: 44rem;
+  margin: 0 auto 1.8rem;
+}
+
+.regionalTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  position: relative;
+}
+
+.regionalTitle::after {
+  content: "";
+  display: block;
+  width: 2.75rem;
+  height: 2px;
+  margin-top: 0.45rem;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-soft)
+  );
+  border-radius: 999px;
+}
+
+.regionalSubtitle {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.regionalGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .regionalGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.regionalCard {
+  border-radius: 0.85rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  padding: 1.05rem 1.15rem;
+  font-size: 0.92rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
+    border-color 0.12s ease-out, background-color 0.12s ease-out;
+}
+
+.regionalCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.08);
+  border-color: var(--color-primary-soft);
+}
+
+.regionalName {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.regionalDetails {
+  margin: 0 0 0.45rem;
+  line-height: 1.5;
+}
+
+.regionalPhone,
+.regionalExtra {
+  margin: 0.2rem 0;
+  line-height: 1.45;
+}
+
+.regionalPhone a,
+.regionalExtra a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.regionalPhone a:hover,
+.regionalExtra a:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode tweak */
+:root[data-theme="dark"] .regionalCard {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+}
