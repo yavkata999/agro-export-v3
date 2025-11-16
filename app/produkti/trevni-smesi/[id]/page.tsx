@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
+import { ProductApplications } from "@components/product/ProductApplications";
+import { ProductCTA } from "@components/product/ProductCTA";
+import { ProductDescription } from "@components/product/ProductDescription";
+import { ProductHero } from "@components/product/ProductHero";
+import { ProductSpecs } from "@components/product/ProductSpecs";
 import { getProductById, getProductsByCategory } from "@lib/products";
-import detailStyles from "@styles/ProductDetail.module.css";
 
 type PageProps = {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 };
 
 export function generateStaticParams() {
@@ -16,7 +19,7 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { id } = await params;
+  const { id } = params;
   const product = getProductById(id);
 
   if (!product) {
@@ -32,86 +35,35 @@ export async function generateMetadata({
 }
 
 export default async function ProductPage({ params }: PageProps) {
-  const { id } = await params;
+  const { id } = params;
   const product = getProductById(id);
   if (!product) return notFound();
 
   return (
-    <section className="section">
-      <div className="container">
-        <div className="page-header">
-          <h1>{product.name}</h1>
-          <p className="muted">
-            Тревна смес за професионална и хоби употреба. За цени и условия за
-            доставка, свържете се с нас.
-          </p>
-        </div>
+    <>
+      <ProductHero
+        productId={product.id}
+        name={product.name}
+        brand={product.brand}
+        shortDescription={product.shortDescription}
+        packaging={product.packaging}
+        image={product.image}
+      />
 
-        <div className={detailStyles.wrapper}>
-          {product.image && (
-            <div className={detailStyles.imageCol}>
-              <Image
-                src={product.image}
-                alt={product.name}
-                width={800}
-                height={600}
-                className={detailStyles.image}
-              />
-            </div>
-          )}
+      <ProductSpecs
+        brand={product.brand}
+        packaging={product.packaging}
+        features={product.features}
+      />
 
-          <div className={detailStyles.contentCol}>
-            <p>
-              <strong>Марка:</strong> {product.brand || "GlobalGrass"}
-            </p>
+      <ProductApplications applications={product.applications} />
 
-            {product.packaging && (
-              <p>
-                <strong>Опаковки:</strong> {product.packaging}
-              </p>
-            )}
+      <ProductDescription
+        shortDescription={product.shortDescription}
+        longDescription={product.longDescription}
+      />
 
-            <p style={{ marginTop: "1rem" }}>
-              {product.longDescription || product.shortDescription}
-            </p>
-
-            {product.features && product.features.length > 0 && (
-              <>
-                <h2>Основни предимства</h2>
-                <ul>
-                  {product.features.map((f) => (
-                    <li key={f}>{f}</li>
-                  ))}
-                </ul>
-              </>
-            )}
-
-            {product.applications && product.applications.length > 0 && (
-              <>
-                <h2>Приложения</h2>
-                <ul>
-                  {product.applications.map((a) => (
-                    <li key={a}>{a}</li>
-                  ))}
-                </ul>
-              </>
-            )}
-
-            <h2 className="mt-2">Запитване за този продукт</h2>
-            <p className="muted">
-              Изпратете ни запитване, като посочите този продукт и
-              ориентировъчни количества. Ще се свържем с вас с конкретна оферта.
-            </p>
-
-            <a
-              className="button mt-2"
-              href={`/kontakti?product=${encodeURIComponent(product.id)}`}
-            >
-              Изпратете запитване
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+      <ProductCTA productId={product.id} />
+    </>
   );
 }
