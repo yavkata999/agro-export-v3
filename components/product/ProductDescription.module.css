@@ -8,7 +8,7 @@
   background-color: var(--color-surface-elevated);
   box-shadow: var(--shadow-soft);
   max-width: 840px;
-  border: 1px solid var(--color-border-soft);
+  border: 1px solid rgba(8, 74, 45, 0.08);
   color: var(--color-text);
 }
 
@@ -30,4 +30,8 @@
 .descriptionCard p {
   line-height: 1.8;
   color: var(--color-text);
+}
+
+:global(:root[data-theme="dark"]) :local(.descriptionCard) {
+  border-color: rgba(255, 255, 255, 0.08);
 }
