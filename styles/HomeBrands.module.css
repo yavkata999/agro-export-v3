@@ -103,7 +103,7 @@
 
 .chip:hover {
   border-color: var(--color-primary-soft);
-  background-color: rgba(22, 163, 74, 0.05);
+  background-color: var(--color-surface-accent);
   transform: translateY(-1px);
 }
 
@@ -119,15 +119,11 @@
 }
 
 /* Dark theme adjustments */
-:root[data-theme="dark"] .section {
-  background-color: #020617;
-}
-
 :root[data-theme="dark"] .card {
-  background-color: #020617;
+  background-color: var(--color-surface);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
 }
 
 :root[data-theme="dark"] .chip {
-  background-color: #020617;
+  background-color: var(--color-surface);
 }
