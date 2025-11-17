@@ -3,12 +3,12 @@ import styles from "@styles/components/home/HomeHero.module.css";
 
 const HERO_STATS = [
   {
-    value: "15+",
+    value: "34+",
     label: "години опит във вноса и логистиката",
   },
   {
-    value: "7",
-    label: "основни категории продукти",
+    value: "6+",
+    label: "категории продукти",
   },
   {
     value: "100%",
