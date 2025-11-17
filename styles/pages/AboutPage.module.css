@@ -57,11 +57,25 @@
   border-radius: var(--radius-lg);
   padding: 1.5rem;
   box-shadow: var(--shadow-soft);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .highlightCard h3 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+}
+
+.highlightCard h3,
+.highlightCard p {
+  text-align: center;
+}
+
+.highlightCard p {
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 .statsSection {
