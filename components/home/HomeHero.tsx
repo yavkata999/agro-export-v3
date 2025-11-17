@@ -1,6 +1,21 @@
 import Link from "next/link";
 import styles from "@styles/components/home/HomeHero.module.css";
 
+const HERO_STATS = [
+  {
+    value: "15+",
+    label: "години опит във вноса и логистиката",
+  },
+  {
+    value: "7",
+    label: "основни категории продукти",
+  },
+  {
+    value: "100%",
+    label: "фокус върху B2B партньори в България",
+  },
+];
+
 export default function HomeHero() {
   return (
     <section
@@ -9,6 +24,7 @@ export default function HomeHero() {
     >
       <div className="container">
         <div className={`${styles.heroInner} ${styles.heroAppear}`}>
+          <p className={styles.heroBadge}>B2B внос и дистрибуция</p>
           <h1 id="hero-heading" className={styles.heroTitle}>
             Вашият партньор за внос и дистрибуция{" "}
             <span className={styles.heroTitleAccent}>
@@ -36,6 +52,15 @@ export default function HomeHero() {
             Работим изцяло B2B – с магазини, дистрибутори, производители и други
             професионални клиенти.
           </p>
+
+          <ul className={styles.heroStats}>
+            {HERO_STATS.map((stat) => (
+              <li key={stat.label} className={styles.heroStat}>
+                <span className={styles.heroStatValue}>{stat.value}</span>
+                <span className={styles.heroStatLabel}>{stat.label}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
