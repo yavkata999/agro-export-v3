@@ -1,0 +1,233 @@
+.page {
+  background: var(--color-bg);
+}
+
+.heroSection {
+  padding: calc(var(--space-section-y) * 1.4) 0;
+  background: radial-gradient(circle at top right, rgba(21, 128, 61, 0.15), transparent 45%),
+    var(--color-surface);
+}
+
+.heroGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 960px) {
+  .heroGrid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-muted);
+  max-width: 36rem;
+}
+
+.heroHighlights {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .heroHighlights {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.highlightCard {
+  background: var(--color-surface-accent);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.highlightCard h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.statsSection {
+  padding: calc(var(--space-section-y) * 0.8) 0;
+  background: var(--color-surface-accent-strong);
+}
+
+.statsGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .statsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.statCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.statLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.sectionHeader {
+  max-width: 720px;
+  margin-bottom: 2rem;
+}
+
+.sectionHeader p {
+  color: var(--color-muted);
+}
+
+.storySection,
+.timelineSection,
+.valuesSection {
+  padding: var(--space-section-y) 0;
+}
+
+.storyGrid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 960px) {
+  .storyGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.storyCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.timelineSection {
+  background: var(--color-surface-muted);
+}
+
+.timelineGrid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .timelineGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.timelineCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  padding: 1.25rem;
+}
+
+.timelineYear {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+}
+
+.valuesGrid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 960px) {
+  .valuesGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.valueCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-soft);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ctaSection {
+  padding: calc(var(--space-section-y) * 1.2) 0;
+  background: var(--color-surface);
+}
+
+.ctaCard {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .ctaCard {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.ctaCard h2 {
+  margin: 0.35rem 0;
+  color: #fff;
+}
+
+.ctaCard p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ctaButton {
+  background: #fff;
+  color: var(--color-primary-dark);
+  padding: 0.9rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(15, 118, 66, 0.25);
+}
