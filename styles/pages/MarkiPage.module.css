@@ -7,8 +7,10 @@
 .heroSection {
   position: relative;
   padding: calc(var(--space-section-y) * 1.4) 0 calc(var(--space-section-y) * 1.1);
-  background: radial-gradient(circle at top left, rgba(21, 128, 61, 0.08), transparent 45%),
-    linear-gradient(120deg, rgba(21, 128, 61, 0.12), rgba(15, 118, 66, 0.05));
+  background:
+    radial-gradient(circle at top left, rgba(21, 128, 61, 0.12), transparent 45%),
+    linear-gradient(120deg, rgba(21, 128, 61, 0.18), rgba(15, 118, 66, 0.08)),
+    var(--color-surface);
   overflow: hidden;
 }
 
@@ -59,10 +61,9 @@
 .highlightItem {
   padding: 1.25rem;
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid var(--color-border-soft);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-  backdrop-filter: blur(4px);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
 }
 
 .highlightTitle {
