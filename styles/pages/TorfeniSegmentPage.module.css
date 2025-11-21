@@ -1,0 +1,102 @@
+.page {
+  padding: 2.75rem 0;
+}
+
+.header {
+  max-width: 820px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--color-muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.productCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.productTitle {
+  margin: 0 0 0.35rem;
+}
+
+.productDesc {
+  color: var(--color-muted);
+  margin-bottom: 0.75rem;
+}
+
+.featureList {
+  margin: 0.25rem 0 0.5rem 1.1rem;
+  color: var(--color-text);
+}
+
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--color-surface-accent);
+  border: 1px solid var(--color-border);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+.introBlock {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow-soft);
+}
+
+.cta {
+  display: inline-flex;
+  margin-top: 0.75rem;
+}
+
+.tableWrapper {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.table th {
+  background: var(--color-surface-accent);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}

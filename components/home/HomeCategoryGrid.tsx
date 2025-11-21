@@ -9,7 +9,7 @@ type Category = {
 
 const CATEGORIES: Category[] = [
   {
-    slug: "/torfeni-substrati",
+    slug: "/produkti/torfeni-substrati",
     title: "Торфени субстрати",
     description:
       "Професионални и хоби субстрати Durpeta за разсадопроизводство, цветя и зеленчуци.",
