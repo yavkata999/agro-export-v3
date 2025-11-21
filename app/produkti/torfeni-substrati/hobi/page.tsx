@@ -57,31 +57,6 @@ export default function TorfeniHobiPage() {
           ))}
         </div>
 
-        <div className={styles.tableWrapper}>
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th>Продукт</th>
-                <th>Основно приложение</th>
-                <th>Опаковка</th>
-              </tr>
-            </thead>
-            <tbody>
-              {resolvedProducts.map((product) => (
-                <tr key={product.id}>
-                  <td>
-                    <Link href={`/produkti/torfeni-substrati/${product.product.id}`}>
-                      {product.product.name}
-                    </Link>
-                  </td>
-                  <td>{product.product.shortDescription}</td>
-                  <td>{product.product.packaging || "-"}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
         <div className={styles.introBlock}>
           <h2>Нужни са професионални обеми?</h2>
           <p className={styles.subtitle}>
