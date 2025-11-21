@@ -253,41 +253,63 @@ export default function TorfeniProfesionalistiPage() {
         </div>
 
         <div className={styles.tableWrapper}>
-          <h2>Стандартни професионални рецепти</h2>
-          <p className={styles.subtitle}>
-            Изберете подходящия субстрат по култура, електропроводимост, pH и
-            добавки. Всички рецепти са налични в изброените опаковки.
-          </p>
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th>Име на продукта</th>
-                <th>Сол (г/д.л.)</th>
-                <th>pH (CaCl2)</th>
-                <th>Фракция</th>
-                <th>Влага %</th>
-                <th>Тип торф</th>
-                <th>N-P-K %</th>
-                <th>Допълнителни материали</th>
-                <th>Опаковка</th>
-              </tr>
-            </thead>
-            <tbody>
-              {standardRecipes.map((recipe) => (
-                <tr key={recipe.name}>
-                  <td>{recipe.name}</td>
-                  <td>{recipe.salt}</td>
-                  <td>{recipe.ph}</td>
-                  <td>{recipe.fraction}</td>
-                  <td>{recipe.moisture}</td>
-                  <td>{recipe.peatType}</td>
-                  <td>{recipe.npk}</td>
-                  <td>{recipe.additives}</td>
-                  <td>{recipe.packaging}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <div className={styles.sectionHeader}>
+            <div>
+              <p className="muted">Стандартизирани рецепти</p>
+              <h2>Премиум каталог с готови смеси</h2>
+              <p className={styles.subtitle}>
+                Подредихме характеристиките на всяка рецепта в прегледни карти, за
+                да виждате набързо солеви профил, pH, фракция, влажност, N-P-K и
+                добавки.
+              </p>
+            </div>
+            <div className={styles.sectionBadge}>Готови за производство</div>
+          </div>
+
+          <div className={styles.recipeGrid}>
+            {standardRecipes.map((recipe) => (
+              <article key={recipe.name} className={styles.recipeCard}>
+                <header className={styles.recipeHeader}>
+                  <div>
+                    <p className="muted">Субстрат</p>
+                    <h3>{recipe.name}</h3>
+                  </div>
+                  <div className={styles.pillStack}>
+                    <span className={styles.pill}>{recipe.fraction}</span>
+                    <span className={styles.pill}>{recipe.peatType}</span>
+                  </div>
+                </header>
+
+                <dl className={styles.metrics}>
+                  <div>
+                    <dt>Сол (г/д.л.)</dt>
+                    <dd>{recipe.salt}</dd>
+                  </div>
+                  <div>
+                    <dt>pH (CaCl2)</dt>
+                    <dd>{recipe.ph}</dd>
+                  </div>
+                  <div>
+                    <dt>Влага %</dt>
+                    <dd>{recipe.moisture}</dd>
+                  </div>
+                  <div>
+                    <dt>N-P-K %</dt>
+                    <dd>{recipe.npk}</dd>
+                  </div>
+                </dl>
+
+                <div className={styles.metaLine}>
+                  <span className={styles.metaLabel}>Добавени материали</span>
+                  <span className={styles.metaValue}>{recipe.additives}</span>
+                </div>
+                <div className={styles.metaLine}>
+                  <span className={styles.metaLabel}>Опаковки</span>
+                  <span className={styles.metaValue}>{recipe.packaging}</span>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
 
         <div className={styles.introBlock}>
