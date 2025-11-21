@@ -4,6 +4,8 @@ import {
   torfeniSegmentProfessional,
   torfeniSegmentHobby,
 } from "@content/torfeni-substrati";
+import ProductCard from "@components/shared/ProductCard";
+import { getProductById } from "@lib/products";
 import styles from "@styles/pages/TorfeniSegmentPage.module.css";
 
 export const metadata: Metadata = {
@@ -13,6 +15,10 @@ export const metadata: Metadata = {
 
 export default function TorfeniProfesionalistiPage() {
   const segment = torfeniSegmentProfessional;
+  const resolvedProducts = segment.products.flatMap((item) => {
+    const product = getProductById(item.productId);
+    return product ? [{ ...item, product }] : [];
+  });
 
   return (
     <section className={styles.page}>
@@ -35,25 +41,19 @@ export default function TorfeniProfesionalistiPage() {
           </Link>
         </div>
 
-        <div className={styles.grid}>
-          {segment.products.map((product) => (
-            <article key={product.id} className={styles.productCard}>
-              <h3 className={styles.productTitle}>{product.name}</h3>
-              <p className={styles.productDesc}>{product.description}</p>
-              {product.features && (
-                <ul className={styles.featureList}>
-                  {product.features.map((feature) => (
-                    <li key={feature}>{feature}</li>
-                  ))}
-                </ul>
-              )}
-              <div className={styles.badgeRow}>
-                {product.packaging && (
-                  <span className={styles.badge}>Опаковка: {product.packaging}</span>
-                )}
-                <span className={styles.badge}>B2B асортимент</span>
-              </div>
-            </article>
+        <div className="grid grid-3">
+          {resolvedProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              name={product.product.name}
+              description={
+                product.product.packaging
+                  ? `${product.product.shortDescription} | Опаковки: ${product.product.packaging}`
+                  : product.product.shortDescription
+              }
+              image={product.product.image}
+              href={`/produkti/torfeni-substrati/${product.product.id}`}
+            />
           ))}
         </div>
 
@@ -67,11 +67,15 @@ export default function TorfeniProfesionalistiPage() {
               </tr>
             </thead>
             <tbody>
-              {segment.products.map((product) => (
+              {resolvedProducts.map((product) => (
                 <tr key={product.id}>
-                  <td>{product.name}</td>
-                  <td>{product.description}</td>
-                  <td>{product.packaging || "-"}</td>
+                  <td>
+                    <Link href={`/produkti/torfeni-substrati/${product.product.id}`}>
+                      {product.product.name}
+                    </Link>
+                  </td>
+                  <td>{product.product.shortDescription}</td>
+                  <td>{product.product.packaging || "-"}</td>
                 </tr>
               ))}
             </tbody>
