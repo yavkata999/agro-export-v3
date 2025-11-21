@@ -4,6 +4,7 @@ export type TorfeniSegmentProduct = {
   id: string;
   name: string;
   description: string;
+  productId: string;
   packaging?: string;
   features?: string[];
 };
@@ -43,6 +44,7 @@ export const torfeniSegmentProfessional: TorfeniSegment = {
       name: "Durpeta Pro Seed Start",
       description:
         "Ситна фракция (0–10 мм) с прецизно pH за засяване и пикиране в тавички.",
+      productId: "durpeta-pro-seed-start",
       packaging: "70 л, биг-бег",
       features: [
         "Стабилна структура за равномерно поникване",
@@ -55,6 +57,7 @@ export const torfeniSegmentProfessional: TorfeniSegment = {
       name: "Durpeta Pro Vegetables",
       description:
         "Средна фракция (0–20 мм) за зеленчуков разсад, едносезонни цветя и билки.",
+      productId: "durpeta-pro-vegetables",
       packaging: "70 л, биг-бег",
       features: [
         "Оптимално водно-воздушно съотношение",
@@ -67,6 +70,7 @@ export const torfeniSegmentProfessional: TorfeniSegment = {
       name: "Durpeta Pro Container Mix",
       description:
         "Едра фракция (10–25 мм) за контейнери, декоративни и ягодоплодни култури.",
+      productId: "durpeta-pro-container",
       packaging: "250 л, биг-бег",
       features: [
         "Дълготрайна структура за многомесечно отглеждане",
@@ -96,6 +100,7 @@ export const torfeniSegmentHobby: TorfeniSegment = {
       name: "Durpeta Garden Mix",
       description:
         "Универсален торфен субстрат за саксийни и балконски растения със стартово торене.",
+      productId: "durpeta-hobby-garden",
       packaging: "20 л, 50 л",
       features: [
         "Готов за употреба",
@@ -108,6 +113,7 @@ export const torfeniSegmentHobby: TorfeniSegment = {
       name: "Durpeta Balcony & Flowers",
       description:
         "Смес за каскадни и балконски растения с по-добър дренаж и подхранване.",
+      productId: "durpeta-hobby-balcony",
       packaging: "20 л, 45 л",
       features: [
         "Перлит за подобрена аерация",
@@ -120,6 +126,7 @@ export const torfeniSegmentHobby: TorfeniSegment = {
       name: "Durpeta Seedling & Herbs",
       description:
         "Фина структура за семена и подправки, осигуряваща равномерно поникване.",
+      productId: "durpeta-hobby-seedling-herbs",
       packaging: "10 л, 20 л",
       features: [
         "Буферирано pH за чувствителни култури",
