@@ -20,6 +20,207 @@ export default function TorfeniProfesionalistiPage() {
     return product ? [{ ...item, product }] : [];
   });
 
+  const standardRecipes = [
+    {
+      name: "Субстрат за Бегони",
+      salt: "0.2 - 0.5",
+      ph: "5.0 - 5.5",
+      fraction: "Средна",
+      moisture: "50",
+      peatType: "Светъл",
+      npk: "14 - 16 - 18",
+      additives: "Перлит, минерален тор",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат за рози",
+      salt: "0.3 - 0.5",
+      ph: "5.5 - 6.5",
+      fraction: "Средна",
+      moisture: "50",
+      peatType: "Смес",
+      npk: "20 - 10 - 20",
+      additives: "Торове",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат за разсад",
+      salt: "0.4 - 0.8",
+      ph: "5.5 - 6.5",
+      fraction: "Ситна",
+      moisture: "50",
+      peatType: "Светъл",
+      npk: "14 - 16 - 18",
+      additives: "Торове",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат за кактуси и палми",
+      salt: "0.4 - 0.6",
+      ph: "5.5 - 6.5",
+      fraction: "Средна",
+      moisture: "40",
+      peatType: "Смес",
+      npk: "20 - 10 - 20",
+      additives: "-",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат за сеитба и пикиране",
+      salt: "1.0 - 1.4",
+      ph: "5.0 - 5.5",
+      fraction: "Средна",
+      moisture: "65",
+      peatType: "Смес",
+      npk: "20 - 10 - 20",
+      additives: "Агроглина, микроелементи",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат за изящни цветя",
+      salt: "1.0 - 1.4",
+      ph: "5.0 - 5.5",
+      fraction: "Средна",
+      moisture: "70",
+      peatType: "Смес",
+      npk: "20 - 10 - 20",
+      additives: "Агроглина, микроелементи",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат за иглолистни",
+      salt: "1.0 - 1.4",
+      ph: "5.5 - 6.5",
+      fraction: "Средна",
+      moisture: "60",
+      peatType: "Смес",
+      npk: "20 - 10 - 20",
+      additives: "-",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат за трева",
+      salt: "1.0 - 1.4",
+      ph: "5.5 - 6.5",
+      fraction: "Ситна",
+      moisture: "70",
+      peatType: "Смес",
+      npk: "20 - 10 - 20",
+      additives: "Торове, микроелементи",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Универсален субстрат",
+      salt: "1.0 - 1.4",
+      ph: "5.0 - 6.0",
+      fraction: "Средна",
+      moisture: "60",
+      peatType: "Смес",
+      npk: "20 - 10 - 20",
+      additives: "Агроглина, микроелементи",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат за гъби",
+      salt: "1.0 - 1.4",
+      ph: "5.5 - 6.5",
+      fraction: "Средна",
+      moisture: "60",
+      peatType: "Смес",
+      npk: "20 - 10 - 20",
+      additives: "Микроелементи",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат за стапелии",
+      salt: "1.5 - 2.0",
+      ph: "5.5 - 6.5",
+      fraction: "Едра",
+      moisture: "50",
+      peatType: "Смес",
+      npk: "20 - 10 - 20",
+      additives: "Агроглина, перлит",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат за азалии и рододендрони",
+      salt: "1.8 - 2.2",
+      ph: "4.5 - 5.5",
+      fraction: "Средна",
+      moisture: "55",
+      peatType: "Тъмен",
+      npk: "20 - 10 - 20",
+      additives: "Торове",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат RDDP MIX 1 за разсад",
+      salt: "0.9 - 1.1",
+      ph: "5.5 - 6.5",
+      fraction: "Ситна",
+      moisture: "70",
+      peatType: "Смес",
+      npk: "20 - 10 - 20",
+      additives: "Вермикулит",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат RDDP MIX 2 за засаждане в оранжерия",
+      salt: "0.9 - 1.1",
+      ph: "5.5 - 6.5",
+      fraction: "Средна",
+      moisture: "70",
+      peatType: "Смес",
+      npk: "20 - 10 - 20",
+      additives: "Глина, микроелементи",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат RDDP MIX 4 за засаждане в контейнери",
+      salt: "0.9 - 1.1",
+      ph: "5.5 - 6.5",
+      fraction: "Средна",
+      moisture: "60",
+      peatType: "Смес",
+      npk: "20 - 10 - 20",
+      additives: "Глина, микроелементи",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат PRDP MIX 5 за разсад",
+      salt: "0.8 - 1.0",
+      ph: "5.5 - 6.5",
+      fraction: "Средна",
+      moisture: "70",
+      peatType: "Смес",
+      npk: "20 - 10 - 20",
+      additives: "Перлит, глина, микроелементи",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат PRDP MIX 6 за засаждане в оранжерия",
+      salt: "0.8 - 1.0",
+      ph: "5.5 - 6.5",
+      fraction: "Средна",
+      moisture: "60",
+      peatType: "Тъмен",
+      npk: "20 - 10 - 20",
+      additives: "Глина, микроелементи",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+    {
+      name: "Субстрат PRDP MIX 7 за засаждане в контейнери",
+      salt: "0.8 - 1.0",
+      ph: "5.5 - 6.5",
+      fraction: "Средна",
+      moisture: "60",
+      peatType: "Тъмен",
+      npk: "20 - 10 - 20",
+      additives: "Глина, микроелементи",
+      packaging: "20, 70 л; 250, 3,0 м3 Big Bag",
+    },
+  ];
+
   return (
     <section className={styles.page}>
       <div className="container">
@@ -49,6 +250,44 @@ export default function TorfeniProfesionalistiPage() {
             Ако не откривате точната рецепта за вашите нужди, можем да създадем
             индивидуална, но поръчката трябва да е минимум един камион.
           </p>
+        </div>
+
+        <div className={styles.tableWrapper}>
+          <h2>Стандартни професионални рецепти</h2>
+          <p className={styles.subtitle}>
+            Изберете подходящия субстрат по култура, електропроводимост, pH и
+            добавки. Всички рецепти са налични в изброените опаковки.
+          </p>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>Име на продукта</th>
+                <th>Сол (г/д.л.)</th>
+                <th>pH (CaCl2)</th>
+                <th>Фракция</th>
+                <th>Влага %</th>
+                <th>Тип торф</th>
+                <th>N-P-K %</th>
+                <th>Допълнителни материали</th>
+                <th>Опаковка</th>
+              </tr>
+            </thead>
+            <tbody>
+              {standardRecipes.map((recipe) => (
+                <tr key={recipe.name}>
+                  <td>{recipe.name}</td>
+                  <td>{recipe.salt}</td>
+                  <td>{recipe.ph}</td>
+                  <td>{recipe.fraction}</td>
+                  <td>{recipe.moisture}</td>
+                  <td>{recipe.peatType}</td>
+                  <td>{recipe.npk}</td>
+                  <td>{recipe.additives}</td>
+                  <td>{recipe.packaging}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         <div className={styles.introBlock}>
