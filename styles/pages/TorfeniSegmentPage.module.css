@@ -140,13 +140,6 @@
   gap: 0.25rem;
 }
 
-.metricItem {
-  background: var(--color-surface-accent);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 0.65rem 0.75rem;
-}
-
 .metrics dt {
   margin: 0;
   color: var(--color-muted);
@@ -158,21 +151,6 @@
   margin: 0;
   font-weight: 700;
   color: var(--color-text);
-}
-
-.accentValue {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.35rem 0.65rem;
-  background: linear-gradient(
-    135deg,
-    rgba(16, 185, 129, 0.12),
-    rgba(52, 211, 153, 0.22)
-  );
-  border-radius: var(--radius-md);
-  color: var(--color-primary-dark);
-  box-shadow: var(--shadow-soft);
 }
 
 .metaLine {

@@ -259,9 +259,9 @@ export default function TorfeniProfesionalistiPage() {
                 </header>
 
                 <dl className={styles.metrics}>
-                  <div className={styles.metricItem}>
+                  <div>
                     <dt>Фракция</dt>
-                    <dd className={styles.accentValue}>{recipe.fraction}</dd>
+                    <dd>{recipe.fraction}</dd>
                   </div>
                   <div>
                     <dt>Сол (г/д.л.)</dt>
