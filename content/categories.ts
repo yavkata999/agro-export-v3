@@ -21,6 +21,20 @@ export type Category = {
 
 export const categories: Category[] = [
   {
+    slug: "torfeni-substrati",
+    name: "Торфени субстрати Durpeta",
+    rootPath: "/produkti/torfeni-substrati",
+    productsPath: "/produkti/torfeni-substrati",
+    shortDescription:
+      "Професионални и хоби торфени субстрати Durpeta – за разсад, контейнери и домашни растения.",
+    longDescription:
+      "Премиум смеси със светъл и тъмен торф, контролирано pH и възможност за персонализация според културата.",
+    seoTitle: "Торфени субстрати Durpeta – професионални и хоби решения",
+    seoDescription:
+      "Durpeta торфени субстрати за професионалисти и хоби градинари – контролирано pH, различни фракции, готови смеси и custom рецепти.",
+  },
+
+  {
     slug: "trevni-smesi",
     name: "Тревни смеси GlobalGrass",
     rootPath: "/produkti/trevni-smesi",
