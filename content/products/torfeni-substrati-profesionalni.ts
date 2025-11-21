@@ -1,7 +1,7 @@
-// content/products/torfeni-substrati.ts
+// content/products/torfeni-substrati-profesionalni.ts
 import type { Product } from "./types";
 
-export const torfeniSubstratiProducts: Product[] = [
+export const torfeniSubstratiProfesionalniProducts: Product[] = [
   {
     id: "durpeta-pro-seed-start",
     category: "torfeni-substrati",
@@ -66,50 +66,6 @@ export const torfeniSubstratiProducts: Product[] = [
       "Декоративни растения",
       "Ягодоплодни в контейнери",
       "Едри саксийни култури",
-    ],
-  },
-  {
-    id: "durpeta-hobby-garden",
-    category: "torfeni-substrati",
-    name: "Durpeta Garden Mix",
-    brand: "Durpeta",
-    shortDescription:
-      "Универсален хоби субстрат за саксийни и балконски растения.",
-    longDescription:
-      "Готова за употреба смес с балансирано pH и стартово подхранване. Подходяща за пресаждане на сезонни цветя и стайни растения.",
-    packaging: "20 л, 50 л",
-    image: "/placeholder.png",
-    features: [
-      "Лесна за разрохкване",
-      "Поддържа добър воден капацитет",
-      "Подходяща за начинаещи градинари",
-    ],
-    applications: [
-      "Стайни растения",
-      "Балконски цветя",
-      "Саксийни зеленчуци",
-    ],
-  },
-  {
-    id: "durpeta-hobby-balcony",
-    category: "torfeni-substrati",
-    name: "Durpeta Balcony & Flowers",
-    brand: "Durpeta",
-    shortDescription:
-      "Хоби смес с перлит за аерация и обилен цъфтеж.",
-    longDescription:
-      "Съдържа перлит за по-добър дренаж и аерация, подходяща за каскадни и балконски растения. Поддържа здрав корен и богато цъфтене.",
-    packaging: "20 л, 45 л",
-    image: "/placeholder.png",
-    features: [
-      "Перлит за лекота",
-      "Буферирано pH",
-      "Стартово торене",
-    ],
-    applications: [
-      "Саксии и сандъчета",
-      "Цъфтящи балконски видове",
-      "Любителски разсад",
     ],
   },
 ];
