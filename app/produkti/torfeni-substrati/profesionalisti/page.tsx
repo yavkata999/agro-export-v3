@@ -214,7 +214,8 @@ export default function TorfeniProfesionalistiPage() {
 
         <div className={styles.introBlock}>
           <p>
-            „Durpeta" АД произвежда широка гама от продукти от по-евтини стандартни
+            &bdquo;Durpeta&ldquo; АД произвежда широка гама от продукти от по-евтини
+            стандартни
             субстрати до смеси според специфичните нужди на клиента, например
             субстрати за примула/виола или за контейнерно отглеждани декоративни
             растения с торове с продължително действие. Можете да изберете желания
@@ -255,15 +256,13 @@ export default function TorfeniProfesionalistiPage() {
                   <div>
                     <h3>{recipe.name}</h3>
                   </div>
-                  <div className={styles.pillStack}>
-                    <span className={styles.pill}>{recipe.fraction}</span>
-                    <span className={styles.pill}>
-                      Светъл {recipe.lightPeat}% / Тъмен {recipe.darkPeat}%
-                    </span>
-                  </div>
                 </header>
 
                 <dl className={styles.metrics}>
+                  <div className={styles.metricItem}>
+                    <dt>Фракция</dt>
+                    <dd className={styles.accentValue}>{recipe.fraction}</dd>
+                  </div>
                   <div>
                     <dt>Сол (г/д.л.)</dt>
                     <dd>{recipe.salt}</dd>
