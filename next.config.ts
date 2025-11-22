@@ -1,8 +1,23 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Your existing experimental flag
   reactCompiler: true,
 
+  // Cloudinary Configuration
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        port: "",
+        // Restricts access to your specific Cloudinary account (from your API data)
+        pathname: "/dggelqxji/**",
+      },
+    ],
+  },
+
+  // Your existing redirects
   async redirects() {
     return [
       {

@@ -23,24 +23,35 @@ export default function TorfeniHobiPage() {
   return (
     <section className={styles.page}>
       <div className="container">
+        {/* ---------------- HEADER ---------------- */}
         <div className={styles.header}>
           <p className="muted">Durpeta – хоби линия</p>
           <h1>{segment.title}</h1>
           <p className={styles.subtitle}>{segment.description}</p>
         </div>
 
+        {/* ---------------- INTRO ---------------- */}
         <div className={styles.introBlock}>
-          <h2>Сигурен избор за любители</h2>
+          <h2>Сигурен избор за дома и градината</h2>
+          <p className={styles.subtitle}>
+            Хоби линията на Durpeta е създадена за любители, които искат
+            професионално качество без сложност. Смесите са готови за употреба,
+            лесни за работа и подходящи за различни видове стайни, балконски и
+            дворни растения.
+          </p>
+
           <ul className={styles.featureList}>
             {segment.highlights.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
+
           <Link href="/kontakti" className={`button ${styles.cta}`}>
             Намерете най-близкия партньор
           </Link>
         </div>
 
+        {/* ---------------- PRODUCT GRID ---------------- */}
         <div className="grid grid-3">
           {resolvedProducts.map((product) => (
             <ProductCard
@@ -57,11 +68,13 @@ export default function TorfeniHobiPage() {
           ))}
         </div>
 
+        {/* ---------------- CROSS-LINK ---------------- */}
         <div className={styles.introBlock}>
-          <h2>Нужни са професионални обеми?</h2>
+          <h2>Търсите професионални решения?</h2>
           <p className={styles.subtitle}>
-            За оранжерии, разсадници или градински центрове вижте професионалната
-            линия с персонализирани рецепти и доставки на палети.
+            За оранжерии, разсадници и градински центрове е налична отделна
+            професионална линия с контролирани параметри, персонализирани
+            рецепти и доставки на палети или биг бегове.
           </p>
           <Link
             href={torfeniSegmentProfessional.ctaHref}
