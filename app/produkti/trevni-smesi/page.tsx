@@ -47,7 +47,7 @@ export default function TrevniSmesiListPage() {
                     ? `${product.shortDescription} | Опаковки: ${product.packaging}`
                     : product.shortDescription
                 }
-                image={product.image}
+                image={product.images?.[0]}
                 href={`/produkti/trevni-smesi/${product.id}`}
               />
             ))}

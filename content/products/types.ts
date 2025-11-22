@@ -9,7 +9,7 @@ export type Product = {
   shortDescription: string;
   longDescription?: string;
   packaging?: string;
-  images?: string;
+  images?: string[];
   features?: string[];
   applications?: string[];
 };

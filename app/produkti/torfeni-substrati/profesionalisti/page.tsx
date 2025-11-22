@@ -326,7 +326,7 @@ export default function TorfeniProfesionalistiPage() {
                   ? `${product.product.shortDescription} | Опаковки: ${product.product.packaging}`
                   : product.product.shortDescription
               }
-              image={product.product.image}
+              image={product.product.images?.[0]}
               href={`/produkti/torfeni-substrati/${product.product.id}`}
             />
           ))}

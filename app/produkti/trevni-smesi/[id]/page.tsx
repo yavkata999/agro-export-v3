@@ -47,7 +47,7 @@ export default async function ProductPage(pageProps: PageProps) {
         brand={product.brand}
         shortDescription={product.shortDescription}
         packaging={product.packaging}
-        image={product.image}
+        images={product.images}
       />
 
       <ProductSpecs
