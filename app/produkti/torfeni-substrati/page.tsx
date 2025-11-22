@@ -165,12 +165,21 @@ export default function TorfeniSubstratiHubPage() {
               </Link>
             </div>
 
-            <div className={styles.faqList}>
-              {torfeniFaq.map((item) => (
-                <article key={item.question} className={styles.faqItem}>
-                  <h3>{item.question}</h3>
-                  <p>{item.answer}</p>
-                </article>
+            <div className={styles.faqAccordion}>
+              {torfeniFaq.map((item, index) => (
+                <details
+                  key={item.question}
+                  className={styles.faqItem}
+                  open={index === 0}
+                >
+                  <summary className={styles.faqQuestion}>
+                    <span>{item.question}</span>
+                    <span className={styles.faqToggle} aria-hidden>
+                      ➜
+                    </span>
+                  </summary>
+                  <p className={styles.faqAnswer}>{item.answer}</p>
+                </details>
               ))}
             </div>
           </div>
