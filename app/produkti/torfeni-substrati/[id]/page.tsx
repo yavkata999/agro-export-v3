@@ -8,7 +8,7 @@ import { ProductSpecs } from "@components/product/ProductSpecs";
 import { getProductById, getProductsByCategory } from "@lib/products";
 
 interface PageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export function generateStaticParams() {
@@ -17,7 +17,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata(pageProps: PageProps): Promise<Metadata> {
-  const { params } = pageProps;
+  const params = await pageProps.params;
   const product = getProductById(params.id);
 
   if (!product) {
@@ -31,7 +31,7 @@ export async function generateMetadata(pageProps: PageProps): Promise<Metadata> 
 }
 
 export default async function ProductPage(pageProps: PageProps) {
-  const { params } = pageProps;
+  const params = await pageProps.params;
   const product = getProductById(params.id);
   if (!product) return notFound();
 

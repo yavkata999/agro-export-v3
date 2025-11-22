@@ -8,7 +8,7 @@ import { ProductSpecs } from "@components/product/ProductSpecs";
 import { getProductById, getProductsByCategory } from "@lib/products";
 
 type PageProps = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export function generateStaticParams() {
