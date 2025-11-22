@@ -62,7 +62,7 @@ export default function TorfeniHobiPage() {
                   ? `${product.product.shortDescription} | Опаковки: ${product.product.packaging}`
                   : product.product.shortDescription
               }
-              image={product.product.images}
+              image={product.product.images?.[0]}
               href={`/produkti/torfeni-substrati/${product.product.id}`}
             />
           ))}

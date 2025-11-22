@@ -12,7 +12,7 @@ export const torfeniSubstratiProfesionalniProducts: Product[] = [
     longDescription:
       "Създаден за професионално засяване в тавички – фракция 0–10 мм, стабилна влажност и прецизно буферирано pH. Подпомага равномерното поникване и развитието на фина коренова система.",
     packaging: "70 л, биг-бег",
-    image: "/placeholder.png",
+    images: ["/placeholder.png"],
     features: [
       "Фина структура без големи частици",
       "Стабилно водо-въздушно съотношение",
@@ -34,7 +34,7 @@ export const torfeniSubstratiProfesionalniProducts: Product[] = [
     longDescription:
       "Оптимално водно-въздушно съотношение за домати, пипер, краставици и ароматни култури. При заявка се добавя перлит за по-добра аерация.",
     packaging: "70 л, биг-бег",
-    image: "/placeholder.png",
+    images: ["/placeholder.png"],
     features: [
       "Стартово торене за първите 2–3 седмици",
       "Възможност за добавка на перлит",
@@ -56,7 +56,7 @@ export const torfeniSubstratiProfesionalniProducts: Product[] = [
     longDescription:
       "Фракция 10–25 мм за многомесечно отглеждане в саксии и контейнери. Дава добра дренажност и запазва структурата дългосрочно.",
     packaging: "250 л, биг-бег",
-    image: "/placeholder.png",
+    images: ["/placeholder.png"],
     features: [
       "Дълготрайна структура",
       "Добро оттичане при висока водоемност",

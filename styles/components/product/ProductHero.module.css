@@ -75,9 +75,13 @@
 
 .imageWrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .imageSurface {
+  position: relative;
   border-radius: var(--radius-lg);
   background: radial-gradient(
       circle at 20% 20%,
@@ -90,15 +94,203 @@
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(8, 74, 45, 0.08);
+  overflow: hidden;
+}
+
+.imageViewport {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .heroImage {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
   background: var(--color-surface);
+  cursor: zoom-in;
+  transition: transform 200ms ease;
+}
+
+.heroImage:hover {
+  transform: scale(1.02);
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: var(--color-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.navButton:hover {
+  background-color: rgba(0, 0, 0, 0.12);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.navButtonPrev {
+  left: 1rem;
+}
+
+.navButtonNext {
+  right: 1rem;
+}
+
+.thumbnailStrip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 0.5rem;
+}
+
+.thumbnailButton {
+  padding: 0.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(8, 74, 45, 0.1);
+  background-color: var(--color-surface-elevated);
+  cursor: pointer;
+  transition: border-color 150ms ease, transform 150ms ease;
+}
+
+.thumbnailButton:hover {
+  transform: translateY(-2px);
+}
+
+.thumbnailButtonActive {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.15);
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.lightboxContent {
+  position: relative;
+  max-width: min(1024px, 96vw);
+  width: 100%;
+  background: var(--color-surface-elevated);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-strong);
+  display: grid;
+  gap: 1rem;
+}
+
+.lightboxContentZoomed {
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  border: none;
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--color-text);
+  border-radius: 999px;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.lightboxClose:hover {
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.lightboxNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.lightboxNav button {
+  border: none;
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--color-text);
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.lightboxNav button:hover {
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.lightboxImageFrame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: zoom-in;
+  transition: transform 200ms ease;
+}
+
+.lightboxImageFrameZoomed {
+  cursor: zoom-out;
+}
+
+.lightboxImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 200ms ease;
+}
+
+.lightboxContentZoomed .lightboxImageFrameZoomed .lightboxImage {
+  transform: scale(1.4);
+}
+
+.zoomHint {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  font-size: 0.85rem;
+  pointer-events: none;
 }
 
 :global(:root[data-theme="dark"]) .heroCard,
@@ -111,6 +303,10 @@
   color: #dcfce7;
 }
 
+:global(:root[data-theme="dark"]) .lightboxContent {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
 @media (min-width: 768px) {
   .metaGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -121,5 +317,9 @@
   .heroCard {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
+  }
+
+  .imageSurface {
+    padding: 2rem;
   }
 }
