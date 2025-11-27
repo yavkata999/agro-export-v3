@@ -7,7 +7,7 @@ export type CategorySlug =
   | "formi-za-razsad"
   | "formi-za-razsad-turcziya"
   | "perlit-vermikulit"
-  | "mrezhi"
+  | "mrezhi-i-folia"
   | "gradinski-produkti";
 
 export type Category = {
@@ -90,6 +90,20 @@ export const categories: Category[] = [
     seoTitle: "Форми за разсад – табли и подложки за професионална употреба",
     seoDescription:
       "Каталог с пластмасови форми за разсад от 4 до 512 гнезда и подложка за поливане и транспорт. Решения за зеленчукови, цветни и горски разсадници.",
+  },
+
+  {
+    slug: "mrezhi-i-folia",
+    name: "Мрежи и фолиа",
+    rootPath: "/produkti/mrezhi-i-folia",
+    productsPath: "/produkti/mrezhi-i-folia",
+    shortDescription:
+      "Мрежи против плевели, птици и засенчващи мрежи за професионална защита на културите.",
+    longDescription:
+      "Асортимент от мрежи и фолиа за опазване на насаждения: устойчиви на UV лъчи, налични в различни ширини и предназначени за оранжерии, овощни градини и открити площи.",
+    seoTitle: "Мрежи и фолиа - Агро Експорт Импорт ООД",
+    seoDescription:
+      "Защитете растенията си с нашите мрежи против плевели, птици и засенчващи мрежи. Изработени от висококачествени материали.",
   },
 
   {
