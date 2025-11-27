@@ -63,6 +63,20 @@ export const categories: Category[] = [
       "Асортимент Soparco: саксии DUO, висящи саксии и фиксатори за стабилен транспорт. Подходящи за автоматизация и B2B клиенти.",
   },
 
+  {
+    slug: "gradinski-produkti",
+    name: "Градински продукти Florovit, Azofoska",
+    rootPath: "/produkti/gradinski-produkti",
+    productsPath: "/produkti/gradinski-produkti",
+    shortDescription:
+      "Пълно портфолио от торове, подобрители на почвата и препарати за домашни и професионални градини.",
+    longDescription:
+      "Минерални и органични торове Florovit, Azofoska и Pro Natura – решения за тревни площи, иглолистни, овошки, зеленчуци и компостиране.",
+    seoTitle: "Градински продукти Florovit – торове и препарати",
+    seoDescription:
+      "Торове Florovit и Azofoska за тревни площи, иглолистни, овошки, зеленчуци и домашни растения. Активатори за компост и почвени подобрители.",
+  },
+
   // Example of how future categories will look:
   // {
   //   slug: "torfeni-substrati",

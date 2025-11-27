@@ -1,5 +1,6 @@
 // content/products.ts
 import type { Product } from "./products/types";
+import { gradinskiProdukti } from "./products/gradinski-produkti";
 import { trevniSmesiProducts } from "./products/trevni-smesi";
 import { torfeniSubstratiHobiProducts } from "./products/torfeni-substrati-hobi";
 import { torfeniSubstratiProfesionalniProducts } from "./products/torfeni-substrati-profesionalni";
@@ -12,6 +13,7 @@ export const products: Product[] = [
   ...torfeniSubstratiProfesionalniProducts,
   ...torfeniSubstratiHobiProducts,
   ...soparcoProducts,
+  ...gradinskiProdukti,
   // later:
   // ...toroveProducts,
   // ...saksiiProducts,
