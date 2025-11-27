@@ -6,7 +6,7 @@ export const perlitVermikulitProducts: Product[] = [
     id: "agroperlit",
     category: "perlit-i-vermikulit",
     name: "Агроперлит",
-    brand: "Agro Export",
+    brand: "Гръцки",
     shortDescription:
       "Естествен вулканичен материал за подобряване на аерацията, дренажа и структурата на почвата.",
     longDescription:
@@ -33,7 +33,7 @@ export const perlitVermikulitProducts: Product[] = [
     id: "perlit-za-hidroponika",
     category: "perlit-i-vermikulit",
     name: "Перлит за хидропоника",
-    brand: "Agro Export",
+    brand: "Гръцки",
     shortDescription:
       "Специализиран перлит с висока плътност и здравина за хидропонни системи.",
     longDescription:
@@ -60,7 +60,7 @@ export const perlitVermikulitProducts: Product[] = [
     id: "stroitelen-perlit",
     category: "perlit-i-vermikulit",
     name: "Строителен перлит",
-    brand: "Agro Export",
+    brand: "Гръцки",
     shortDescription:
       "Лек инертен материал за топлоизолация, шумоизолация и олекотени бетони.",
     longDescription:
@@ -86,7 +86,7 @@ export const perlitVermikulitProducts: Product[] = [
     id: "agrovermikulit",
     category: "perlit-i-vermikulit",
     name: "Агровермикулит",
-    brand: "Agro Export",
+    brand: "Гръцки",
     shortDescription:
       "Минерал с висок капацитет за задържане на вода и хранителни вещества (йонен обмен).",
     longDescription:
