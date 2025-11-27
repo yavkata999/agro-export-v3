@@ -64,6 +64,20 @@ export const categories: Category[] = [
   },
 
   {
+    slug: "formi-za-razsad",
+    name: "Форми за разсад и подложки",
+    rootPath: "/produkti/formi-za-razsad",
+    productsPath: "/produkti/formi-za-razsad",
+    shortDescription:
+      "Табли и подложки за разсад с различна дълбочина и брой гнезда – за зеленчуци, цветя и горски култури.",
+    longDescription:
+      "Пластмасови форми за разсад от 4 до 512 гнезда и универсална подложка за транспорт и долно поливане. Подходящи за професионални оранжерии и разсадници.",
+    seoTitle: "Форми за разсад – табли и подложки за професионална употреба",
+    seoDescription:
+      "Каталог с пластмасови форми за разсад от 4 до 512 гнезда и подложка за поливане и транспорт. Решения за зеленчукови, цветни и горски разсадници.",
+  },
+
+  {
     slug: "gradinski-produkti",
     name: "Градински продукти Florovit, Azofoska",
     rootPath: "/produkti/gradinski-produkti",
