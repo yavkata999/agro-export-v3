@@ -6,7 +6,11 @@ interface ProductSpecsProps {
   features?: string[];
 }
 
-export function ProductSpecs({ brand, packaging, features }: ProductSpecsProps) {
+export function ProductSpecs({
+  brand,
+  packaging,
+  features,
+}: ProductSpecsProps) {
   const highlightItems = [
     brand ? { label: "Марка", value: brand } : null,
     packaging ? { label: "Опаковки", value: packaging } : null,
@@ -27,10 +31,6 @@ export function ProductSpecs({ brand, packaging, features }: ProductSpecsProps) 
             <p className={styles.overline}>Детайли</p>
             <h2>Основни характеристики</h2>
           </div>
-          <p className="muted">
-            Изчерпателна информация за продукта, подготвена за агро специалисти
-            и партньори.
-          </p>
         </div>
 
         {hasHighlights && (

@@ -4,7 +4,9 @@ interface ProductApplicationsProps {
   applications?: string[];
 }
 
-export function ProductApplications({ applications }: ProductApplicationsProps) {
+export function ProductApplications({
+  applications,
+}: ProductApplicationsProps) {
   if (!applications || applications.length === 0) {
     return null;
   }
@@ -15,11 +17,7 @@ export function ProductApplications({ applications }: ProductApplicationsProps) 
         <div className={styles.contentCard}>
           <div>
             <p className={styles.overline}>Приложения</p>
-            <h2>Къде работи продуктът най-добре</h2>
-            <p className="muted">
-              Подбрани сценарии за употреба, базирани на резултати при наши
-              клиенти и партньори.
-            </p>
+            <h2>Къде работи продуктът най-добре?</h2>
           </div>
 
           <ul className={styles.applicationList}>

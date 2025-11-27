@@ -17,10 +17,8 @@ export function ProductDescription({
       <div className="container">
         <div className={styles.descriptionCard}>
           <p className={styles.overline}>Описание</p>
-          <h2>Разгърната информация</h2>
-          {hasExtendedCopy && (
-            <p className={styles.lead}>{shortDescription}</p>
-          )}
+          <h2>Пълна информация</h2>
+          {hasExtendedCopy && <p className={styles.lead}>{shortDescription}</p>}
           <p>{content}</p>
         </div>
       </div>
