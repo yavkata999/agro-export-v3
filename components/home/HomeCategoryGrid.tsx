@@ -15,31 +15,31 @@ const CATEGORIES: Category[] = [
       "Професионални и хоби субстрати Durpeta за разсадопроизводство, цветя и зеленчуци.",
   },
   {
-    slug: "/trevni-smesi",
+    slug: "/produkti/trevni-smesi",
     title: "Тревни смеси",
     description:
       "Тревни смеси GlobalGrass за дворове, спортни терени и обществени пространства.",
   },
   {
-    slug: "/saksii",
+    slug: "/produkti/saksii-i-kontejneri-soparco",
     title: "Саксии",
     description:
       "Работни саксии и контейнери – френски Soparco и подбрани турски производители.",
   },
   {
-    slug: "/formi-za-razsad",
+    slug: "/produkti/formi-za-razsad",
     title: "Форми за разсад",
     description:
       "Транспортни тарелки и форми за разсад за професионални производители.",
   },
   {
-    slug: "/perlit-i-vermikulit",
+    slug: "/produkti/perlit-vermikulit",
     title: "Перлит и вермикулит",
     description:
       "Гръцки перлит и вермикулит за подобряване на структурата и аерацията на субстрата.",
   },
   {
-    slug: "/gradinski-produkti-i-torove",
+    slug: "/produkti/gradinski-produkti",
     title: "Градински продукти и торове",
     description:
       "Azofoska, Florovit, Florovit Pro Natura, Florovit Agro и други решения за торене.",
