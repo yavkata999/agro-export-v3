@@ -33,7 +33,7 @@ const CATEGORIES: Category[] = [
       "Транспортни тарелки и форми за разсад за професионални производители.",
   },
   {
-    slug: "/produkti/perlit-vermikulit",
+    slug: "/produkti/perlit-i-vermikulit",
     title: "Перлит и вермикулит",
     description:
       "Гръцки перлит и вермикулит за подобряване на структурата и аерацията на субстрата.",

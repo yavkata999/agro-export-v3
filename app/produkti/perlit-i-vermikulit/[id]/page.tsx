@@ -12,11 +12,13 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  const products = getProductsByCategory("perlit-vermikulit");
+  const products = getProductsByCategory("perlit-i-vermikulit");
   return products.map((p) => ({ id: p.id }));
 }
 
-export async function generateMetadata(pageProps: PageProps): Promise<Metadata> {
+export async function generateMetadata(
+  pageProps: PageProps
+): Promise<Metadata> {
   const params = await pageProps.params;
   const { id } = params;
   const product = getProductById(id);

@@ -8,7 +8,7 @@ import { torfeniSubstratiHobiProducts } from "./products/torfeni-substrati-hobi"
 import { torfeniSubstratiProfesionalniProducts } from "./products/torfeni-substrati-profesionalni";
 import { soparcoProducts } from "./products/saksii-i-kontejneri-soparco";
 import { mrezhiIFoliaProducts } from "./products/mrezhi-i-folia";
-import { perlitVermikulitProducts } from "./products/perlit-vermikulit";
+import { perlitVermikulitProducts } from "./products/perlit-i-vermikulit";
 
 export type { Product } from "./products/types";
 

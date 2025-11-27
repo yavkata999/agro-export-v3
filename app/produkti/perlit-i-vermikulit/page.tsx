@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getCategory, getProductsByCategory } from "@lib/products";
 import ProductCard from "@components/shared/ProductCard";
 
-const slug = "perlit-vermikulit" as const;
+const slug = "perlit-i-vermikulit" as const;
 
 export const metadata: Metadata = (() => {
   const category = getCategory(slug);
@@ -26,9 +26,9 @@ export default function PerlitVermikulitListPage() {
         <div className="page-header">
           <h1>Всички продукти – {category?.name || "Перлит и вермикулит"}</h1>
           <p className="muted">
-            Минерални подобрители за субстрати и почви – перлит и вермикулит
-            от гръцки производител. Подходящи са за професионални оранжерии и
-            хоби градинари. За конкретна оферта изпратете запитване.
+            Минерални подобрители за субстрати и почви – перлит и вермикулит от
+            гръцки производител. Подходящи са за професионални оранжерии и хоби
+            градинари. За конкретна оферта изпратете запитване.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export default function PerlitVermikulitListPage() {
                     : product.shortDescription
                 }
                 image={product.images?.[0]}
-                href={`/produkti/perlit-vermikulit/${product.id}`}
+                href={`/produkti/perlit-i-vermikulit/${product.id}`}
               />
             ))}
           </div>
