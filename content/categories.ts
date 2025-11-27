@@ -5,6 +5,7 @@ export type CategorySlug =
   | "saksii-i-kontejneri-soparco"
   | "sakcii"
   | "formi-za-razsad"
+  | "formi-za-razsad-turcziya"
   | "perlit-vermikulit"
   | "mrezhi"
   | "gradinski-produkti";
@@ -61,6 +62,20 @@ export const categories: Category[] = [
     seoTitle: "Саксии и контейнери Soparco – професионални решения",
     seoDescription:
       "Асортимент Soparco: саксии DUO, висящи саксии и фиксатори за стабилен транспорт. Подходящи за автоматизация и B2B клиенти.",
+  },
+
+  {
+    slug: "formi-za-razsad-turcziya",
+    name: "Форми за разсад (Турция)",
+    rootPath: "/produkti/formi-za-razsad-turcziya",
+    productsPath: "/produkti/formi-za-razsad-turcziya",
+    shortDescription:
+      "Турски професионални табли за разсад – квадратни, кръгли, дълбоки и разделящи се модели за зеленчуци, цветя и горски култури.",
+    longDescription:
+      "Каталог с турски табли за разсад: от 20 до 128 гнезда, дълбоки версии и универсална подложка за долно поливане. Подходящи за оранжерии, разсадници и търговия на дребно.",
+    seoTitle: "Турски форми за разсад – табли и подложки | Agro Export-Import",
+    seoDescription:
+      "Професионални турски табли за разсад от 20 до 128 гнезда, дълбоки модели и разделящи се опции. Подходящи за зеленчуци, цветя, горски култури и продажба на дребно.",
   },
 
   {
