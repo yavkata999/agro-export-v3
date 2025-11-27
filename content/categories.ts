@@ -107,6 +107,20 @@ export const categories: Category[] = [
   },
 
   {
+    slug: "perlit-vermikulit",
+    name: "Перлит и вермикулит",
+    rootPath: "/produkti/perlit-vermikulit",
+    productsPath: "/produkti/perlit-vermikulit",
+    shortDescription:
+      "Гръцки перлит и вермикулит за подобряване на аерацията, влагозадържането и структурата на субстрати и почви.",
+    longDescription:
+      "Експандирани минерали за професионално и хоби приложение – намаляват уплътняването, буферират влагата и подпомагат развитието на корените при разсад, саксийни и контейнерни култури.",
+    seoTitle: "Перлит и вермикулит – подобрители за субстрати | Agro Export-Import",
+    seoDescription:
+      "Перлит и вермикулит от Гърция за разрохкване, аерация и влагозадържане в субстрати и почви. Подходящи за разсад, саксийни и оранжерийни култури.",
+  },
+
+  {
     slug: "gradinski-produkti",
     name: "Градински продукти Florovit, Azofoska",
     rootPath: "/produkti/gradinski-produkti",
