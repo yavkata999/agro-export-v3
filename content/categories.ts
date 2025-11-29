@@ -3,6 +3,7 @@ export type CategorySlug =
   | "trevni-smesi"
   | "torfeni-substrati"
   | "saksii-i-kontejneri-soparco"
+  | "rabotni-saksii-i-kontejneri"
   | "sakcii"
   | "formi-za-razsad"
   | "formi-za-razsad-turcziya"
@@ -62,6 +63,20 @@ export const categories: Category[] = [
     seoTitle: "Саксии и контейнери Soparco – професионални решения",
     seoDescription:
       "Асортимент Soparco: саксии DUO, висящи саксии и фиксатори за стабилен транспорт. Подходящи за автоматизация и B2B клиенти.",
+  },
+
+  {
+    slug: "rabotni-saksii-i-kontejneri",
+    name: "Работни саксии и контейнери",
+    rootPath: "/produkti/rabotni-saksii-i-kontejneri",
+    productsPath: "/produkti/rabotni-saksii-i-kontejneri",
+    shortDescription:
+      "Серия работни саксии и контейнери Agro Export – от P8 до 20 см паници и висящи модели за професионално и хоби производство.",
+    longDescription:
+      "Каталог с работни саксии в кръгла и квадратна форма, включително паници и висящи саксии. Проектирани за надежден дренаж, стабилно стифиране и съвместимост с автоматизирани линии за производство на разсад.",
+    seoTitle: "Работни саксии и контейнери – Agro Export",
+    seoDescription:
+      "Работни саксии и контейнери от Agro Export: кръгли, квадратни, паници и висящи модели с UV защита и добър дренаж за професионални разсадници и оранжерии.",
   },
 
   {

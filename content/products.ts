@@ -7,6 +7,7 @@ import { trevniSmesiProducts } from "./products/trevni-smesi";
 import { torfeniSubstratiHobiProducts } from "./products/torfeni-substrati-hobi";
 import { torfeniSubstratiProfesionalniProducts } from "./products/torfeni-substrati-profesionalni";
 import { soparcoProducts } from "./products/saksii-i-kontejneri-soparco";
+import { rabotniSaksiiProducts } from "./products/rabotni-saksii-i-kontejneri";
 import { mrezhiIFoliaProducts } from "./products/mrezhi-i-folia";
 import { perlitVermikulitProducts } from "./products/perlit-i-vermikulit";
 
@@ -17,6 +18,7 @@ export const products: Product[] = [
   ...torfeniSubstratiProfesionalniProducts,
   ...torfeniSubstratiHobiProducts,
   ...soparcoProducts,
+  ...rabotniSaksiiProducts,
   ...formiZaRazsadTurciaProducts,
   ...formiZaRazsadProducts,
   ...gradinskiProdukti,
