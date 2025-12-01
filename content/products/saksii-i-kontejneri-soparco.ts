@@ -1,4 +1,3 @@
-// content/products/saksii-i-kontejneri-soparco.ts
 import type { Product } from "./types";
 
 export const soparcoProducts: Product[] = [

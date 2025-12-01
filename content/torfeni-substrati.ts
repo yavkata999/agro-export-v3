@@ -1,4 +1,3 @@
-// content/torfeni-substrati.ts
 import { torfeniSubstratiHobiProducts } from "@content/products/torfeni-substrati-hobi";
 import { torfeniSubstratiProfesionalniProducts } from "./products/torfeni-substrati-profesionalni";
 
@@ -44,9 +43,8 @@ export const torfeniSegmentProfessional: TorfeniSegment = {
     id: product.id,
     name: product.name,
     description: product.shortDescription,
-    productId: product.id, // Links to the detailed product page
+    productId: product.id,
     packaging: product.packaging || "По запитване",
-    // We take the first 3 features to keep the UI cards consistent
     features: product.features ? product.features.slice(0, 3) : [],
   })),
 };
@@ -64,14 +62,12 @@ export const torfeniSegmentHobby: TorfeniSegment = {
   ],
   ctaLabel: "Разгледайте хоби асортимента",
   ctaHref: "/produkti/torfeni-substrati/hobi",
-  // We automatically map the detailed product data to the simpler segment display format
   products: torfeniSubstratiHobiProducts.map((product) => ({
     id: product.id,
     name: product.name,
     description: product.shortDescription,
-    productId: product.id, // Links to the detailed product page
+    productId: product.id,
     packaging: product.packaging || "По запитване",
-    // We take the first 3 features to keep the UI cards consistent
     features: product.features ? product.features.slice(0, 3) : [],
   })),
 };

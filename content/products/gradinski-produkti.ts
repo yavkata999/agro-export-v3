@@ -1,4 +1,3 @@
-// content/products/gradinski-produkti.ts
 import type { Product } from "./types";
 
 export const gradinskiProdukti: Product[] = [

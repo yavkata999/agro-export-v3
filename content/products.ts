@@ -1,4 +1,3 @@
-// content/products.ts
 import type { Product } from "./products/types";
 import { gradinskiProdukti } from "./products/gradinski-produkti";
 import { formiZaRazsadProducts } from "./products/formi-za-razsad";
@@ -24,7 +23,4 @@ export const products: Product[] = [
   ...gradinskiProdukti,
   ...mrezhiIFoliaProducts,
   ...perlitVermikulitProducts,
-  // later:
-  // ...toroveProducts,
-  // ...saksiiProducts,
 ];

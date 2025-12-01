@@ -1,4 +1,3 @@
-// content/products/torfeni-substrati-hobi.ts
 import type { Product } from "./types";
 
 export const torfeniSubstratiHobiProducts: Product[] = [

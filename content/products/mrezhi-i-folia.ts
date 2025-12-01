@@ -1,4 +1,3 @@
-// content/products/mrezhi-i-folia.ts
 import type { Product } from "./types";
 
 export const mrezhiIFoliaProducts: Product[] = [
@@ -6,7 +5,7 @@ export const mrezhiIFoliaProducts: Product[] = [
     id: "mreji-protiv-pleveli",
     category: "mrezhi-i-folia",
     name: "Мрежи против плевели",
-    brand: "Agro Export", // Assuming default brand or generic
+    brand: "Agro Export",
     shortDescription:
       "Здраво почвопокривно фолио (геотекстил) за ефективен контрол на плевелите без химикали.",
     longDescription:

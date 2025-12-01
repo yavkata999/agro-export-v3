@@ -1,4 +1,3 @@
-// content/products/formi-za-razsad.ts
 import type { Product } from "./types";
 
 export const formiZaRazsadProducts: Product[] = [

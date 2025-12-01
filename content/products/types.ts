@@ -1,4 +1,3 @@
-// content/products/types.ts
 import type { CategorySlug } from "../categories";
 
 export type Product = {
