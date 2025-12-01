@@ -37,7 +37,6 @@ export default function Header() {
   const [theme, setTheme] = useState<Theme>(resolveInitialTheme);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Persist theme choice + sync dataset for CSS selectors
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
     if (typeof window !== "undefined") {

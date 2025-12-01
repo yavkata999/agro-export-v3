@@ -1,4 +1,3 @@
-// content/products/rabotni-saksii-i-kontejneri.ts
 import type { Product } from "./types";
 
 export const rabotniSaksiiProducts: Product[] = [

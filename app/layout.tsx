@@ -6,7 +6,6 @@ import "@styles/globals.css";
 import Header from "@components/layout/Header";
 import Footer from "@components/layout/Footer";
 
-// Cyrillic-friendly font
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
   variable: "--font-sans",

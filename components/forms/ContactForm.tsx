@@ -49,8 +49,6 @@ export default function ContactForm() {
     setSubmitting(true);
 
     try {
-      // TODO: wire this to your real API / email service.
-      // For now we just simulate a short delay.
       await new Promise((resolve) => setTimeout(resolve, 800));
 
       setSuccess("Вашето запитване беше изпратено успешно.");

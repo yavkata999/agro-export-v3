@@ -1,4 +1,3 @@
-// app/produkti/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
 import { categories } from "@content/categories";

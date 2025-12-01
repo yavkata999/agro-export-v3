@@ -1,4 +1,3 @@
-// app/kontakti/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "@styles/pages/Kontakti.module.css";

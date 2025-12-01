@@ -1,4 +1,3 @@
-// content/products/perlit-i-vermikulit.ts
 import type { Product } from "./types";
 
 export const perlitVermikulitProducts: Product[] = [

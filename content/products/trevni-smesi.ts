@@ -1,4 +1,3 @@
-// content/products/trevni-smesi.ts
 import type { Product } from "./types";
 
 export const trevniSmesiProducts: Product[] = [

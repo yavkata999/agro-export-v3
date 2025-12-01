@@ -1,4 +1,3 @@
-// content/categories.ts
 export type CategorySlug =
   | "trevni-smesi"
   | "torfeni-substrati"
@@ -150,18 +149,4 @@ export const categories: Category[] = [
       "Торове Florovit и Azofoska за тревни площи, иглолистни, овошки, зеленчуци и домашни растения. Активатори за компост и почвени подобрители.",
   },
 
-  // Example of how future categories will look:
-  // {
-  //   slug: "torfeni-substrati",
-  //   name: "Торфени субстрати Durpeta",
-  //   rootPath: "/produkti/torfeni-substrati",
-  //   productsPath: "/produkti/torfeni-substrati",
-  //   shortDescription:
-  //     "Професионални и хоби торфени субстрати Durpeta – внос от Литва.",
-  //   longDescription:
-  //     "Висококачествени субстрати за разсадопроизводство, оранжерии и градински центрове. Налични в различни размери и фракции.",
-  //   seoTitle: "Торфени субстрати Durpeta – вносител за България",
-  //   seoDescription:
-  //     "Официален вносител на Durpeta торфени субстрати за професионални и хоби приложения.",
-  // },
 ];
