@@ -1,5 +1,6 @@
 // content/torfeni-substrati.ts
 import { torfeniSubstratiHobiProducts } from "@content/products/torfeni-substrati-hobi";
+import { torfeniSubstratiProfesionalniProducts } from "./products/torfeni-substrati-profesionalni";
 
 export type TorfeniSegmentProduct = {
   id: string;
@@ -39,47 +40,15 @@ export const torfeniSegmentProfessional: TorfeniSegment = {
   ],
   ctaLabel: "Вижте професионалните смеси",
   ctaHref: "/produkti/torfeni-substrati/profesionalisti",
-  products: [
-    {
-      id: "durpeta-professional-1",
-      name: "Durpeta Pro Seed Start",
-      description:
-        "Ситна фракция (0–10 мм) с прецизно pH за засяване и пикиране в тавички.",
-      productId: "durpeta-pro-seed-start",
-      packaging: "70 л, биг-бег",
-      features: [
-        "Стабилна структура за равномерно поникване",
-        "Минимизиране на засушаване в клетките",
-        "Поддържа фина коренова система",
-      ],
-    },
-    {
-      id: "durpeta-professional-2",
-      name: "Durpeta Pro Vegetables",
-      description:
-        "Средна фракция (0–20 мм) за зеленчуков разсад, едносезонни цветя и билки.",
-      productId: "durpeta-pro-vegetables",
-      packaging: "70 л, биг-бег",
-      features: [
-        "Оптимално водно-въздушно съотношение",
-        "Възможност за добавка на перлит",
-        "Стартово торене за 2–3 седмици",
-      ],
-    },
-    {
-      id: "durpeta-professional-3",
-      name: "Durpeta Pro Container Mix",
-      description:
-        "Едра фракция (10–25 мм) за контейнери, декоративни и ягодоплодни култури.",
-      productId: "durpeta-pro-container",
-      packaging: "250 л, биг-бег",
-      features: [
-        "Дълготрайна структура за многомесечно отглеждане",
-        "Добра дренажност при висока водоемност",
-        "Персонализирано торене по култура",
-      ],
-    },
-  ],
+  products: torfeniSubstratiProfesionalniProducts.map((product) => ({
+    id: product.id,
+    name: product.name,
+    description: product.shortDescription,
+    productId: product.id, // Links to the detailed product page
+    packaging: product.packaging || "По запитване",
+    // We take the first 3 features to keep the UI cards consistent
+    features: product.features ? product.features.slice(0, 3) : [],
+  })),
 };
 
 export const torfeniSegmentHobby: TorfeniSegment = {
