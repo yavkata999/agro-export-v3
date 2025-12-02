@@ -17,19 +17,26 @@ const NAV_LINKS = [
 ];
 
 const resolveInitialTheme = (): Theme => {
-  if (typeof window === "undefined") {
-    return "light";
+  if (typeof document !== "undefined") {
+    const current = document.documentElement.dataset.theme;
+    if (current === "light" || current === "dark") {
+      return current;
+    }
   }
 
-  const stored = window.localStorage.getItem("theme");
-  if (stored === "light" || stored === "dark") {
-    return stored;
+  if (typeof window !== "undefined") {
+    const stored = window.localStorage.getItem("theme");
+    if (stored === "light" || stored === "dark") {
+      return stored;
+    }
+
+    const prefersDark = window
+      .matchMedia?.("(prefers-color-scheme: dark)")
+      ?.matches;
+    return prefersDark ? "dark" : "light";
   }
 
-  const prefersDark = window
-    .matchMedia?.("(prefers-color-scheme: dark)")
-    ?.matches;
-  return prefersDark ? "dark" : "light";
+  return "light";
 };
 
 export default function Header() {
@@ -38,7 +45,11 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    document.documentElement.dataset.theme = theme;
+    const root = document.documentElement;
+    if (root.dataset.theme !== theme) {
+      root.dataset.theme = theme;
+    }
+
     if (typeof window !== "undefined") {
       window.localStorage.setItem("theme", theme);
     }
