@@ -11,6 +11,13 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
+const THEME_BOOTSTRAP_SCRIPT = `(() => {
+  const stored = window.localStorage.getItem("theme");
+  const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)")?.matches;
+  const resolved = stored === "light" || stored === "dark" ? stored : prefersDark ? "dark" : "light";
+  document.documentElement.dataset.theme = resolved;
+})();`;
+
 export const metadata: Metadata = {
   title: "Agro Export-Import – Вносител на градински продукти",
   description:
@@ -24,6 +31,9 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="bg" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP_SCRIPT }} />
+      </head>
       <body className={inter.variable}>
         <Header />
         <main>{children}</main>
