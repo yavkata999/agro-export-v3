@@ -146,3 +146,21 @@
 .card:hover .cardArrow {
   transform: translateX(2px);
 }
+
+/* Dark theme adjustments */
+
+:root[data-theme="dark"] .headerSide {
+  background: linear-gradient(
+    135deg,
+    rgba(12, 34, 23, 0.9),
+    rgba(15, 23, 42, 0.92)
+  );
+  border-color: var(--color-border-strong);
+  box-shadow: 0 16px 40px rgba(2, 6, 23, 0.7);
+}
+
+:root[data-theme="dark"] .card:hover {
+  background-color: #0f172a;
+  border-color: var(--color-border-strong);
+  box-shadow: 0 22px 55px rgba(2, 6, 23, 0.9);
+}
