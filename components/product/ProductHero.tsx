@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "@styles/components/product/ProductHero.module.css";
 
 interface ProductHeroProps {
@@ -68,15 +69,15 @@ export function ProductHero({
             </div>
 
             <div className={styles.heroActions}>
-              <a
+              <Link
                 className="button"
                 href={`/kontakti?product=${encodeURIComponent(productId)}`}
               >
                 Изпратете запитване
-              </a>
-              <a className="button button--ghost" href="#product-details">
+              </Link>
+              <Link className="button button--ghost" href="#product-details">
                 Вижте спецификациите
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -112,6 +113,9 @@ export function ProductHero({
                     width={720}
                     height={720}
                     className={styles.heroImage}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    priority={activeIndex === 0}
+                    fetchPriority={activeIndex === 0 ? "high" : "auto"}
                     onClick={() => {
                       setIsLightboxOpen(true);
                       setIsZoomed(false);

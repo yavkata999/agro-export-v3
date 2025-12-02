@@ -118,19 +118,21 @@ export default function KontaktiPage() {
                   <div className={styles.primaryRow}>
                     <dt>Телефон</dt>
                     <dd>
-                      <a href="tel:0887609587">0887 609 587</a>
+                      <Link href="tel:0887609587">0887 609 587</Link>
                     </dd>
                   </div>
                   <div className={styles.primaryRow}>
                     <dt>Телефон 2</dt>
                     <dd>
-                      <a href="tel:052609587">052 609 587</a>
+                      <Link href="tel:052609587">052 609 587</Link>
                     </dd>
                   </div>
                   <div className={styles.primaryRow}>
                     <dt>Имейл</dt>
                     <dd>
-                      <a href="mailto:agro_export@abv.bg">agro_export@abv.bg</a>
+                      <Link href="mailto:agro_export@abv.bg">
+                        agro_export@abv.bg
+                      </Link>
                     </dd>
                   </div>
                 </dl>
@@ -143,13 +145,13 @@ export default function KontaktiPage() {
                   <div className={styles.primaryRow}>
                     <dt>Телефон</dt>
                     <dd>
-                      <a href="tel:0887609587">0887 609 587</a>
+                      <Link href="tel:0887609587">0887 609 587</Link>
                     </dd>
                   </div>
                   <div className={styles.primaryRow}>
                     <dt>Телефон 2</dt>
                     <dd>
-                      <a href="tel:0876755443">0876 755 443</a>
+                      <Link href="tel:0876755443">0876 755 443</Link>
                     </dd>
                   </div>
                   <div className={styles.primaryRow}>
@@ -177,7 +179,7 @@ export default function KontaktiPage() {
                   <div className={styles.primaryRow}>
                     <dt>Телефон</dt>
                     <dd>
-                      <a href="tel:+359889308754">+359 88 930 8754</a>
+                      <Link href="tel:+359889308754">+359 88 930 8754</Link>
                     </dd>
                   </div>
                 </dl>
@@ -244,24 +246,24 @@ export default function KontaktiPage() {
 
                   <p className={styles.regionalPhone}>
                     Телефон:{" "}
-                    <a href={`tel:${rc.phone.replace(/\s+/g, "")}`}>
+                    <Link href={`tel:${rc.phone.replace(/\s+/g, "")}`}>
                       {rc.phone}
-                    </a>
+                    </Link>
                   </p>
 
                   {extraTrimmed && isExtraPhone && (
                     <p className={styles.regionalExtra}>
                       Телефон 2:{" "}
-                      <a href={`tel:${extraTrimmed.replace(/\s+/g, "")}`}>
+                      <Link href={`tel:${extraTrimmed.replace(/\s+/g, "")}`}>
                         {extraTrimmed}
-                      </a>
+                      </Link>
                     </p>
                   )}
 
                   {extraTrimmed && !isExtraPhone && (
                     <p className={styles.regionalExtra}>
                       Адрес:{" "}
-                      <a
+                      <Link
                         href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
                           extraTrimmed
                         )}`}
@@ -269,7 +271,7 @@ export default function KontaktiPage() {
                         rel="noopener noreferrer"
                       >
                         {extraTrimmed}
-                      </a>
+                      </Link>
                     </p>
                   )}
                 </article>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "@styles/components/product/ProductCTA.module.css";
 
 interface ProductCTAProps {
@@ -23,18 +24,18 @@ export function ProductCTA({ productId }: ProductCTAProps) {
             </ul>
           </div>
           <div className={styles.actions}>
-            <a
+            <Link
               className="button"
               href={`/kontakti?product=${encodeURIComponent(productId)}`}
             >
               Изпратете запитване
-            </a>
+            </Link>
             <p className="muted">
               или ни пишете на
               {" "}
-              <a className="link" href="mailto:office@agroexport.bg">
+              <Link className="link" href="mailto:office@agroexport.bg">
                 office@agroexport.bg
-              </a>
+              </Link>
             </p>
           </div>
         </div>

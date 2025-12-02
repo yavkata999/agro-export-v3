@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Inter } from "next/font/google";
 
 import "@styles/globals.css";
 import Header from "@components/layout/Header";
 import Footer from "@components/layout/Footer";
-
-const inter = Inter({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-sans",
-});
 
 const THEME_BOOTSTRAP_SCRIPT = `(() => {
   const stored = window.localStorage.getItem("theme");
@@ -34,7 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP_SCRIPT }} />
       </head>
-      <body className={inter.variable}>
+      <body>
         <Header />
         <main>{children}</main>
         <Footer />
