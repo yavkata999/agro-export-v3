@@ -1,12 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    reactCompiler: true,
-    // Drop legacy browser bundles so Lighthouse only measures modern JavaScript
-    legacyBrowsers: false,
-  },
-
   // Cloudinary Configuration
   images: {
     remotePatterns: [
