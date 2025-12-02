@@ -31,6 +31,7 @@ export function ProductCTA({ productId }: ProductCTAProps) {
             </a>
             <p className="muted">
               или ни пишете на
+              {" "}
               <a className="link" href="mailto:office@agroexport.bg">
                 office@agroexport.bg
               </a>
