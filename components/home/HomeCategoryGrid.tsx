@@ -12,37 +12,37 @@ const CATEGORIES: Category[] = [
     slug: "/produkti/torfeni-substrati",
     title: "Торфени субстрати",
     description:
-      "Професионални и хоби субстрати Durpeta за разсадопроизводство, цветя и зеленчуци.",
+      "Професионални смеси Durpeta за разсадници и хоби субстрати за градински центрове. Над 2000 рецепти.",
   },
   {
     slug: "/produkti/trevni-smesi",
     title: "Тревни смеси",
     description:
-      "Тревни смеси GlobalGrass за дворове, спортни терени и обществени пространства.",
+      "Висококачествени семена GlobalGrass за паркове, спортни терени и частни градини. Устойчиви и гъсти.",
   },
   {
     slug: "/produkti/saksii-i-kontejneri-soparco",
-    title: "Саксии",
+    title: "Саксии и контейнери",
     description:
-      "Работни саксии и контейнери – френски Soparco и подбрани турски производители.",
+      "Пълна гама работни саксии – от френските Soparco до икономични решения за масово производство.",
   },
   {
     slug: "/produkti/formi-za-razsad",
     title: "Форми за разсад",
     description:
-      "Транспортни тарелки и форми за разсад за професионални производители.",
+      "Транспортни тарелки и форми за разсад за ефективна логистика и здравословно вкореняване.",
   },
   {
     slug: "/produkti/perlit-i-vermikulit",
     title: "Перлит и вермикулит",
     description:
-      "Гръцки перлит и вермикулит за подобряване на структурата и аерацията на субстрата.",
+      "Подобрители на почвата за аерация и задържане на влага. Вносен гръцки агроперлит с високо качество.",
   },
   {
     slug: "/produkti/gradinski-produkti",
-    title: "Градински продукти и торове",
+    title: "Торове и препарати",
     description:
-      "Azofoska, Florovit, Florovit Pro Natura, Florovit Agro и други решения за торене.",
+      "Комплексни решения за подхранване от Florovit и Azofoska. Течни и гранулирани формули за всяка култура.",
   },
 ];
 
@@ -52,12 +52,12 @@ export default function HomeCategories() {
       <div className="container">
         <header className={styles.header}>
           <h2 id="categories-heading" className={styles.title}>
-            Основни продуктови категории
+            Пълен асортимент за вашия бизнес
           </h2>
           <p className={styles.subtitle}>
-            Поддържаме добре структуриран асортимент за професионални клиенти –
-            от субстрати и тревни смеси до саксии, форми за разсад, перлит,
-            вермикулит и торове.
+            Структурирали сме портфолиото си така, че да покрием всички нужди на
+            един модерен градински център или производствен разсадник – от
+            посяването до продажбата.
           </p>
         </header>
 
@@ -75,7 +75,7 @@ export default function HomeCategories() {
 
                 <div className={styles.cardFooter}>
                   <span className={styles.cardLink}>
-                    Вижте продуктите
+                    Разгледайте категорията
                     <span className={styles.arrow} aria-hidden="true">
                       →
                     </span>

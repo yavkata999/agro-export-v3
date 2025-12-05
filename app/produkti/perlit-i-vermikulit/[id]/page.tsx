@@ -25,12 +25,12 @@ export async function generateMetadata(
 
   if (!product) {
     return {
-      title: "Продуктът не беше намерен | Agro Export-Import",
+      title: "Продуктът не беше намерен | Агро Експорт Импорт ООД",
     };
   }
 
   return {
-    title: `${product.name} | Agro Export-Import`,
+    title: `${product.name} | Агро Експорт Импорт ООД`,
     description: product.longDescription || product.shortDescription,
   };
 }

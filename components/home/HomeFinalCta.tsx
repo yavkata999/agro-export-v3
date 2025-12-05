@@ -7,22 +7,21 @@ export default function HomeFinalCTA() {
       <div className="container">
         <div className={styles.inner}>
           <div className={styles.textCol}>
-            <h2 className={styles.title}>
-              Готови ли сте да планирате следващия сезон?
-            </h2>
+            <h2 className={styles.title}>Планирайте следващия сезон с нас</h2>
             <p className={styles.text}>
-              Изпратете ни запитване за асортимент, наличности и условия за
-              доставка. Ще се свържем с вас с конкретна оферта и предложения.
+              Не чакайте последния момент. Свържете се с нашия търговски отдел
+              за актуални ценови листи, условия за доставка и консултация за
+              най-подходящите продукти за вашия бизнес.
             </p>
           </div>
 
           <div className={styles.actions}>
             <Link href="/kontakti" className="button">
-              Изпратете запитване
+              Поискайте оферта
             </Link>
 
             <Link href="/produkti" className={styles.ghostWhite}>
-              Вижте всички продукти
+              Вижте пълния каталог
             </Link>
           </div>
         </div>

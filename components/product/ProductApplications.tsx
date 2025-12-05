@@ -16,8 +16,8 @@ export function ProductApplications({
       <div className="container">
         <div className={styles.contentCard}>
           <div>
-            <p className={styles.overline}>Приложения</p>
-            <h2>Къде работи продуктът най-добре?</h2>
+            <p className={styles.overline}>Сфери на приложение</p>
+            <h2>Подходящ за:</h2>
           </div>
 
           <ul className={styles.applicationList}>

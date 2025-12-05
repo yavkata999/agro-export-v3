@@ -12,8 +12,9 @@ export function ProductSpecs({
   features,
 }: ProductSpecsProps) {
   const highlightItems = [
-    brand ? { label: "Марка", value: brand } : null,
-    packaging ? { label: "Опаковки", value: packaging } : null,
+    // "Производител" implies origin and quality assurance better than just "Марка"
+    brand ? { label: "Производител", value: brand } : null,
+    packaging ? { label: "Налични опаковки", value: packaging } : null,
   ].filter(Boolean) as { label: string; value: string }[];
 
   const hasFeatures = Boolean(features && features.length > 0);
@@ -28,8 +29,8 @@ export function ProductSpecs({
       <div className="container">
         <div className={styles.headerRow}>
           <div>
-            <p className={styles.overline}>Детайли</p>
-            <h2>Основни характеристики</h2>
+            <p className={styles.overline}>Технически данни</p>
+            <h2>Спецификации</h2>
           </div>
         </div>
 
@@ -46,7 +47,7 @@ export function ProductSpecs({
 
         {hasFeatures && (
           <div className={styles.featuresCard}>
-            <h3>Предимства</h3>
+            <h3>Ключови предимства</h3>
             <ul>
               {features!.map((feature) => (
                 <li key={feature}>{feature}</li>

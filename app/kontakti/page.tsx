@@ -4,9 +4,9 @@ import styles from "@styles/pages/Kontakti.module.css";
 import ContactForm from "@components/forms/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Контакти | Agro Export-Import",
+  title: "Контакти | Агро Експорт Импорт ООД",
   description:
-    "Свържете се с Agro Export-Import за поръчки, дистрибуция и професионални консултации за торфени субстрати, тревни смеси, саксии и градински продукти.",
+    "Свържете се с Агро Експорт Импорт ООД за поръчки, дистрибуция и професионални консултации за торфени субстрати, тревни смеси, саксии и градински продукти.",
 };
 
 type RegionalContact = {
@@ -82,8 +82,50 @@ const regionalContacts: RegionalContact[] = [
 ];
 
 export default function KontaktiPage() {
+  // --- SEO SCHEMA ---
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WholesaleStore",
+    name: "Агро Експорт Импорт ООД",
+    url: "https://agro-export.com/kontakti",
+    logo: "https://agro-export.com/logo.png",
+    image: "https://agro-export.com/warehouse-photo.jpg", // Replace with real image if available
+    description:
+      "Основен офис и склад за внос и дистрибуция на градински продукти във Варна.",
+    telephone: "+359-887-609-587",
+    email: "agro_export@abv.bg",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "ул. Орех № 2",
+      addressLocality: "Варна",
+      postalCode: "9000",
+      addressCountry: "BG",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 43.2141, // Approximate Varna coords, update if you have exact ones
+      longitude: 27.9147,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "17:30",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Bulgaria",
+    },
+  };
+
   return (
     <section className={styles.page}>
+      {/* SEO Script Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <div className="container">
         {/* HERO */}
         <header className={styles.hero}>
@@ -158,7 +200,7 @@ export default function KontaktiPage() {
                     <dt>Адрес</dt>
                     <dd>
                       <Link
-                        href="https://www.google.com/maps/search/?api=1&query=%D1%83%D0%BB.+%D0%9E%D1%80%D0%B5%D1%85+%E2%84%96+2,+%D0%92%D0%B0%D1%80%D0%BD%D0%B0&ucbcb=1"
+                        href="https://www.google.com/maps/search/?api=1&query=ул.+Орех+№+2,+Варна"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.contactMapLink}

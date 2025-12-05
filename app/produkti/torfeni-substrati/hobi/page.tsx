@@ -9,7 +9,7 @@ import { getProductById } from "@lib/products";
 import styles from "@styles/pages/TorfeniSegmentPage.module.css";
 
 export const metadata: Metadata = {
-  title: `${torfeniSegmentHobby.title} | Agro Export-Import`,
+  title: `${torfeniSegmentHobby.title} | Агро Експорт Импорт ООД`,
   description: torfeniSegmentHobby.description,
 };
 

@@ -12,15 +12,15 @@ export function ProductCTA({ productId }: ProductCTAProps) {
         <div className={styles.ctaCard}>
           <div className={styles.ctaContent}>
             <p className={styles.overline}>Запитване</p>
-            <h2>Получете персонализирана оферта</h2>
+            <h2>Поискайте индивидуална оферта на едро</h2>
             <p>
-              Експертният ни екип ще се свърже с вас до 48 часа с конкретни
-              условия и цени за продукта.
+              Свържете се с нас за актуални цени, наличности и условия за
+              дистрибуция. Ще получите отговор от нас в рамките на работния ден.
             </p>
             <ul className={styles.trustList}>
-              <li>Сертифицирани агрономи и технолози</li>
-              <li>Доставка на територията на България и ЕС</li>
-              <li>Пълно съдействие при избор на смеси</li>
+              <li>Директен внос и гарантиран произход</li>
+              <li>Логистика до ваш склад или обект</li>
+              <li>Професионална консултация</li>
             </ul>
           </div>
           <div className={styles.actions}>
@@ -31,8 +31,7 @@ export function ProductCTA({ productId }: ProductCTAProps) {
               Изпратете запитване
             </Link>
             <p className="muted">
-              или ни пишете на
-              {" "}
+              или ни пишете на{" "}
               <Link className="link" href="mailto:office@agroexport.bg">
                 office@agroexport.bg
               </Link>

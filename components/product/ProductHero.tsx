@@ -57,14 +57,14 @@ export function ProductHero({
             <div className={styles.metaGrid}>
               {packaging && (
                 <div className={styles.metaItem}>
-                  <span className={styles.metaLabel}>Опаковки</span>
+                  <span className={styles.metaLabel}>Налични опаковки</span>
                   <span className={styles.metaValue}>{packaging}</span>
                 </div>
               )}
 
               <div className={styles.metaItem}>
-                <span className={styles.metaLabel}>Отговор до</span>
-                <span className={styles.metaValue}>48 часа</span>
+                <span className={styles.metaLabel}>Отговор</span>
+                <span className={styles.metaValue}>В рамките на деня</span>
               </div>
             </div>
 
@@ -76,7 +76,7 @@ export function ProductHero({
                 Изпратете запитване
               </Link>
               <Link className="button button--ghost" href="#product-details">
-                Вижте спецификациите
+                Технически детайли
               </Link>
             </div>
           </div>

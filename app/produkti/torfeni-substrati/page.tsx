@@ -13,14 +13,51 @@ import styles from "@styles/pages/TorfeniSubstratiPage.module.css";
 const segments = [torfeniSegmentProfessional, torfeniSegmentHobby];
 
 export const metadata: Metadata = {
-  title: "Торфени субстрати Durpeta | Agro Export-Import",
+  title: "Торфени субстрати Durpeta | Агро Експорт Импорт ООД",
   description:
     "Премиум торфени субстрати за професионални производители и хоби градинари. Контролирано pH, структурирани фракции, лабораторно гарантирано качество и оптимизирани рецепти.",
 };
 
 export default function TorfeniSubstratiHubPage() {
+  // --- SEO SCHEMA ---
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Торфени субстрати Durpeta",
+    description:
+      "Внос и дистрибуция на висококачествени литовски торфени субстрати.",
+    url: "https://agro-export.com/produkti/torfeni-substrati",
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Начало",
+          item: "https://agro-export.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Продукти",
+          item: "https://agro-export.com/produkti",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Торфени субстрати",
+          item: "https://agro-export.com/produkti/torfeni-substrati",
+        },
+      ],
+    },
+  };
   return (
     <main>
+      {/* Inject Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* -------------------------- HERO -------------------------- */}
       <section className={styles.hero}>
         <div className="container">
@@ -45,7 +82,9 @@ export default function TorfeniSubstratiHubPage() {
           </div>
 
           <div className={styles.heroCard}>
-            <div className={styles.heroBadge}>Premium substrate partner</div>
+            <div className={styles.heroBadge}>
+              Официален партньор на Durpeta
+            </div>
             <ul className={styles.heroList}>
               <li>Стандартизирани рецепти със светъл и тъмен торф</li>
               <li>Лабораторно гарантирано pH и електропроводимост</li>
@@ -60,13 +99,15 @@ export default function TorfeniSubstratiHubPage() {
       <section className={styles.section}>
         <div className="container">
           <header className={styles.sectionHeader}>
-            <p className={styles.kicker}>Качество и последователност</p>
-            <h2>Какво отличава нашите субстрати</h2>
+            <p className={styles.kicker}>
+              Защо професионалистите избират Durpeta?
+            </p>
+            <h2>Технология зад всяка рецепта</h2>
             <p className={styles.lead}>
-              Работим със сертифицирана суровина и точно контролирани рецепти,
-              използвани в професионални оранжерийни производства. Същата
-              последователност прилагаме и в хоби линията, за да гарантираме
-              предвидими и стабилни резултати за всеки клиент.
+              Торфът не е просто пръст. Нашите субстрати са прецизно балансирани
+              смеси, които осигуряват предвидими резултати. Използваме
+              компютъризирано смесване на фракции, за да постигнем идеалното
+              съотношение въздух/вода за всяка култура.
             </p>
           </header>
 
@@ -85,13 +126,11 @@ export default function TorfeniSubstratiHubPage() {
       <section id="segments" className={styles.sectionAlt}>
         <div className="container">
           <header className={styles.sectionHeader}>
-            <p className={styles.kicker}>Две професионално дефинирани линии</p>
-            <h2>Субстрати за професионална и хоби употреба</h2>
+            <p className={styles.kicker}>Решения за всеки мащаб</p>
+            <h2>Асортимент, покриващ целия пазар</h2>
             <p className={styles.lead}>
-              Поддържаме ясно сегментиран асортимент, така че всеки клиент да
-              открие точния субстрат според обема, културата и нивото на опит.
-              Независимо дали произвеждате в оранжерия или се грижите за домашна
-              колекция – качеството остава на най-високо ниво.
+              Независимо дали зареждате агроаптека или управлявате хектари
+              оранжерии, ние имаме правилната опаковка и рецепта за вас.
             </p>
           </header>
 
@@ -127,13 +166,11 @@ export default function TorfeniSubstratiHubPage() {
       <section className={styles.section}>
         <div className="container">
           <header className={styles.sectionHeader}>
-            <p className={styles.kicker}>Употреби</p>
-            <h2>Сигурни резултати във всяко приложение</h2>
+            <p className={styles.kicker}>Специфични приложения</p>
+            <h2>Специализирани рецепти</h2>
             <p className={styles.lead}>
-              Смесите ни поддържат стабилна структура и хранителен баланс за
-              широк обхват култури – от разсади до растения в контейнери.
-              Подходящи са за професионални оранжерии, търговски центрове и
-              домашни условия.
+              Освен универсалните смеси, предлагаме субстрати, разработени за
+              капризните изисквания на специфични култури.
             </p>
           </header>
 
@@ -153,15 +190,14 @@ export default function TorfeniSubstratiHubPage() {
         <div className="container">
           <div className={styles.faqWrapper}>
             <div className={styles.faqIntro}>
-              <p className={styles.kicker}>Подкрепа и логистика</p>
+              <p className={styles.kicker}>Логистика и Поръчки</p>
               <h2>Често задавани въпроси</h2>
               <p className={styles.lead}>
-                Подкрепяме както професионални производители, така и хоби
-                клиенти — от избор на рецепта до планиране на сезонни доставки.
-                Свържете се с нас за индивидуално съдействие.
+                Научете повече за минималните количества, условията за доставка
+                на палети и възможностите за производство на рецепти по поръчка
               </p>
               <Link href="/kontakti" className="button">
-                Изпратете запитване
+                Свържете се с нас
               </Link>
             </div>
 

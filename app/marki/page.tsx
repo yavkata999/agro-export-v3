@@ -4,116 +4,156 @@ import Link from "next/link";
 import styles from "@styles/pages/MarkiPage.module.css";
 
 export const metadata: Metadata = {
-  title: "Марки | Agro Export-Import",
+  title: "Марки и Партньори | Агро Експорт Импорт ООД",
   description:
-    "Партньорски марки – Durpeta, Soparco, GlobalGrass, Florovit и други производители, с които работим.",
+    "Официален вносител на Durpeta, Soparco, GlobalGrass и Florovit за България. Вижте пълното портфолио от професионални градински марки.",
 };
 
 const HERO_FEATURES = [
   {
-    title: "Фокус върху качеството",
-    text: "Работим със сертифицирани производители и контролираме всяка доставка, за да запазим повторяемостта на партидите.",
+    title: "Качество без компромис",
+    text: "Работим само с доказани европейски производители, гарантиращи постоянство в състава и характеристиките на всяка партида.",
   },
   {
-    title: "Прозрачни доставки",
-    text: "Планираме наличности и транспорти предварително, така че сезонните кампании да вървят без прекъсване.",
+    title: "Сигурност на доставките",
+    text: "Планираме складови наличности месеци напред, за да сте спокойни, че стоката ще е при вас точно когато сезонът започне.",
   },
   {
-    title: "Търговска подкрепа",
-    text: "Подготвяме екипите на клиентите с продуктови обучения, каталози и POS материали.",
+    title: "Маркетинг и Обучение",
+    text: "Не просто доставяме палети – ние обучаваме вашия екип как да продава продуктите и осигуряваме рекламни материали.",
   },
 ];
 
 const STATS = [
-  { value: "6+ марки", label: "стратегически партньорства в портфолиото" },
-  { value: "3 направления", label: "субстрати, храни и производствени системи" },
-  { value: "100% B2B", label: "работим само с професионални клиенти" },
+  { value: "6+", label: "ексклузивни бранда" },
+  { value: "200+", label: "активни артикула" },
+  { value: "100%", label: "гарантиран произход" },
 ];
 
 const BRAND_CLUSTERS = [
   {
     title: "Субстрати и подобрители",
     description:
-      "Професионални смеси и добавки, които гарантират чистота, правилна структура и отлична аерация за разсадопроизводство и отглеждане.",
+      "Основата на успеха за всеки производител. Предлагаме решения за професионални разсадници и хоби градинари с гарантирана структура и чистота.",
     brands: [
       {
         name: "Durpeta",
-        description: "Професионални и хоби торфени субстрати от Литва.",
+        description:
+          "Лидер в добива на торф от Литва. Професионални субстрати с прецизни рецепти за всяка култура.",
       },
       {
-        name: "Гръцки перлит",
-        description: "Перлит за подобряване на структурата и аерацията на субстратите.",
+        name: "Agroperlite Greece",
+        description:
+          "Висококачествен гръцки перлит за подобряване на аерацията и дренажа в почвените смеси.",
       },
     ],
   },
   {
-    title: "Торове и зелени площи",
+    title: "Торове и тревни смеси",
     description:
-      "Минерални и органични решения за подхранване, тревни площи и поддръжка на градски и жилищни зелени системи.",
+      "Цялостни решения за подхранване и озеленяване. От старта на семето до поддръжката на перфектната морава.",
     brands: [
       {
-        name: "Florovit / Florovit Pro Natura / Florovit Agro",
-        description: "Торове и торови решения за различни култури и приложения.",
+        name: "Florovit & Azofoska",
+        description:
+          "Полският стандарт за качество при торовете. Комплексни решения за всяка фаза на растеж.",
       },
       {
         name: "GlobalGrass",
-        description: "Тревни смеси за дворове, паркове и спортни терени.",
+        description:
+          "Премиум тревни смески за паркове, спортни терени и частни градини с висока кълняемост.",
       },
     ],
   },
   {
-    title: "Саксии и производствени системи",
+    title: "Саксии и производство",
     description:
-      "Решения за професионални оранжерии, разсадници и градински центрове – от премиум саксии до работни контейнери.",
+      "Всичко необходимо за модерната оранжерия – от форми за разсад до контейнери за отглеждане.",
     brands: [
       {
         name: "Soparco",
-        description: "Френски саксии и контейнери за професионално производство.",
+        description:
+          "Френски иновации в пластмасовите саксии. Лидер в контейнерите за разсадници.",
       },
       {
-        name: "Турски производители на саксии и форми за разсад",
-        description: "Решения за работни саксии и контейнери на конкурентни цени.",
+        name: "Турски производители",
+        description:
+          "Баланс между качество и цена. Надеждни работни саксии и тарелки за масово производство.",
       },
     ],
   },
 ];
 
 const GUARANTEES = [
-  "Регулярни доставки и буферирани количества за сезонни кампании.",
-  "Съвместно планиране на асортимент и позициониране на ценови нива.",
-  "Поддръжка с POS материали, каталози и технически листове.",
-  "Асистенция при внедряване на нови продуктови линии и обучения.",
+  "Приоритетно зареждане за лоялни партньори по време на пиковия сезон.",
+  "Консултация при избора на асортимент спрямо вашия регион и клиенти.",
+  "Техническа документация и сертификати за всички продукти.",
+  "Гъвкави схеми на доставка и логистична подкрепа.",
 ];
 
 const PROCESS = [
   {
-    title: "Откриване на нуждите",
-    description: "Анализираме таргет клиенти, желани формати и логистични възможности.",
+    title: "1. Анализ",
+    description:
+      "Разглеждаме вашия бизнес модел и клиенти, за да предложим най-подходящия микс от марки и продукти.",
   },
   {
-    title: "Селекция и тестове",
-    description: "Организираме мостри и сравнения на продуктови серии преди по-големи поръчки.",
+    title: "2. Тестване",
+    description:
+      "Възможност за поръчка на мостри и малки количества, за да се уверите в качеството преди основното зареждане.",
   },
   {
-    title: "Въвеждане и развитие",
-    description: "Планираме промо активности, обучения и следим резултатите за устойчив растеж.",
+    title: "3. Партньорство",
+    description:
+      "Дългосрочно планиране на заявките, маркетингова подкрепа и регулярни посещения от наш търговски представител.",
   },
 ];
 
 export default function BrandsPage() {
+  // --- SEO SCHEMA ---
+  // This schema links your company to the brands you sell as a distributor.
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WholesaleStore",
+    name: "Агро Експорт Импорт ООД",
+    url: "https://agro-export.com/marki",
+    description:
+      "Официален вносител и дистрибутор на водещи европейски марки за градинарство: Durpeta, Soparco, GlobalGrass, Florovit.",
+    knowsAbout: [
+      "Horticulture",
+      "Peat Substrates",
+      "Fertilizers",
+      "Grass Seeds",
+      "Plant Pots",
+    ],
+    brand: [
+      { "@type": "Brand", name: "Durpeta" },
+      { "@type": "Brand", name: "Soparco" },
+      { "@type": "Brand", name: "GlobalGrass" },
+      { "@type": "Brand", name: "Florovit" },
+      { "@type": "Brand", name: "Azofoska" },
+    ],
+  };
+
   return (
     <div className={styles.page}>
+      {/* Schema Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <section className={styles.heroSection}>
         <div className="container">
           <div className={styles.heroGrid}>
             <div>
-              <p className={styles.eyebrow}>Подбрани европейски производители</p>
-              <h1 className={styles.title}>Марки, които носят доверие и последователност</h1>
+              <p className={styles.eyebrow}>Европейско качество</p>
+              <h1 className={styles.title}>Марки, които изграждат репутация</h1>
               <p className={styles.lead}>
-                Представляваме премиум и допълващи марки за субстрати, торове,
-                тревни смеси и производствени системи. Комбинираме продуктите в
-                завършени решения за градински центрове, дистрибутори и
-                професионални производители.
+                Вашият успех зависи от продуктите, които предлагате. Ние сме
+                селектирали портфолио от водещи производители, които гарантират
+                качество, иновации и надеждност. Като официален вносител, ние ви
+                даваме директен достъп до най-доброто от Европа.
               </p>
 
               <div className={styles.heroHighlights}>
@@ -127,10 +167,11 @@ export default function BrandsPage() {
             </div>
 
             <div className={styles.assuranceCard}>
-              <h2 className={styles.assuranceTitle}>Премиум отношение към партньорите</h2>
+              <h2 className={styles.assuranceTitle}>Защо да изберете нас?</h2>
               <p className={styles.assuranceText}>
-                Влизаме в ролята на разширение на вашия екип – от избор на
-                продукти до позициониране и продажби на място.
+                Ние не сме просто доставчик, а стратегически партньор, който се
+                грижи вашият бизнес да разполага с правилните стоки в правилното
+                време.
               </p>
               <ul className={styles.assuranceList}>
                 {GUARANTEES.map((item) => (
@@ -138,7 +179,7 @@ export default function BrandsPage() {
                 ))}
               </ul>
               <Link href="/kontakti" className={styles.ctaButton}>
-                Планирайте среща
+                Станете партньор
               </Link>
             </div>
           </div>
@@ -161,11 +202,10 @@ export default function BrandsPage() {
       <section className={styles.brandsSection}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Ясна структура на портфолиото</h2>
+            <h2>Портфолио по направления</h2>
             <p>
-              Групираме марките по направления, за да комбинираме субстрати,
-              подхранване и производствени аксесоари в пълни решения – от
-              подготовката на почвата до продажбата в магазина.
+              Разделихме нашите марки в три основни направления, за да покрием
+              пълния цикъл на производство и търговия с растения.
             </p>
           </div>
 
@@ -174,14 +214,18 @@ export default function BrandsPage() {
               <article key={cluster.title} className={styles.brandCluster}>
                 <div>
                   <h3 className={styles.clusterTitle}>{cluster.title}</h3>
-                  <p className={styles.clusterDescription}>{cluster.description}</p>
+                  <p className={styles.clusterDescription}>
+                    {cluster.description}
+                  </p>
                 </div>
 
                 <div className={styles.brandList}>
                   {cluster.brands.map((brand) => (
                     <div key={brand.name} className={styles.brandCard}>
                       <p className={styles.brandName}>{brand.name}</p>
-                      <p className={styles.brandDescription}>{brand.description}</p>
+                      <p className={styles.brandDescription}>
+                        {brand.description}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -195,10 +239,11 @@ export default function BrandsPage() {
         <div className="container">
           <div className={styles.partnerGrid}>
             <article className={styles.partnerCard}>
-              <h3>Какво осигуряваме на представяните марки</h3>
+              <h3>Гаранция за партньори</h3>
               <p>
-                Изграждаме доверие чрез прозрачен процес и дългосрочни планове за
-                развитие на продажбите.
+                Вярваме в дългосрочните отношения. Когато работите с нас,
+                получавате не само стока, а цялостна подкрепа за развитието на
+                вашия бизнес.
               </p>
               <ul className={styles.guaranteeList}>
                 {GUARANTEES.map((item) => (
@@ -208,11 +253,8 @@ export default function BrandsPage() {
             </article>
 
             <article className={styles.partnerCard}>
-              <h3>Процес на въвеждане</h3>
-              <p>
-                Всяко партньорство преминава през ясни етапи, така че и двете
-                страни да имат пълна видимост върху следващите стъпки.
-              </p>
+              <h3>Как работим?</h3>
+              <p>Процесът ни е създаден да бъде лесен и прозрачен за вас.</p>
               <div className={styles.processList}>
                 {PROCESS.map((step) => (
                   <div key={step.title} className={styles.processItem}>
@@ -229,18 +271,18 @@ export default function BrandsPage() {
       <section className={styles.finalCtaSection}>
         <div className="container">
           <div className={styles.finalCtaCard}>
-            <p className={styles.finalCtaEyebrow}>Следваща стъпка</p>
-            <h2>Да обсъдим как портфолиото може да работи за вас</h2>
+            <p className={styles.finalCtaEyebrow}>Готови за работа?</p>
+            <h2>Нека изградим успешен сезон заедно</h2>
             <p>
-              Ще подготвим персонализирано предложение с препоръчани марки,
-              логистичен план и маркетингова подкрепа.
+              Свържете се с нас за актуална ценова листа и консултация относно
+              най-подходящите продукти за вашия регион и клиенти.
             </p>
             <div className={styles.finalCtaActions}>
               <Link href="/kontakti" className={styles.finalCtaButtonPrimary}>
-                Свържете се с екипа
+                Свържете се с нас
               </Link>
               <Link href="/za-nas" className={styles.finalCtaButtonSecondary}>
-                Научете повече за Agro Export-Import
+                Научете повече за фирмата
               </Link>
             </div>
           </div>

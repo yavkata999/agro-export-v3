@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Видео и обучения | Agro Export-Import",
+  title: "Видео и обучения | Агро Експорт Импорт ООД",
   description:
     "Обучителни видеа и продуктови презентации за торфени субстрати, тревни смеси, саксии и други продукти.",
 };

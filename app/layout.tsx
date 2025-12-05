@@ -13,9 +13,42 @@ const THEME_BOOTSTRAP_SCRIPT = `(() => {
 })();`;
 
 export const metadata: Metadata = {
-  title: "Agro Export-Import – Вносител на градински продукти",
+  metadataBase: new URL("https://agro-export.com"),
+  title: {
+    default: "Агро Експорт Импорт ООД | Професионални градински решения",
+    template: "%s | Агро Експорт Импорт", // Now pages will look like "Контакти | Агро Експорт Импорт"
+  },
   description:
-    "B2B вносител на торф, субстрати, тревни смеси, саксии, перлит и др.",
+    "Вашият стратегически B2B партньор за внос и дистрибуция на торф, субстрати, тревни смеси, саксии и торове. Официален представител на Durpeta, GlobalGrass и Florovit.",
+  keywords: [
+    "торф на едро",
+    "субстрати Durpeta",
+    "тревни смески GlobalGrass",
+    "саксии Soparco",
+    "вносител градински продукти",
+    "агро борса",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "bg_BG",
+    url: "https://agro-export.com",
+    title: "Агро Експорт Импорт ООД",
+    description: "Професионални решения за градински центрове и производители.",
+    // Using Cyrillic here looks much better when shared on Viber/Facebook in Bulgaria
+    siteName: "Агро Експорт Импорт",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Агро Експорт Импорт Склад",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 type RootLayoutProps = {
@@ -23,10 +56,28 @@ type RootLayoutProps = {
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  // --- GLOBAL SCHEMA ---
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Агро Експорт Импорт", // Primary name in Cyrillic
+    alternateName: ["Agro Export Import", "Agro Export"], // English variations help Google connect the dots
+    url: "https://agro-export.com",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://agro-export.com/produkti?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <html lang="bg" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP_SCRIPT }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body>
         <Header />

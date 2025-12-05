@@ -30,9 +30,9 @@ const resolveInitialTheme = (): Theme => {
       return stored;
     }
 
-    const prefersDark = window
-      .matchMedia?.("(prefers-color-scheme: dark)")
-      ?.matches;
+    const prefersDark = window.matchMedia?.(
+      "(prefers-color-scheme: dark)"
+    )?.matches;
     return prefersDark ? "dark" : "light";
   }
 
@@ -73,7 +73,7 @@ export default function Header() {
         <div className={styles.bar}>
           {/* Logo / brand */}
           <Link href="/" className={styles.logo}>
-            Agro Export-Import
+            Агро Експорт Импорт
           </Link>
 
           {/* Desktop nav */}

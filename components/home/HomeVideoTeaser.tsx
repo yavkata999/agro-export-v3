@@ -13,29 +13,29 @@ type VideoItem = {
 const VIDEOS: VideoItem[] = [
   {
     slug: "/video/izbor-na-trevna-smes",
-    title: "Как да изберем правилна тревна смес",
+    title: "Как да изберем правилната тревна смес за обекта",
     description:
-      "Практични насоки за избор на GlobalGrass според приложението – двор, спортно игрище или общинска площ.",
+      "Ръководство за озеленители: кога да използваме GlobalGrass Sport и кога Park Music според натоварването и слънцегреенето.",
     status: "soon",
     category: "Тревни смеси",
     duration: "10 мин",
   },
   {
     slug: "/video/torfeni-substrati-durpeta",
-    title: "Работа с торфени субстрати Durpeta",
+    title: "Оптимизация на разсадопроизводството с Durpeta",
     description:
-      "Съвети за подготовка, поливане и подхранване на субстрата при разсадопроизводство.",
+      "Технически съвети за водозадържане и хранене на разсада при използване на професионалните субстрати Durpeta.",
     status: "soon",
     category: "Торфени субстрати",
     duration: "12 мин",
   },
   {
     slug: "/video/organizacia-na-proizvodstvoto",
-    title: "Организация на производството със саксии и форми за разсад",
+    title: "Ефективност в оранжерията: Саксии и форми",
     description:
-      "Как различните форми, тарелки и контейнери оптимизират труда и пространството в оранжерията.",
+      "Как изборът на правилната работна саксия (Soparco) намалява фирата и подобрява логистиката на растенията.",
     status: "soon",
-    category: "Саксии и форми за разсад",
+    category: "Саксии и контейнери",
     duration: "15 мин",
   },
 ];
@@ -46,12 +46,12 @@ export default function HomeVideos() {
       <div className="container">
         <header className={styles.header}>
           <h2 id="videos-heading" className={styles.title}>
-            Видео и обучения
+            Академия за партньори
           </h2>
           <p className={styles.subtitle}>
-            Подготвяме библиотека от кратки видеа и обучения, насочени към
-            професионални производители и търговци. Целта е да използвате
-            продуктите възможно най-ефективно – с ясни примери от практиката.
+            Вярваме, че информираният избор води до по-добри резултати. Скоро
+            тук ще намерите видео обучения, насочени към спецификите на нашите
+            продукти и най-добрите практики в бранша.
           </p>
         </header>
 
@@ -67,7 +67,7 @@ export default function HomeVideos() {
                       : `${styles.status} ${styles.statusLive}`
                   }
                 >
-                  {video.status === "soon" ? "Скоро" : "На живо"}
+                  {video.status === "soon" ? "Очаквайте" : "На живо"}
                 </span>
               </div>
 
@@ -83,7 +83,7 @@ export default function HomeVideos() {
                 <span className={styles.spacer} />
 
                 {video.status === "soon" ? (
-                  <span className={styles.soonLabel}>Очаквайте онлайн</span>
+                  <span className={styles.soonLabel}>Скоро онлайн</span>
                 ) : (
                   <Link href={video.slug} className={styles.watchLink}>
                     <span className={styles.playIcon} aria-hidden="true">
@@ -99,7 +99,7 @@ export default function HomeVideos() {
 
         <div className={styles.ctaWrapper}>
           <Link href="/video" className={styles.ctaButton}>
-            Вижте секцията „Видео и обучения“
+            Към всички видео материали
           </Link>
         </div>
       </div>

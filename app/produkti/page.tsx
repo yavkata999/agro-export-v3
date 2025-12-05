@@ -4,33 +4,59 @@ import { categories } from "@content/categories";
 import styles from "@styles/pages/ProduktiPage.module.css";
 
 export const metadata: Metadata = {
-  title: "Продукти | Agro Export-Import",
+  title: "Продуктов Каталог | Агро Експорт Импорт",
   description:
-    "Каталог с професионални продукти – торфени субстрати, тревни смеси, саксии, форми за разсад, перлит, вермикулит и градински продукти за B2B клиенти.",
+    "Пълна гама професионални решения за градинарството: субстрати, семена, торове и производствени консумативи. Внос и дистрибуция на едро.",
 };
 
 export default function ProduktiPage() {
+  // --- SEO SCHEMA ---
+  // CollectionPage schema helps Google understand this is a hub for other product lists
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Продуктов Каталог - Агро Експорт Импорт",
+    description: "Каталог с професионални продукти за градинарството.",
+    url: "https://agro-export.com/produkti",
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: categories.map((cat, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: cat.name,
+        url: `https://agro-export.com${
+          cat.rootPath ?? `/produkti/${cat.slug}`
+        }`,
+      })),
+    },
+  };
+
   return (
     <section className={styles.page}>
+      {/* Schema Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <div className="container">
         {/* PAGE INTRO */}
         <header className={styles.header}>
           <div className={styles.headerMain}>
-            <h1 className={styles.title}>Каталог продукти</h1>
+            <h1 className={styles.title}>Вашият професионален избор</h1>
             <p className={styles.subtitle}>
-              Подбран асортимент за професионални клиенти – торфени субстрати,
-              тревни смеси, саксии, форми за разсад, перлит, вермикулит и
-              градински продукти. Работим изцяло B2B с градински центрове,
-              дистрибутори и производители.
+              Събрахме на едно място всичко необходимо за успешния сезон. От
+              доказани европейски субстрати и семена до специализирани торове и
+              производствени контейнери. Качество, което гарантира растеж за
+              вашия бизнес.
             </p>
           </div>
 
           <div className={styles.headerSide}>
-            <h2 className={styles.sideTitle}>Как да поръчате</h2>
+            <h2 className={styles.sideTitle}>Лесна поръчка на едро</h2>
             <p className={styles.sideText}>
-              Изберете категория, разгледайте продуктите и ни изпратете
-              запитване за конкретна оферта. Организираме доставки за цялата
-              страна чрез транспортни партньори.
+              Разгледайте асортимента и се свържете с нас за индивидуална оферта
+              и условия за дистрибуция. Доставяме до всяка точка на страната.
             </p>
           </div>
         </header>
@@ -54,7 +80,8 @@ export default function ProduktiPage() {
                   )}
 
                   <span className={styles.cardCta}>
-                    Вижте продуктите<span className={styles.cardArrow}>→</span>
+                    Разгледайте категорията
+                    <span className={styles.cardArrow}>→</span>
                   </span>
                 </div>
               </Link>

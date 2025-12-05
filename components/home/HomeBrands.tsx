@@ -6,8 +6,8 @@ const LINE_BRANDS = [
   "Azofoska",
   "Florovit Pro Natura",
   "Florovit Agro",
-  "Гръцки перлит",
-  "Турски саксии и тарелки",
+  "Agroperlite Greece",
+  "TurkPot",
 ];
 
 export default function HomeBrands() {
@@ -16,13 +16,13 @@ export default function HomeBrands() {
       <div className="container">
         <div className={styles.header}>
           <h2 id="brands-heading" className={styles.title}>
-            Марки, с които работим
+            Доказани Европейски Брандове
           </h2>
           <p className={styles.subtitle}>
-            Представляваме утвърдени европейски производители на торфени
-            субстрати, тревни смеси, саксии, торове и допълващи продукти. Това
-            ни позволява да предлагаме последователно качество и сигурни
-            доставки към B2B партньорите ни.
+            Ние не просто продаваме стока, ние сме официален представител на
+            производителите. Това гарантира на нашите B2B партньори постоянство
+            в качеството, свежи наличности и най-добрите ценови условия на
+            пазара.
           </p>
         </div>
 
@@ -31,8 +31,8 @@ export default function HomeBrands() {
             <div className={styles.rowHeader}>
               <span className={styles.rowLabel}>Стратегически партньори</span>
               <p className={styles.rowText}>
-                Основните марки, около които изграждаме асортимента си за
-                градински центрове, дистрибутори и производители.
+                Основните стълбове на вашия асортимент – субстрати, треви,
+                саксии и торове.
               </p>
             </div>
             <div className={styles.chipRow}>
@@ -51,12 +51,10 @@ export default function HomeBrands() {
 
           <div className={styles.row}>
             <div className={styles.rowHeader}>
-              <span className={styles.rowLabel}>
-                Допълващи продуктови линии
-              </span>
+              <span className={styles.rowLabel}>Специализирани серии</span>
               <p className={styles.rowText}>
-                Марки и серии, които разширяват решенията ни – органични
-                продукти, специализирани торове, перлит и аксесоари.
+                Решения за специфични нужди – от професионално земеделие до био
+                производство.
               </p>
             </div>
             <div className={styles.chipRow}>

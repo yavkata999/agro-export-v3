@@ -16,10 +16,10 @@ export function ProductDescription({
     <section className={`section ${styles.descriptionSection}`}>
       <div className="container">
         <div className={styles.descriptionCard}>
-          <p className={styles.overline}>Описание</p>
-          <h2>Пълна информация</h2>
+          <p className={styles.overline}>Детайли за продукта</p>
+          <h2>Характеристики и приложение</h2>
           {hasExtendedCopy && <p className={styles.lead}>{shortDescription}</p>}
-          <p>{content}</p>
+          <p style={{ whiteSpace: "pre-line" }}>{content}</p>
         </div>
       </div>
     </section>

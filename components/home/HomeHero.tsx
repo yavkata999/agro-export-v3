@@ -7,12 +7,12 @@ const HERO_STATS = [
     label: "години опит във вноса и логистиката",
   },
   {
-    value: "6+",
-    label: "категории продукти",
+    value: "200+",
+    label: "активни артикула",
   },
   {
     value: "100%",
-    label: "фокус върху B2B партньори в България",
+    label: "фокус върху B2B партньори",
   },
 ];
 
@@ -24,33 +24,32 @@ export default function HomeHero() {
     >
       <div className="container">
         <div className={`${styles.heroInner} ${styles.heroAppear}`}>
-          <p className={styles.heroBadge}>B2B внос и дистрибуция</p>
+          <p className={styles.heroBadge}>Ексклузивен внос и дистрибуция</p>
           <h1 id="hero-heading" className={styles.heroTitle}>
-            Вашият партньор за внос и дистрибуция{" "}
+            Вашият надежден партньор за{" "}
             <span className={styles.heroTitleAccent}>
-              на професионални градински продукти
+              професионални градински решения
             </span>
           </h1>
 
           <p className={styles.heroSubtitle}>
-            Помагаме на градински центрове, дистрибутори и професионални
-            производители в България да изградят по-силен асортимент – от
-            торфени субстрати Durpeta и тревни смеси GlobalGrass до саксии,
-            форми за разсад, перлит, вермикулит и торове Florovit.
+            Снабдяваме градински центрове, оранжерии и дистрибутори с продукти
+            от водещи европейски производители. Осигурете си качество и
+            предвидимост с торфени субстрати Durpeta, тревни смеси GlobalGrass и
+            торове Florovit.
           </p>
 
           <div className={styles.heroActions}>
             <Link href="/kontakti" className="button">
-              Свържете се с нас
+              Поискайте оферта
             </Link>
             <Link href="/produkti" className="button button--ghost">
-              Вижте продуктите
+              Разгледайте каталога
             </Link>
           </div>
 
           <p className={styles.heroNote}>
-            Работим изцяло B2B – с магазини, дистрибутори, производители и други
-            професионални клиенти.
+            *Работим само с юридически лица и търговци на едро.
           </p>
 
           <ul className={styles.heroStats}>
