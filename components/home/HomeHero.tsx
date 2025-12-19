@@ -12,7 +12,7 @@ const HERO_STATS = [
   },
   {
     value: "100%",
-    label: "фокус върху B2B партньори",
+    label: "фокус върху бизнес клиенти",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function HomeHero() {
           </div>
 
           <p className={styles.heroNote}>
-            *Работим само с юридически лица и търговци на едро.
+            *Работим само с юридически лица и клиенти на едро.
           </p>
 
           <ul className={styles.heroStats}>

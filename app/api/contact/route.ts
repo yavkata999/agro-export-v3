@@ -1,16 +1,23 @@
 import { NextResponse } from "next/server";
 
-const RECIPIENT_EMAIL = "yavor.kr@abv.bg";
+// --- CONFIGURATION ---
+const RECIPIENT_EMAIL = "agroexport69@gmail.com";
+
+// Limits
 const MAX_FIELD_LENGTH = 200;
-const MAX_MESSAGE_LENGTH = 2000;
+const MAX_MESSAGE_LENGTH = 3000;
 const MIN_MESSAGE_LENGTH = 10;
-const EMAIL_PATTERN = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/i;
+const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
+const MAX_REQUESTS_PER_IP = 3; // 3 requests per minute
+
+// --- REGEX PATTERNS ---
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i;
 const PHONE_PATTERN = /^[0-9+()\\s-]{6,20}$/;
-const THREAT_PATTERN =
-  /(\\bkill\\b|\\bmurder\\b|\\bshoot\\b|\\bthreat\\b|\\bterror\\b|\\b폭탄\\b|\\bбомба\\b|\\bзаплаха\\b|\\bубия\\b|\\bуби(я|ем|еш|е)\\b|\\bkill you\\b|\\bdeath\\b)/i;
-const HTML_OR_SCRIPT_PATTERN = /<\\s*script|<\\s*iframe|<\\s*svg|<\\s*img|on\\w+\\s*=|javascript:/i;
+const XSS_PATTERN = /<\s*script|<\s*iframe|<\s*object|on\w+\s*=|javascript:/i;
 const SQL_INJECTION_PATTERN =
-  /(\\bselect\\b|\\binsert\\b|\\bupdate\\b|\\bdelete\\b|\\bdrop\\b|\\bunion\\b|--|;)/i;
+  /(\bunion\b.*\bselect\b|\bdrop\b\s+\btable\b|--;|\bupdate\b.*\bset\b)/i;
+const THREAT_PATTERN =
+  /(\bkill\b|\bmurder\b|\bshoot\b|\bthreat\b|\bterror\b|\b폭탄\b|\bбомба\b|\bзаплаха\b|\bубия\b|\bуби(я|ем|еш|е)\b|\bkill you\b|\bdeath\b)/i;
 
 type ContactPayload = {
   name?: string;
@@ -21,8 +28,12 @@ type ContactPayload = {
   message?: string;
 };
 
-const sanitize = (value: string) =>
-  value.replace(/[<>]/g, "").replace(/\\s+/g, " ").trim();
+// --- RATE LIMITER STORAGE ---
+// Changed to store an ARRAY of numbers (timestamps) per IP
+const rateLimitMap = new Map<string, number[]>();
+
+// Helper to sanitize basic inputs (trimming)
+const sanitize = (value: string) => value.replace(/\s+/g, " ").trim();
 
 const validatePayload = (payload: ContactPayload) => {
   const name = sanitize(payload.name ?? "");
@@ -32,65 +43,50 @@ const validatePayload = (payload: ContactPayload) => {
   const topic = sanitize(payload.topic ?? "");
   const message = sanitize(payload.message ?? "");
 
+  // 1. Check Required Fields
   if (!name || !email || !message) {
-    return { ok: false, error: "Моля, попълнете задължителните полета." };
+    return {
+      ok: false,
+      error: "Моля, попълнете задължителните полета (Име, Имейл, Съобщение).",
+    };
   }
 
+  // 2. Check Lengths
   if (name.length > MAX_FIELD_LENGTH || company.length > MAX_FIELD_LENGTH) {
-    return { ok: false, error: "Прекалено дълго име или фирма." };
+    return { ok: false, error: "Името или фирмата са твърде дълги." };
   }
-
-  if (!EMAIL_PATTERN.test(email)) {
-    return { ok: false, error: "Моля, въведете валиден имейл адрес." };
-  }
-
-  if (phone && !PHONE_PATTERN.test(phone)) {
-    return { ok: false, error: "Моля, въведете валиден телефонен номер." };
-  }
-
-  if (topic.length > MAX_FIELD_LENGTH) {
-    return { ok: false, error: "Прекалено дълга тема на запитването." };
-  }
-
   if (message.length < MIN_MESSAGE_LENGTH) {
-    return { ok: false, error: "Съобщението трябва да е поне 10 символа." };
+    return {
+      ok: false,
+      error: `Съобщението трябва да е поне ${MIN_MESSAGE_LENGTH} символа.`,
+    };
   }
-
   if (message.length > MAX_MESSAGE_LENGTH) {
-    return { ok: false, error: "Съобщението е прекалено дълго." };
+    return { ok: false, error: "Съобщението е твърде дълго." };
   }
 
-  if (
-    THREAT_PATTERN.test(message) ||
-    THREAT_PATTERN.test(name) ||
-    THREAT_PATTERN.test(company)
-  ) {
-    return {
-      ok: false,
-      error: "Съобщението съдържа неприемливо съдържание.",
-    };
+  // 3. Check Formats
+  if (!EMAIL_PATTERN.test(email)) {
+    return { ok: false, error: "Невалиден имейл адрес." };
+  }
+  if (phone && !PHONE_PATTERN.test(phone)) {
+    return { ok: false, error: "Невалиден телефонен номер." };
   }
 
-  if (
-    HTML_OR_SCRIPT_PATTERN.test(message) ||
-    HTML_OR_SCRIPT_PATTERN.test(name) ||
-    HTML_OR_SCRIPT_PATTERN.test(company)
-  ) {
+  // 4. Security Checks
+  const allContent = `${name} ${company} ${topic} ${message}`;
+
+  if (THREAT_PATTERN.test(allContent)) {
     return {
       ok: false,
-      error: "Съобщението съдържа неподдържани символи или код.",
+      error: "Съобщението съдържа неподходящ език или заплахи.",
     };
   }
-
-  if (
-    SQL_INJECTION_PATTERN.test(message) ||
-    SQL_INJECTION_PATTERN.test(name) ||
-    SQL_INJECTION_PATTERN.test(company)
-  ) {
-    return {
-      ok: false,
-      error: "Съобщението съдържа неподдържани символи.",
-    };
+  if (XSS_PATTERN.test(allContent)) {
+    return { ok: false, error: "Открит е невалиден код в съобщението." };
+  }
+  if (SQL_INJECTION_PATTERN.test(allContent)) {
+    return { ok: false, error: "Открит е опит за манипулация на данните." };
   }
 
   return {
@@ -99,14 +95,7 @@ const validatePayload = (payload: ContactPayload) => {
   };
 };
 
-const buildEmailBody = (data: {
-  name: string;
-  company: string;
-  email: string;
-  phone: string;
-  topic: string;
-  message: string;
-}) =>
+const buildEmailBody = (data: ContactPayload) =>
   `Ново запитване от сайта Agro Export:\n\n` +
   `Име: ${data.name}\n` +
   `Фирма: ${data.company || "-"}\n` +
@@ -117,53 +106,84 @@ const buildEmailBody = (data: {
 
 export async function POST(request: Request) {
   try {
+    // --- Rate Limiting Logic (FIXED) ---
+    const ip = request.headers.get("x-forwarded-for") || "unknown";
+    const now = Date.now();
+
+    // Get existing timestamps for this IP, or empty array if none
+    let requestTimestamps = rateLimitMap.get(ip) || [];
+
+    // Filter out timestamps that are older than the window (older than 1 minute)
+    requestTimestamps = requestTimestamps.filter(
+      (timestamp) => now - timestamp < RATE_LIMIT_WINDOW
+    );
+
+    // Check if the user has reached the limit
+    if (requestTimestamps.length >= MAX_REQUESTS_PER_IP) {
+      return NextResponse.json(
+        { error: "Прекалено много заявки. Моля, изчакайте малко." },
+        { status: 429 }
+      );
+    }
+
+    // Add the current timestamp to the list and update the map
+    requestTimestamps.push(now);
+    rateLimitMap.set(ip, requestTimestamps);
+
+    // --- Parsing & Validation ---
     const payload = (await request.json()) as ContactPayload;
     const validation = validatePayload(payload);
 
     if (!validation.ok) {
-      return NextResponse.json(
-        { error: validation.error },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: validation.error }, { status: 400 });
     }
 
-    const data = validation.data;
+    const data = validation.data!;
 
-    const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        service_id: process.env.EMAILJS_SERVICE_ID,
-        template_id: process.env.EMAILJS_TEMPLATE_ID,
-        user_id: process.env.EMAILJS_PUBLIC_KEY,
-        accessToken: process.env.EMAILJS_PRIVATE_KEY,
-        template_params: {
-          to_email: RECIPIENT_EMAIL,
-          from_name: data.name,
-          from_email: data.email,
-          company: data.company,
-          phone: data.phone,
-          topic: data.topic,
-          message: data.message,
-          reply_to: data.email,
-          text_body: buildEmailBody(data),
-        },
-      }),
-    });
+    // --- Sending to EmailJS ---
+    const response = await fetch(
+      "https://api.emailjs.com/api/v1.0/email/send",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          service_id: process.env.EMAILJS_SERVICE_ID,
+          template_id: process.env.EMAILJS_TEMPLATE_ID,
+          user_id: process.env.EMAILJS_PUBLIC_KEY,
+          accessToken: process.env.EMAILJS_PRIVATE_KEY,
+          template_params: {
+            to_email: RECIPIENT_EMAIL,
+            from_name: data.name,
+            from_email: data.email,
+            company: data.company,
+            phone: data.phone,
+            topic: data.topic,
+            message: data.message,
+            reply_to: data.email,
+            text_body: buildEmailBody(data),
+          },
+        }),
+      }
+    );
 
     if (!response.ok) {
+      const errorText = await response.text();
+      console.error("EmailJS Failed:", errorText);
+
       return NextResponse.json(
-        { error: "Неуспешно изпращане. Моля, опитайте отново." },
+        { error: "Възникна грешка при изпращането. Моля, опитайте по-късно." },
         { status: 502 }
       );
     }
 
-    return NextResponse.json({ ok: true });
-  } catch {
+    return NextResponse.json({
+      ok: true,
+      message: "Съобщението е изпратено успешно!",
+    });
+  } catch (error) {
+    console.error("Server Error:", error);
     return NextResponse.json(
-      { error: "Невалидни данни за изпращане." },
+      { error: "Невалидни данни или сървърна грешка." },
       { status: 400 }
     );
   }

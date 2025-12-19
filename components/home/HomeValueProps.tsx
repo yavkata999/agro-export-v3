@@ -96,7 +96,7 @@ export default function HomeValueProps() {
             <article className={styles.card}>
               <div className={styles.cardHeader}>
                 <BriefcaseIcon />
-                <h3>100% B2B Фокус</h3>
+                <h3>100% Фокус върху бизнес клиенти</h3>
               </div>
               <p>
                 Ние не се конкурираме с вас. Работим изключително с търговци и
