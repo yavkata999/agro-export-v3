@@ -46,10 +46,32 @@ export default function ContactForm() {
       return;
     }
 
+    if (values.message.trim().length < 10) {
+      setError("Съобщението трябва да е поне 10 символа.");
+      return;
+    }
+
     setSubmitting(true);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 800));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(
+          typeof data?.error === "string"
+            ? data.error
+            : "Възникна грешка при изпращане. Моля, опитайте отново."
+        );
+        return;
+      }
 
       setSuccess("Вашето запитване беше изпратено успешно.");
       setValues(initialValues);
