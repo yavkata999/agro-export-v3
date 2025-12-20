@@ -1,12 +1,113 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "@styles/pages/Kontakti.module.css";
-import ContactForm from "@components/forms/ContactForm";
 
 export const metadata: Metadata = {
   title: "Контакти | Агро Експорт Импорт ООД",
   description:
-    "Свържете се с Агро Експорт Импорт ООД за поръчки, дистрибуция и професионални консултации за торфени субстрати, тревни смеси, саксии и градински продукти.",
+    "Свържете се с нас за поръчки, дистрибуция и професионални консултации.",
+};
+
+/* --- INLINE ICONS --- */
+const Icons = {
+  MapPin: () => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  ),
+  Phone: () => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  ),
+  Mail: () => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="20" height="16" x="2" y="4" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+    </svg>
+  ),
+  Clock: () => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+  ),
+  Truck: () => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M10 17h4V5H2v12h3" />
+      <path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5" />
+      <path d="M14 17h1" />
+      <circle cx="7.5" cy="17.5" r="2.5" />
+      <circle cx="17.5" cy="17.5" r="2.5" />
+    </svg>
+  ),
+  Building: () => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
+      <path d="M9 22v-4h6v4" />
+      <path d="M8 6h.01" />
+      <path d="M16 6h.01" />
+      <path d="M8 10h.01" />
+      <path d="M16 10h.01" />
+      <path d="M8 14h.01" />
+      <path d="M16 14h.01" />
+    </svg>
+  ),
 };
 
 type RegionalContact = {
@@ -18,310 +119,244 @@ type RegionalContact = {
 
 const regionalContacts: RegionalContact[] = [
   {
-    region: "София, Перник, Кюстендил",
-    details: "Продажби и обслужване на клиенти.",
+    region: "София, Перник",
+    details: "Продажби и обслужване",
     phone: "0889 427 439",
   },
   {
-    region: "гр. Бяла, обл. Русе",
-    details: "",
+    region: "гр. Бяла (Русе)",
+    details: "Бул. Колю Фичето № 25",
     phone: "0897 963 106",
-    extra: "Бул. Колю Фичето № 25, Бяла",
   },
+  { region: "Добрич", details: "Агроцентър", phone: "0895 504 930" },
+  { region: "Айтос", details: "Регионален дистрибутор", phone: "0897 963 118" },
+  { region: "Пловдив", details: "Градински центрове", phone: "0876 659 525" },
   {
-    region: "гр. Добрич – Агроцентър",
-    details: "Търговски представител за региона.",
-    phone: "0895 504 930",
-    extra: "0885 330 824",
-  },
-  {
-    region: "гр. Айтос",
-    details: "Регионален дистрибутор.",
-    phone: "0897 963 118",
-  },
-  {
-    region: "Пловдив",
-    details: "Партньори и градински центрове в региона.",
-    phone: "0876 659 525",
-  },
-  {
-    region: "Пловдив – с. Милево",
-    details: "Регионален склад.",
+    region: "Пловдив (с. Милево)",
+    details: "Регионален склад",
     phone: "0886 133 684",
   },
-  {
-    region: "Пловдив – с. Чешнегирово",
-    details: "Търговски представител.",
-    phone: "0889 447 444",
-  },
-  {
-    region: "Сандански – с. Ново Делчево",
-    details: "Регионален партньор.",
-    phone: "0899 676 567",
-  },
-  {
-    region: "Сандански – с. Струма",
-    details: "Покрива Югозападна България.",
-    phone: "0878 263 160",
-  },
-  {
-    region: "Гоце Делчев",
-    details: "Регионален дистрибутор.",
-    phone: "0884 553 650",
-  },
-  {
-    region: "Пазарджик – с. Черногорово",
-    details: "Търговски представител.",
-    phone: "0887 314 837",
-  },
-  {
-    region: "Харманли",
-    details: "Регионален дистрибутор.",
-    phone: "0897 963 109",
-  },
+  { region: "Сандански", details: "с. Ново Делчево", phone: "0899 676 567" },
+  { region: "Гоце Делчев", details: "Дистрибутор", phone: "0884 553 650" },
+  { region: "Харманли", details: "Дистрибутор", phone: "0897 963 109" },
 ];
 
 export default function KontaktiPage() {
-  // --- SEO SCHEMA ---
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WholesaleStore",
-    name: "Агро Експорт Импорт ООД",
-    url: "https://agro-export.com/kontakti",
-    logo: "https://agro-export.com/logo.png",
-    image: "https://agro-export.com/warehouse-photo.jpg", // Replace with real image if available
-    description:
-      "Основен офис и склад за внос и дистрибуция на градински продукти във Варна.",
-    telephone: "+359-887-609-587",
-    email: "agro_export@abv.bg",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "ул. Орех № 2",
-      addressLocality: "Варна",
-      postalCode: "9000",
-      addressCountry: "BG",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 43.2141, // Approximate Varna coords, update if you have exact ones
-      longitude: 27.9147,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "17:30",
-    },
-    areaServed: {
-      "@type": "Country",
-      name: "Bulgaria",
-    },
-  };
-
   return (
-    <section className={styles.page}>
-      {/* SEO Script Injection */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      <div className="container">
-        {/* HERO */}
-        <header className={styles.hero}>
+    <div className={styles.pageWrapper}>
+      <section className={styles.heroSection}>
+        <div className={styles.heroContainer}>
           <h1 className={styles.heroTitle}>Контакти</h1>
           <p className={styles.heroText}>
             Основни контакти за поръчки, дистрибуция и логистика. Работим изцяло
-            с B2B клиенти – градински центрове, дистрибутори, производители и
-            търговци.
+            с бизнес клиенти – градински центрове, дистрибутори, производители.
           </p>
-        </header>
+        </div>
+      </section>
 
-        {/* MAIN 2-COLUMN LAYOUT: PRIMARY CONTACT CARD + FORM */}
-        <div className={styles.mainLayout}>
-          {/* LEFT: основен офис и склад */}
-          <section
-            className={styles.primaryCard}
-            aria-label="Основни контакти и координати"
-          >
-            <div className={styles.primaryCardInner}>
-              <h2 className={styles.primaryCardTitle}>
-                Основен офис и склад – Варна
-              </h2>
-              <p className={styles.primaryCardText}>
-                Използвайте тези контакти за всички B2B запитвания, поръчки и
-                координация на доставки.
+      <div className="container">
+        <div className={styles.mainSection}>
+          <div className={styles.mainGrid}>
+            {/* LEFT: INFO CARD */}
+            <div className={styles.infoCard}>
+              <h2 className={styles.infoTitle}>Основен офис – Варна</h2>
+              <p className={styles.infoSubtitle}>
+                Използвайте тези контакти за всички търговски запитвания.
               </p>
 
-              {/* Офис – Варна */}
-              <div className={styles.primaryBlock}>
-                <h3 className={styles.primaryBlockTitle}>Офис – Варна</h3>
-                <dl className={styles.primaryDetails}>
-                  <div className={styles.primaryRow}>
-                    <dt>Телефон</dt>
-                    <dd>
-                      <Link href="tel:0887609587">0887 609 587</Link>
-                    </dd>
+              {/* Group 1: Office */}
+              <div className={styles.contactGroup}>
+                <div className={styles.groupLabel}>
+                  <Icons.Building /> Администрация
+                </div>
+                <div className={styles.contactItem}>
+                  <div className={styles.iconWrapper}>
+                    <Icons.Phone />
                   </div>
-                  <div className={styles.primaryRow}>
-                    <dt>Телефон 2</dt>
-                    <dd>
-                      <Link href="tel:052609587">052 609 587</Link>
-                    </dd>
+                  <div>
+                    <span className={styles.contactLabel}>Телефон</span>
+                    <Link href="tel:0887609587" className={styles.contactValue}>
+                      0887 609 587
+                    </Link>
                   </div>
-                  <div className={styles.primaryRow}>
-                    <dt>Имейл</dt>
-                    <dd>
-                      <Link href="mailto:agro_export@abv.bg">
-                        agro_export@abv.bg
-                      </Link>
-                    </dd>
+                </div>
+                <div className={styles.contactItem}>
+                  <div className={styles.iconWrapper}>
+                    <Icons.Mail />
                   </div>
-                </dl>
+                  <div>
+                    <span className={styles.contactLabel}>Имейл</span>
+                    <Link
+                      href="mailto:agro_export@abv.bg"
+                      className={styles.contactValue}
+                    >
+                      agro_export@abv.bg
+                    </Link>
+                  </div>
+                </div>
+                <div className={styles.contactItem}>
+                  <div className={styles.iconWrapper}>
+                    <Icons.Clock />
+                  </div>
+                  <div>
+                    <span className={styles.contactLabel}>Работно време</span>
+                    <span className={styles.contactValue}>
+                      Пон – Пет: 09:00 – 17:30
+                    </span>
+                  </div>
+                </div>
               </div>
 
-              {/* Склад – Варна */}
-              <div className={styles.primaryBlock}>
-                <h3 className={styles.primaryBlockTitle}>Склад – Варна</h3>
-                <dl className={styles.primaryDetails}>
-                  <div className={styles.primaryRow}>
-                    <dt>Телефон</dt>
-                    <dd>
-                      <Link href="tel:0887609587">0887 609 587</Link>
-                    </dd>
+              {/* Group 2: Warehouse */}
+              <div className={styles.contactGroup}>
+                <div className={styles.groupLabel}>
+                  <Icons.Truck /> Логистика и Склад
+                </div>
+                <div className={styles.contactItem}>
+                  <div className={styles.iconWrapper}>
+                    <Icons.Phone />
                   </div>
-                  <div className={styles.primaryRow}>
-                    <dt>Телефон 2</dt>
-                    <dd>
-                      <Link href="tel:0876755443">0876 755 443</Link>
-                    </dd>
+                  <div>
+                    <span className={styles.contactLabel}>Телефон склад</span>
+                    <Link href="tel:0876755443" className={styles.contactValue}>
+                      0876 755 443
+                    </Link>
                   </div>
-                  <div className={styles.primaryRow}>
-                    <dt>Адрес</dt>
-                    <dd>
-                      <Link
-                        href="https://www.google.com/maps/search/?api=1&query=ул.+Орех+№+2,+Варна"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.contactMapLink}
-                      >
-                        ул. Орех № 2, Варна (виж на карта)
-                      </Link>
-                    </dd>
+                </div>
+                <div className={styles.contactItem}>
+                  <div className={styles.iconWrapper}>
+                    <Icons.MapPin />
                   </div>
-                </dl>
-              </div>
-
-              {/* Доставки */}
-              <div className={styles.primaryBlock}>
-                <h3 className={styles.primaryBlockTitle}>
-                  Доставки за цялата страна
-                </h3>
-                <dl className={styles.primaryDetails}>
-                  <div className={styles.primaryRow}>
-                    <dt>Телефон</dt>
-                    <dd>
-                      <Link href="tel:+359889308754">+359 88 930 8754</Link>
-                    </dd>
+                  <div>
+                    <span className={styles.contactLabel}>Адрес</span>
+                    <Link
+                      href="https://maps.google.com/?q=Varna+ul+Oreh+2"
+                      target="_blank"
+                      className={styles.contactValue}
+                    >
+                      ул. Орех № 2, Варна
+                    </Link>
                   </div>
-                </dl>
-                <p className={styles.primaryHint}>
-                  Организираме доставки до всички региони в България чрез
-                  куриерски фирми и транспортни партньори.
-                </p>
-              </div>
-
-              {/* Работно време + допълнителен блок */}
-              <div className={styles.primaryBlock}>
-                <h3 className={styles.primaryBlockTitle}>Работно време</h3>
-                <p className={styles.primaryHint}>Пон – Пет: 09:00 – 17:30</p>
+                </div>
               </div>
             </div>
-          </section>
 
-          {/* RIGHT: форма за запитване */}
-          <section className={styles.formSection} aria-label="Форма за контакт">
-            <h2 className={styles.formTitle}>Изпратете запитване</h2>
-            <p className={styles.formIntro}>
-              Попълнете формата и ни опишете вашето запитване. Ще се свържем с
-              вас до един работен ден.
-            </p>
+            {/* RIGHT: FORM CARD */}
+            <div className={styles.formCard}>
+              <div className={styles.formHeader}>
+                <h2>Изпратете запитване</h2>
+                <p>Ще се свържем с вас в рамките на един работен ден.</p>
+              </div>
 
-            <ContactForm />
+              <form className={styles.formGrid}>
+                <div className={styles.formRow}>
+                  <div className={styles.formField}>
+                    <label htmlFor="name">Име</label>
+                    <input
+                      type="text"
+                      id="name"
+                      className={styles.input}
+                      placeholder="Вашето име"
+                    />
+                  </div>
+                  <div className={styles.formField}>
+                    <label htmlFor="company">Фирма</label>
+                    <input
+                      type="text"
+                      id="company"
+                      className={styles.input}
+                      placeholder="Име на фирма"
+                    />
+                  </div>
+                </div>
 
-            <p className={styles.formNote}>
-              С изпращането на формата потвърждавате, че предоставените данни са
-              коректни и могат да бъдат използвани за връзка с вас във връзка
-              със запитването.
-            </p>
-          </section>
+                <div className={styles.formRow}>
+                  <div className={styles.formField}>
+                    <label htmlFor="email">Имейл</label>
+                    <input
+                      type="email"
+                      id="email"
+                      className={styles.input}
+                      placeholder="name@company.com"
+                    />
+                  </div>
+                  <div className={styles.formField}>
+                    <label htmlFor="phone">Телефон</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      className={styles.input}
+                      placeholder="088..."
+                    />
+                  </div>
+                </div>
+
+                {/* ADDED MISSING FIELD: TOPIC */}
+                <div className={styles.formField}>
+                  <label htmlFor="topic">Тема</label>
+                  <select id="topic" className={styles.select} defaultValue="">
+                    <option value="" disabled>
+                      Изберете тема на запитването...
+                    </option>
+                    <option value="order">Поръчка на едро</option>
+                    <option value="distribution">Стани дистрибутор</option>
+                    <option value="logistics">Логистика и доставки</option>
+                    <option value="other">Друго</option>
+                  </select>
+                </div>
+
+                <div className={styles.formField}>
+                  <label htmlFor="message">Съобщение</label>
+                  <textarea
+                    id="message"
+                    className={styles.textarea}
+                    placeholder="Как можем да ви помогнем?"
+                  ></textarea>
+                </div>
+
+                <button type="submit" className={styles.submitButton}>
+                  Изпрати запитване
+                </button>
+              </form>
+
+              <div className={styles.formFooter}>
+                *Вашите данни са защитени и ще бъдат използвани само за отговор.
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* REGIONAL CONTACTS */}
-        <section
-          className={styles.regionalSection}
-          aria-labelledby="regional-heading"
-        >
+        <section className={styles.regionalSection}>
           <div className={styles.regionalHeader}>
-            <h2 id="regional-heading" className={styles.regionalTitle}>
-              Регионални контакти
-            </h2>
-            <p className={styles.regionalSubtitle}>
-              Работим с регионални партньори и дистрибутори в цялата страна.
+            <h2>Регионални партньори</h2>
+            <p>
               Свържете се директно с представител във вашия район за локални
-              доставки и обслужване.
+              доставки.
             </p>
           </div>
 
           <div className={styles.regionalGrid}>
-            {regionalContacts.map((rc) => {
-              const extraTrimmed = rc.extra?.trim() ?? "";
-              const isExtraPhone =
-                extraTrimmed.startsWith("0") || extraTrimmed.startsWith("+359");
-
-              return (
-                <article key={rc.region} className={styles.regionalCard}>
-                  <h3 className={styles.regionalName}>{rc.region}</h3>
-                  {rc.details && (
-                    <p className={styles.regionalDetails}>{rc.details}</p>
-                  )}
-
-                  <p className={styles.regionalPhone}>
-                    Телефон:{" "}
-                    <Link href={`tel:${rc.phone.replace(/\s+/g, "")}`}>
-                      {rc.phone}
-                    </Link>
-                  </p>
-
-                  {extraTrimmed && isExtraPhone && (
-                    <p className={styles.regionalExtra}>
-                      Телефон 2:{" "}
-                      <Link href={`tel:${extraTrimmed.replace(/\s+/g, "")}`}>
-                        {extraTrimmed}
-                      </Link>
-                    </p>
-                  )}
-
-                  {extraTrimmed && !isExtraPhone && (
-                    <p className={styles.regionalExtra}>
-                      Адрес:{" "}
-                      <Link
-                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                          extraTrimmed
-                        )}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {extraTrimmed}
-                      </Link>
-                    </p>
-                  )}
-                </article>
-              );
-            })}
+            {regionalContacts.map((rc) => (
+              <div key={rc.region} className={styles.regionalCard}>
+                <h3 className={styles.regionName}>{rc.region}</h3>
+                <p className={styles.regionDetails}>{rc.details}</p>
+                <div className={styles.regionContact}>
+                  <div
+                    className={styles.iconWrapper}
+                    style={{ width: 18, height: 18 }}
+                  >
+                    <Icons.Phone />
+                  </div>
+                  <Link href={`tel:${rc.phone.replace(/\s+/g, "")}`}>
+                    {rc.phone}
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
       </div>
-    </section>
+    </div>
   );
 }

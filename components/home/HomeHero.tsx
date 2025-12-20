@@ -4,7 +4,7 @@ import styles from "@styles/components/home/HomeHero.module.css";
 const HERO_STATS = [
   {
     value: "34+",
-    label: "години опит във вноса и логистиката",
+    label: "години традиция",
   },
   {
     value: "200+",
@@ -12,21 +12,19 @@ const HERO_STATS = [
   },
   {
     value: "100%",
-    label: "фокус върху бизнес клиенти",
+    label: "бизнес фокус",
   },
 ];
 
 export default function HomeHero() {
   return (
-    <section
-      className={`${styles.hero} section`}
-      aria-labelledby="hero-heading"
-    >
+    <section className={styles.hero} aria-labelledby="hero-heading">
       <div className="container">
-        <div className={`${styles.heroInner} ${styles.heroAppear}`}>
-          <p className={styles.heroBadge}>Ексклузивен внос и дистрибуция</p>
+        <div className={styles.heroInner}>
+          <div className={styles.heroBadge}>Ексклузивен внос и дистрибуция</div>
+
           <h1 id="hero-heading" className={styles.heroTitle}>
-            Вашият надежден партньор за{" "}
+            Вашият надежден партньор за
             <span className={styles.heroTitleAccent}>
               професионални градински решения
             </span>
@@ -40,10 +38,10 @@ export default function HomeHero() {
           </p>
 
           <div className={styles.heroActions}>
-            <Link href="/kontakti" className="button">
+            <Link href="/kontakti" className={styles.buttonPrimary}>
               Поискайте оферта
             </Link>
-            <Link href="/produkti" className="button button--ghost">
+            <Link href="/produkti" className={styles.buttonGhost}>
               Разгледайте каталога
             </Link>
           </div>

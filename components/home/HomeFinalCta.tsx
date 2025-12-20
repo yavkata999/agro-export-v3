@@ -5,8 +5,8 @@ export default function HomeFinalCTA() {
   return (
     <section className={styles.section}>
       <div className="container">
-        <div className={styles.inner}>
-          <div className={styles.textCol}>
+        <div className={styles.ctaCard}>
+          <div className={styles.content}>
             <h2 className={styles.title}>Планирайте следващия сезон с нас</h2>
             <p className={styles.text}>
               Не чакайте последния момент. Свържете се с нас за актуални ценови
@@ -16,11 +16,11 @@ export default function HomeFinalCTA() {
           </div>
 
           <div className={styles.actions}>
-            <Link href="/kontakti" className="button">
+            <Link href="/kontakti" className={styles.buttonPrimary}>
               Поискайте оферта
             </Link>
 
-            <Link href="/produkti" className={styles.ghostWhite}>
+            <Link href="/produkti" className={styles.buttonGhost}>
               Вижте пълния каталог
             </Link>
           </div>

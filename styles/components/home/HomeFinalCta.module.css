@@ -1,79 +1,155 @@
+/* --- SECTION WRAPPER --- */
 .section {
-  padding: 3.6rem 0;
-  background: linear-gradient(120deg, #064e3b, #0b5f2a 55%, #022c22);
-  color: #f9fafb;
-  box-shadow: 0 -10px 30px rgba(15, 23, 42, 0.25);
+  padding: 6rem 0 8rem 0;
+  background-color: var(--color-bg);
+  position: relative;
+}
+
+/* --- THE CARD --- */
+.ctaCard {
+  background: var(--color-primary-dark);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2rem;
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  /* Premium dark mesh gradient */
+  background-image: radial-gradient(
+      circle at 0% 0%,
+      rgba(255, 255, 255, 0.1),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(34, 197, 94, 0.2),
+      transparent 40%
+    );
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  text-align: center;
 }
 
-.section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.35), transparent 55%);
-  pointer-events: none;
-}
-
-.inner {
-  position: relative;
-  display: grid;
-  gap: 1.5rem;
-  align-items: center;
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 1.5rem;
-  backdrop-filter: blur(4px);
-  background: rgba(4, 47, 32, 0.5);
-}
-
-@media (min-width: 768px) {
-  .inner {
-    grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.2fr);
+@media (min-width: 960px) {
+  .ctaCard {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 5rem;
   }
 }
 
-.textCol {
-  max-width: 44rem;
+/* --- CONTENT --- */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
 }
 
 .title {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-  font-weight: 700;
-  margin-bottom: 0.6rem;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+
+  /* FIX: Use dynamic variable.
+     Light Mode (Deep Green BG): Text becomes White.
+     Dark Mode (Neon Green BG): Text becomes Dark. */
+  color: var(--color-on-primary);
+
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
 .text {
-  font-size: 0.95rem;
+  font-size: 1.15rem;
+
+  /* FIX: Use dynamic variable with opacity for hierarchy */
+  color: var(--color-on-primary);
+  opacity: 0.9;
+
   line-height: 1.6;
 }
 
+/* --- ACTIONS --- */
 .actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  justify-content: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 240px;
+  position: relative;
+  z-index: 2;
 }
 
-/* white ghost button specifically for this dark band */
-.ghostWhite {
+@media (min-width: 640px) {
+  .actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 960px) {
+  .actions {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+/* Primary Button (White) */
+.buttonPrimary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.4rem;
-  border-radius: 999px;
-  background: transparent;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease,
-    transform 0.05s ease;
+  padding: 1rem 2rem;
+  border-radius: 99px;
+  background-color: #ffffff;
+
+  /* FIX: Hardcode to Deep Green. 
+     Using 'var(--color-primary-dark)' would make it Neon Green in Dark Mode, 
+     which is unreadable on a White button. */
+  color: #14532d;
+
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  text-decoration: none;
 }
 
-.ghostWhite:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: #ffffff;
-  transform: translateY(-1px);
+.buttonPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #f0fdf4;
+}
+
+/* Ghost Button (Transparent) */
+.buttonGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  background-color: transparent;
+
+  /* FIX: Use dynamic variable.
+     Light Mode: White text/border.
+     Dark Mode: Dark text/border. */
+  color: var(--color-on-primary);
+  border: 1px solid var(--color-on-primary);
+
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.buttonGhost:hover {
+  /* Subtle background on hover */
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+
+  /* In Dark Mode (Neon BG), we darken the hover slightly for the text */
+  color: var(--color-on-primary);
+  border-color: var(--color-on-primary);
 }

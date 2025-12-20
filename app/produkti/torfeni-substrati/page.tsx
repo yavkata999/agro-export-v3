@@ -10,16 +10,32 @@ import {
 } from "@content/torfeni-substrati";
 import styles from "@styles/pages/TorfeniSubstratiPage.module.css";
 
+// Reusable Icon for lists
+const CheckIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
+
 const segments = [torfeniSegmentProfessional, torfeniSegmentHobby];
 
 export const metadata: Metadata = {
   title: "Торфени субстрати Durpeta | Агро Експорт Импорт ООД",
   description:
-    "Премиум торфени субстрати за професионални производители и хоби градинари. Контролирано pH, структурирани фракции, лабораторно гарантирано качество и оптимизирани рецепти.",
+    "Премиум торфени субстрати за професионални производители и хоби градинари. Контролирано pH, структурирани фракции и специализирани рецепти.",
 };
 
 export default function TorfeniSubstratiHubPage() {
-  // --- SEO SCHEMA ---
+  // JSON-LD Schema
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -27,45 +43,22 @@ export default function TorfeniSubstratiHubPage() {
     description:
       "Внос и дистрибуция на висококачествени литовски торфени субстрати.",
     url: "https://agro-export.com/produkti/torfeni-substrati",
-    breadcrumb: {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Начало",
-          item: "https://agro-export.com",
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Продукти",
-          item: "https://agro-export.com/produkti",
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Торфени субстрати",
-          item: "https://agro-export.com/produkti/torfeni-substrati",
-        },
-      ],
-    },
   };
+
   return (
     <main>
-      {/* Inject Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* -------------------------- HERO -------------------------- */}
+
+      {/* --- HERO --- */}
       <section className={styles.hero}>
-        <div className="container">
+        <div className={`container ${styles.heroContainer}`}>
+          {/* Left: Text */}
           <div className={styles.heroContent}>
-            <p className={styles.eyebrow}>{torfeniHero.eyebrow}</p>
-
+            <span className={styles.overline}>{torfeniHero.eyebrow}</span>
             <h1 className={styles.title}>{torfeniHero.title}</h1>
-
             <p className={styles.subtitle}>{torfeniHero.subtitle}</p>
 
             <div className={styles.ctaGroup}>
@@ -74,76 +67,97 @@ export default function TorfeniSubstratiHubPage() {
               </Link>
               <Link
                 href={torfeniHero.secondaryCtaHref}
-                className="button ghost"
+                className="button button-outline"
               >
                 {torfeniHero.secondaryCtaLabel}
               </Link>
             </div>
           </div>
 
+          {/* Right: Feature Card */}
           <div className={styles.heroCard}>
-            <div className={styles.heroBadge}>
+            <span className={styles.heroBadge}>
               Официален партньор на Durpeta
-            </div>
+            </span>
             <ul className={styles.heroList}>
-              <li>Стандартизирани рецепти със светъл и тъмен торф</li>
-              <li>Лабораторно гарантирано pH и електропроводимост</li>
-              <li>Доставки на палети и биг бегове за професионални клиенти</li>
-              <li>Хоби опаковки с ясни инструкции и удобство при употреба</li>
+              <li>
+                <div className={styles.checkIcon}>
+                  <CheckIcon />
+                </div>{" "}
+                Стандартизирани рецепти
+              </li>
+              <li>
+                <div className={styles.checkIcon}>
+                  <CheckIcon />
+                </div>{" "}
+                Лабораторно гарантирано pH
+              </li>
+              <li>
+                <div className={styles.checkIcon}>
+                  <CheckIcon />
+                </div>{" "}
+                Палетни доставки (Big Bale)
+              </li>
+              <li>
+                <div className={styles.checkIcon}>
+                  <CheckIcon />
+                </div>{" "}
+                Удобни хоби опаковки
+              </li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* -------------------------- PREMIUM HIGHLIGHTS -------------------------- */}
+      {/* --- HIGHLIGHTS (Why Durpeta?) --- */}
       <section className={styles.section}>
         <div className="container">
-          <header className={styles.sectionHeader}>
-            <p className={styles.kicker}>
+          <div className={styles.headerCentered}>
+            <span className={styles.overline}>Технология</span>
+            <h2 className={styles.sectionTitle}>
               Защо професионалистите избират Durpeta?
+            </h2>
+            <p className={styles.subtitle}>
+              Нашите субстрати са прецизно балансирани смеси, които осигуряват
+              предвидими резултати. Използваме компютъризирано смесване на
+              фракции за идеалното съотношение въздух/вода.
             </p>
-            <h2>Технология зад всяка рецепта</h2>
-            <p className={styles.lead}>
-              Торфът не е просто пръст. Нашите субстрати са прецизно балансирани
-              смеси, които осигуряват предвидими резултати. Използваме
-              компютъризирано смесване на фракции, за да постигнем идеалното
-              съотношение въздух/вода за всяка култура.
-            </p>
-          </header>
+          </div>
 
-          <div className={styles.cards}>
+          <div className={styles.grid3}>
             {torfeniHighlights.map((item) => (
-              <article key={item.title} className={styles.card}>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </article>
+              <div key={item.title} className={styles.featureCard}>
+                <h3 className={styles.featureTitle}>{item.title}</h3>
+                <p className={styles.featureText}>{item.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* -------------------------- SEGMENTS -------------------------- */}
-      <section id="segments" className={styles.sectionAlt}>
+      {/* --- SEGMENTS (The Split) --- */}
+      <section className={styles.sectionAlt}>
         <div className="container">
-          <header className={styles.sectionHeader}>
-            <p className={styles.kicker}>Решения за всеки мащаб</p>
-            <h2>Асортимент, покриващ целия пазар</h2>
-            <p className={styles.lead}>
+          <div className={styles.headerCentered}>
+            <span className={styles.overline}>Асортимент</span>
+            <h2 className={styles.sectionTitle}>Решения за всеки мащаб</h2>
+            <p className={styles.subtitle}>
               Независимо дали зареждате агроаптека или управлявате хектари
               оранжерии, ние имаме правилната опаковка и рецепта за вас.
             </p>
-          </header>
+          </div>
 
-          <div className={styles.segmentGrid}>
+          <div className={styles.segmentsGrid}>
             {segments.map((segment) => (
-              <article key={segment.slug} className={styles.segmentCard}>
-                <div className={styles.segmentHeader}>
-                  <p className={styles.segmentAudience}>{segment.audience}</p>
-                  <h3>{segment.title}</h3>
-                  <p className={styles.segmentDescription}>
-                    {segment.description}
-                  </p>
+              <div key={segment.slug} className={styles.segmentCard}>
+                <div>
+                  <span className={styles.segmentAudience}>
+                    {segment.audience}
+                  </span>
+                  <h3 className={styles.segmentTitle}>{segment.title}</h3>
                 </div>
+
+                <p className={styles.subtitle}>{segment.description}</p>
 
                 <ul className={styles.segmentList}>
                   {segment.highlights.map((point) => (
@@ -152,66 +166,72 @@ export default function TorfeniSubstratiHubPage() {
                 </ul>
 
                 <div className={styles.segmentFooter}>
-                  <Link href={segment.ctaHref} className={styles.segmentCta}>
+                  <Link
+                    href={segment.ctaHref}
+                    className="button button-outline"
+                  >
                     {segment.ctaLabel}
                   </Link>
                 </div>
-              </article>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* -------------------------- USE CASES -------------------------- */}
+      {/* --- USE CASES / APPLICATIONS --- */}
       <section className={styles.section}>
         <div className="container">
-          <header className={styles.sectionHeader}>
-            <p className={styles.kicker}>Специфични приложения</p>
-            <h2>Специализирани рецепти</h2>
-            <p className={styles.lead}>
+          <div className={styles.headerCentered}>
+            <span className={styles.overline}>Приложение</span>
+            <h2 className={styles.sectionTitle}>Специализирани рецепти</h2>
+            <p className={styles.subtitle}>
               Освен универсалните смеси, предлагаме субстрати, разработени за
-              капризните изисквания на специфични култури.
+              специфични култури и нужди.
             </p>
-          </header>
+          </div>
 
-          <div className={styles.useCases}>
+          <div className={styles.useCasesGrid}>
             {torfeniUseCases.map((useCase) => (
-              <article key={useCase.title} className={styles.useCaseCard}>
-                <h3>{useCase.title}</h3>
-                <p>{useCase.description}</p>
-              </article>
+              <div key={useCase.title} className={styles.useCaseCard}>
+                <h3 className={styles.useCaseTitle}>{useCase.title}</h3>
+                <p className={styles.useCaseText}>{useCase.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* -------------------------- FAQ -------------------------- */}
+      {/* --- FAQ --- */}
       <section className={styles.sectionAlt}>
         <div className="container">
-          <div className={styles.faqWrapper}>
-            <div className={styles.faqIntro}>
-              <p className={styles.kicker}>Логистика и Поръчки</p>
-              <h2>Често задавани въпроси</h2>
-              <p className={styles.lead}>
-                Научете повече за минималните количества, условията за доставка
-                на палети и възможностите за производство на рецепти по поръчка
+          <div className={styles.faqGrid}>
+            {/* FAQ Intro */}
+            <div>
+              <span className={styles.overline}>Въпроси и Отговори</span>
+              <h2 className={styles.sectionTitle}>Често задавани въпроси</h2>
+              <p className={styles.subtitle} style={{ marginBottom: "2rem" }}>
+                Научете повече за логистиката, минималните количества и
+                условията за доставка.
               </p>
               <Link href="/kontakti" className="button">
                 Свържете се с нас
               </Link>
             </div>
 
-            <div className={styles.faqAccordion}>
+            {/* FAQ List */}
+            <div className={styles.faqList}>
               {torfeniFaq.map((item, index) => (
-                <details
-                  key={item.question}
-                  className={styles.faqItem}
-                  open={index === 0}
-                >
-                  <summary className={styles.faqQuestion}>
-                    <span>{item.question}</span>
-                    <span className={styles.faqToggle} aria-hidden>
-                      ➜
+                <details key={index} className={styles.faqItem}>
+                  <summary className={styles.faqSummary}>
+                    {item.question}
+                    <span
+                      style={{
+                        fontSize: "1.2rem",
+                        color: "var(--color-primary)",
+                      }}
+                    >
+                      +
                     </span>
                   </summary>
                   <p className={styles.faqAnswer}>{item.answer}</p>

@@ -1,31 +1,53 @@
 import type { Metadata } from "next";
-import { getCategory, getProductsByCategory } from "@lib/products";
+import { notFound } from "next/navigation";
+import {
+  getCategory,
+  getProductsByCategory,
+  getAllCategorySlugs,
+} from "@lib/products";
 import ProductCard from "@components/shared/ProductCard";
 
-const slug = "perlit-i-vermikulit" as const;
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
 
-export const metadata: Metadata = (() => {
-  const category = getCategory(slug);
+// Generate pages for all categories EXCEPT 'torfeni-substrati' (which has its own folder)
+export async function generateStaticParams() {
+  const slugs = getAllCategorySlugs();
+  return slugs
+    .filter((slug) => slug !== "torfeni-substrati")
+    .map((slug) => ({ slug }));
+}
+
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const params = await props.params;
+  const category = getCategory(params.slug);
+
+  if (!category) return { title: "Категорията не е намерена" };
+
   return {
-    title: category
-      ? `Всички продукти – ${category.name} | Агро Експорт Импорт ООД`
-      : "Перлит и вермикулит | Агро Експорт Импорт ООД",
-    description:
-      category?.seoDescription ||
-      "Висококачествен гръцки агроперлит и вермикулит за професионално земеделие. Подобрете аерацията и водния баланс на почвата.",
+    title:
+      category.seoTitle ||
+      `Всички продукти – ${category.name} | Агро Експорт Импорт`,
+    description: category.seoDescription || category.shortDescription,
   };
-})();
+}
 
-export default function PerlitVermikulitListPage() {
+export default async function CategoryPage(props: PageProps) {
+  const params = await props.params;
+  const { slug } = params;
+
   const category = getCategory(slug);
   const products = getProductsByCategory(slug);
 
-  // --- SEO SCHEMA ---
+  if (!category) return notFound();
+
+  // JSON-LD Schema
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: category?.name || "Перлит и вермикулит",
-    description: "Минерални подобрители за почва и субстрати.",
+    name: category.name,
+    description: category.seoDescription,
     url: `https://agro-export.com/produkti/${slug}`,
     breadcrumb: {
       "@type": "BreadcrumbList",
@@ -45,7 +67,7 @@ export default function PerlitVermikulitListPage() {
         {
           "@type": "ListItem",
           position: 3,
-          name: "Перлит и вермикулит",
+          name: category.name,
           item: `https://agro-export.com/produkti/${slug}`,
         },
       ],
@@ -63,7 +85,6 @@ export default function PerlitVermikulitListPage() {
 
   return (
     <section className="section">
-      {/* Inject Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -71,22 +92,17 @@ export default function PerlitVermikulitListPage() {
 
       <div className="container">
         <div className="page-header">
-          <h1>Всички продукти – {category?.name || "Перлит и вермикулит"}</h1>
-
-          {/* Updated Marketing Text */}
+          <h1>{category.name}</h1>
           <p className="muted">
-            Постигнете перфектния баланс между въздух и вода в кореновата зона.
-            Предлагаме първокласен <strong>гръцки агроперлит</strong>, който
-            предотвратява сбиването на почвата и осигурява жизненоважния
-            кислород за корените, както и<strong> вермикулит</strong>, действащ
-            като естествен резервоар за влага и хранителни вещества. Тези
-            минерали са задължителен компонент за всяка професионална смес за
-            разсад, вкореняване на резници и хидропонни системи.
+            {category.longDescription || category.shortDescription}
           </p>
         </div>
 
         {products.length === 0 ? (
-          <p className="muted">
+          <p
+            className="muted"
+            style={{ textAlign: "center", marginTop: "2rem" }}
+          >
             В момента няма добавени продукти в тази категория.
           </p>
         ) : (

@@ -1,167 +1,118 @@
 .section {
-  padding: 4rem 0;
-  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-soft) 100%);
-  position: relative;
-  overflow: hidden;
+  padding: 6rem 0;
+  background-color: var(--color-bg-alt); /* Subtle contrast from hero */
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
 }
-
-.section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(
-    circle at 25% 25%,
-    rgba(15, 23, 42, 0.04),
-    transparent 45%
-  );
-  opacity: 0.4;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.section > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* HEADER */
 
 .header {
-  max-width: 52rem;
-  margin: 0 auto 2.4rem;
   text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3.5rem auto;
 }
 
 .title {
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
 }
 
 .subtitle {
-  font-size: 0.96rem;
-  color: var(--color-muted);
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
   line-height: 1.6;
 }
-
-/* GRID LAYOUT */
 
 .grid {
   display: grid;
   gap: 1.5rem;
 }
 
-/* 2 columns on tablet */
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* 3 columns on desktop */
-@media (min-width: 1120px) {
+@media (min-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* CARD BASE */
-
+/* --- CARD STYLE --- */
 .card {
-  position: relative;
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-
-.cardInner {
-  height: 100%;
-  border-radius: 1.1rem;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
-  background: linear-gradient(145deg, var(--color-surface), var(--color-surface-accent));
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-
-  padding: 1.5rem 1.6rem 1.4rem;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 0.75rem;
-
-  transition: transform 0.18s ease, box-shadow 0.18s ease,
-    border-color 0.18s ease, background-color 0.18s ease;
+  transition: all 0.2s ease;
+  position: relative;
+  text-decoration: none; /* Reset link style */
 }
 
-/* TITLE + SMALL ACCENT UNDER IT */
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Icon Container */
+.iconWrapper {
+  width: 50px;
+  height: 50px;
+  background: var(--color-bg-alt);
+  color: var(--color-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.card:hover .iconWrapper {
+  background: var(--color-primary);
+  /* FIX: Change 'white' to dynamic variable.
+     Light Mode: White text on Forest Green.
+     Dark Mode: Dark text on Neon Green. */
+  color: var(--color-on-primary);
+}
 
 .cardTitle {
-  font-size: 1.06rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 0.45rem;
-  position: relative;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
 }
 
-.cardTitle::after {
-  content: "";
-  display: block;
-  width: 3.2rem;
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  margin-top: 0.35rem;
-  opacity: 0.8;
-}
-
-/* BODY TEXT */
-
-.cardText {
+.cardDesc {
   font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--color-muted);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
 }
-
-/* FOOTER CTA */
 
 .cardFooter {
-  margin-top: auto;
-}
-
-.cardLink {
-  display: inline-flex;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
   align-items: center;
-  font-size: 0.92rem;
+  justify-content: space-between;
+  /* Use Primary instead of Primary Dark for better visibility in Dark Mode */
+  color: var(--color-primary);
   font-weight: 600;
-  color: var(--color-primary-dark);
+  font-size: 0.9rem;
 }
 
 .arrow {
-  margin-left: 0.3rem;
-  transition: transform 0.16s ease;
-}
-
-/* HOVER STATE */
-
-.card:hover .cardInner {
-  transform: translateY(-4px);
-  box-shadow: 0 22px 40px rgba(15, 23, 42, 0.15);
-  border-color: var(--color-primary-soft);
-  background: linear-gradient(145deg, var(--color-surface-accent-strong), var(--color-surface));
-}
-
-.card:hover .cardTitle::after {
-  background: linear-gradient(
-    to right,
-    var(--color-primary),
-    var(--color-primary-dark)
-  );
-  width: 55%; /* was 3.4rem */
-  opacity: 1;
+  transition: transform 0.2s;
 }
 
 .card:hover .arrow {
   transform: translateX(4px);
-}
-
-/* DARK MODE TWEAKS */
-
-:root[data-theme="dark"] .cardInner {
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
-  border-color: var(--color-border);
 }

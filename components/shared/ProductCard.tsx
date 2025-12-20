@@ -13,23 +13,26 @@ export default function ProductCard({ name, description, image, href }: Props) {
   return (
     <article className={styles.card}>
       {image && (
-        <Image
-          src={image}
-          alt={name}
-          className={styles.image}
-          width={640}
-          height={480}
-          sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 100vw"
-        />
+        <div className={styles.imageWrapper}>
+          <Image
+            src={image}
+            alt={name}
+            className={styles.image}
+            fill
+            sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 100vw"
+          />
+        </div>
       )}
 
-      <h3 className={styles.title}>{name}</h3>
-      <p className={`muted ${styles.description}`}>{description}</p>
+      <div className={styles.content}>
+        <h3 className={styles.title}>{name}</h3>
+        <p className={styles.description}>{description}</p>
 
-      <div className={styles.actions}>
-        <Link href={href} className="button">
-          Виж детайли
-        </Link>
+        <div className={styles.actions}>
+          <Link href={href} className={styles.button}>
+            Виж детайли
+          </Link>
+        </div>
       </div>
     </article>
   );

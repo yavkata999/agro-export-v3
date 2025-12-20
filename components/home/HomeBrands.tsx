@@ -19,14 +19,14 @@ export default function HomeBrands() {
             Доказани Европейски Брандове
           </h2>
           <p className={styles.subtitle}>
-            Ние не просто продаваме стока, ние сме официален представител на
-            производителите. Това гарантира на нашите бизнес партньори
-            постоянство в качеството, свежи наличности и най-добрите ценови
-            условия на пазара.
+            Ние не просто продаваме стока, ние сме официален представител. Това
+            гарантира на нашите бизнес партньори постоянно качество и
+            най-добрите условия.
           </p>
         </div>
 
         <div className={styles.card}>
+          {/* Row 1: Strategic */}
           <div className={styles.row}>
             <div className={styles.rowHeader}>
               <span className={styles.rowLabel}>Стратегически партньори</span>
@@ -49,6 +49,7 @@ export default function HomeBrands() {
 
           <div className={styles.divider} />
 
+          {/* Row 2: Specialized */}
           <div className={styles.row}>
             <div className={styles.rowHeader}>
               <span className={styles.rowLabel}>Специализирани серии</span>

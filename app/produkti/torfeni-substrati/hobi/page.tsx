@@ -13,42 +13,70 @@ export const metadata: Metadata = {
   description: torfeniSegmentHobby.description,
 };
 
+// Reusable Check Icon
+const CheckIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
+
 export default function TorfeniHobiPage() {
-  const segment = torfeniSegmentHobby;
+  const segment = torfeniSegmentHobby; // For Hobby Page
+
+  // Resolve product data
   const resolvedProducts = segment.products.flatMap((item) => {
     const product = getProductById(item.productId);
     return product ? [{ ...item, product }] : [];
   });
 
   return (
-    <section className={styles.page}>
-      <div className="container">
+    <section className={styles.section}>
+      <div className={styles.container}>
         {/* ---------------- HEADER ---------------- */}
-        <div className={styles.header}>
-          <p className="muted">Durpeta – хоби линия</p>
-          <h1>{segment.title}</h1>
+        <header className={styles.header}>
+          <span className={styles.overline}>Durpeta – Хоби линия</span>
+          <h1 className={styles.title}>{segment.title}</h1>
           <p className={styles.subtitle}>{segment.description}</p>
-        </div>
+        </header>
 
-        {/* ---------------- INTRO ---------------- */}
-        <div className={styles.introBlock}>
-          <h2>Сигурен избор за дома и градината</h2>
-          <p className={styles.subtitle}>
-            Хоби линията на Durpeta е създадена за любители, които искат
-            професионално качество без сложност. Смесите са готови за употреба,
-            лесни за работа и подходящи за различни видове стайни, балконски и
-            дворни растения.
-          </p>
+        {/* ---------------- INTRO CARD (Split Layout) ---------------- */}
+        <div className={styles.introCard}>
+          {/* Left: Text Content */}
+          <div className={styles.introContent}>
+            <h2 className={styles.cardTitle}>
+              Сигурен избор за дома и градината
+            </h2>
+            <p className={styles.cardText}>
+              Хоби линията на Durpeta е създадена за любители, които искат
+              професионално качество без сложност. Смесите са готови за
+              употреба, лесни за работа и подходящи за различни видове стайни,
+              балконски и дворни растения.
+            </p>
+            <Link href="/kontakti" className="button">
+              Намерете най-близкия партньор
+            </Link>
+          </div>
 
+          {/* Right: Feature List */}
           <ul className={styles.featureList}>
             {segment.highlights.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item} className={styles.featureItem}>
+                <div className={styles.checkIcon}>
+                  <CheckIcon />
+                </div>
+                <span>{item}</span>
+              </li>
             ))}
           </ul>
-
-          <Link href="/kontakti" className={`button ${styles.cta}`}>
-            Намерете най-близкия партньор
-          </Link>
         </div>
 
         {/* ---------------- PRODUCT GRID ---------------- */}
@@ -68,17 +96,19 @@ export default function TorfeniHobiPage() {
           ))}
         </div>
 
-        {/* ---------------- CROSS-LINK ---------------- */}
-        <div className={styles.introBlock}>
-          <h2>Търсите професионални решения?</h2>
-          <p className={styles.subtitle}>
+        {/* ---------------- CROSS-LINK (Bottom CTA) ---------------- */}
+        <div className={styles.crossLinkCard}>
+          <h2 className={styles.crossLinkTitle}>
+            Търсите професионални решения?
+          </h2>
+          <p className={styles.crossLinkText}>
             За оранжерии, разсадници и градински центрове е налична отделна
             професионална линия с контролирани параметри, персонализирани
             рецепти и доставки на палети или биг бегове.
           </p>
           <Link
             href={torfeniSegmentProfessional.ctaHref}
-            className={`button ghost ${styles.cta}`}
+            className="button button-outline"
           >
             Към професионалните субстрати
           </Link>

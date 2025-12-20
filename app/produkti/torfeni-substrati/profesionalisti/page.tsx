@@ -1,12 +1,28 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import {
-  torfeniSegmentProfessional,
   torfeniSegmentHobby,
+  torfeniSegmentProfessional,
 } from "@content/torfeni-substrati";
 import ProductCard from "@components/shared/ProductCard";
 import { getProductById } from "@lib/products";
 import styles from "@styles/pages/TorfeniSegmentPage.module.css";
+
+// Reusable Check Icon
+const CheckIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
 
 export const metadata: Metadata = {
   title: `${torfeniSegmentProfessional.title} | Агро Експорт Импорт ООД`,
@@ -21,55 +37,114 @@ export default function TorfeniProfesionalistiPage() {
   });
 
   return (
-    <section className={styles.page}>
-      <div className="container">
-        <div className={styles.header}>
-          <p className="muted">Durpeta – професионална линия</p>
-          <h1>{segment.title}</h1>
+    <section className={styles.section}>
+      <div className={styles.container}>
+        {/* ---------------- HEADER ---------------- */}
+        <header className={styles.header}>
+          <span className={styles.overline}>Durpeta – професионална линия</span>
+          <h1 className={styles.title}>{segment.title}</h1>
           <p className={styles.subtitle}>{segment.description}</p>
+        </header>
+
+        {/* ---------------- INTRO / TECHNICAL DETAILS CARD ---------------- */}
+        <div className={styles.introCard}>
+          <div className={styles.introContent}>
+            <h2 className={styles.cardTitle}>
+              Стандарти за модерното земеделие
+            </h2>
+
+            <div
+              className={styles.cardText}
+              style={{ display: "grid", gap: "1rem" }}
+            >
+              <p>
+                „Durpeta“ произвежда широка гама професионални субстрати – от
+                стандартни решения до специализирани смеси за конкретни
+                технологии. В портфолиото влизат субстрати за
+                разсадопроизводство, примула, виола и контейнерно отглеждане с
+                дългодействащи торове.
+              </p>
+
+              <div>
+                <strong
+                  style={{
+                    color: "var(--color-text)",
+                    display: "block",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  Налични фракции и опаковки:
+                </strong>
+                <p style={{ margin: 0 }}>
+                  Изберете фракция според нуждите: 0–5, 5–10, 10–20, 20–40 мм (и
+                  др.). Опаковките варират от 70 до 250 литра, както и
+                  индустриални
+                  <strong> Big Bale (3000–6000 л)</strong>. Всяка партида е с
+                  проследим номер и лабораторно качество.
+                </p>
+              </div>
+
+              <div
+                style={{
+                  padding: "1rem",
+                  backgroundColor: "var(--color-bg)",
+                  borderRadius: "var(--radius-md)",
+                  border: "1px solid var(--color-border)",
+                }}
+              >
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: "0.95rem",
+                    fontStyle: "italic",
+                  }}
+                >
+                  <strong>Индивидуална рецепта?</strong> Ако не откривате
+                  точната смес, можем да разработим персонализирана рецепта за
+                  вашето производство (минимално количество: един камион).
+                </p>
+              </div>
+            </div>
+
+            <Link href="/kontakti" className="button">
+              Запитване за оферта
+            </Link>
+          </div>
+
+          {/* Right: Highlights List */}
+          <div>
+            <span
+              className={styles.overline}
+              style={{ marginBottom: "1rem", display: "block" }}
+            >
+              Какво получавате
+            </span>
+            <ul className={styles.featureList}>
+              {segment.highlights.map((item) => (
+                <li key={item} className={styles.featureItem}>
+                  <div className={styles.checkIcon}>
+                    <CheckIcon />
+                  </div>
+                  <span>{item}</span>
+                </li>
+              ))}
+              <li className={styles.featureItem}>
+                <div className={styles.checkIcon}>
+                  <CheckIcon />
+                </div>
+                <span>Пълна проследимост на партидите</span>
+              </li>
+              <li className={styles.featureItem}>
+                <div className={styles.checkIcon}>
+                  <CheckIcon />
+                </div>
+                <span>Автоматизирано етикетиране</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className={styles.introBlock}>
-          <p>
-            „Durpeta“ произвежда широка гама професионални торфени субстрати –
-            от стандартни решения до специализирани смеси, разработени за
-            конкретни култури и технологии. В портфолиото влизат субстрати за
-            примула и виола, за разсадопроизводство, както и за контейнерно
-            отглеждане на декоративни растения с торове с продължително
-            действие.
-          </p>
-          <p>
-            Можете да изберете продукт според необходимата фракция: 0–5, 5–10,
-            10–20, 20–40, 0–10, 0–20, 0–40 и &gt; 50 мм. Произвеждат се в торби
-            5–80 литра, в опаковки 150–250 литра и в биг бегове 3000–6000 литра.
-            Всяка опаковка носи номер на оригиналната рецепта и информация за
-            състава и структурата, управлявани чрез автоматизирана система за
-            етикетиране.
-          </p>
-          <p className={styles.subtitle}>
-            Ако не откривате точната рецепта за вашето производство, можем да
-            разработим индивидуална смес. За персонализирани рецепти минималното
-            количество е един цял камион.
-          </p>
-        </div>
-
-        <div className={styles.introBlock}>
-          <h2>Какво получавате</h2>
-          <p className={styles.subtitle}>
-            Професионалната линия на Durpeta е разработена така, че да осигури
-            повторяеми резултати и предвидимо поведение на субстрата във всеки
-            цикъл на производство.
-          </p>
-          <ul className={styles.featureList}>
-            {segment.highlights.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <Link href="/kontakti" className={`button ${styles.cta}`}>
-            Запитване за професионална оферта
-          </Link>
-        </div>
-
+        {/* ---------------- PRODUCT GRID ---------------- */}
         <div className="grid grid-3">
           {resolvedProducts.map((product) => (
             <ProductCard
@@ -86,9 +161,12 @@ export default function TorfeniProfesionalistiPage() {
           ))}
         </div>
 
-        <div className={styles.introBlock}>
-          <h2>Хоби линия за вашите клиенти</h2>
-          <p className={styles.subtitle}>
+        {/* ---------------- CROSS-LINK (Bottom CTA) ---------------- */}
+        <div className={styles.crossLinkCard}>
+          <h2 className={styles.crossLinkTitle}>
+            Хоби линия за вашите клиенти
+          </h2>
+          <p className={styles.crossLinkText}>
             Ако обслужвате и любители градинари, можете да допълните своето
             портфолио с хоби субстратите Durpeta – готови опаковки с ясни
             инструкции, подходящи за препродажба в градински центрове и
@@ -96,7 +174,7 @@ export default function TorfeniProfesionalistiPage() {
           </p>
           <Link
             href={torfeniSegmentHobby.ctaHref}
-            className={`button ghost ${styles.cta}`}
+            className="button button-outline"
           >
             Към хоби субстратите
           </Link>

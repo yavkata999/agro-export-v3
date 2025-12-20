@@ -11,53 +11,76 @@ const NAV_LINKS = [
   { href: "/", label: "Начало" },
   { href: "/produkti", label: "Продукти" },
   { href: "/marki", label: "Марки" },
-  { href: "/video", label: "Видео" },
+  { href: "/video", label: "Видео" }, // Uncomment when page is ready
   { href: "/za-nas", label: "За нас" },
   { href: "/kontakti", label: "Контакти" },
 ];
 
-const resolveInitialTheme = (): Theme => {
-  if (typeof document !== "undefined") {
-    const current = document.documentElement.dataset.theme;
-    if (current === "light" || current === "dark") {
-      return current;
-    }
-  }
+/* --- ICONS --- */
+const SunIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2" />
+    <path d="M12 20v2" />
+    <path d="m4.93 4.93 1.41 1.41" />
+    <path d="m17.66 17.66 1.41 1.41" />
+    <path d="M2 12h2" />
+    <path d="M20 12h2" />
+    <path d="m6.34 17.66-1.41 1.41" />
+    <path d="m19.07 4.93-1.41 1.41" />
+  </svg>
+);
 
-  if (typeof window !== "undefined") {
-    const stored = window.localStorage.getItem("theme");
-    if (stored === "light" || stored === "dark") {
-      return stored;
-    }
-
-    const prefersDark = window.matchMedia?.(
-      "(prefers-color-scheme: dark)"
-    )?.matches;
-    return prefersDark ? "dark" : "light";
-  }
-
-  return "light";
-};
+const MoonIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+  </svg>
+);
 
 export default function Header() {
   const pathname = usePathname();
-  const [theme, setTheme] = useState<Theme>(resolveInitialTheme);
+  const [theme, setTheme] = useState<Theme>("light"); // Default to light to match server
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const root = document.documentElement;
-    if (root.dataset.theme !== theme) {
-      root.dataset.theme = theme;
-    }
+  // 1. Fix Hydration Mismatch: Track if we are on the client
+  const [mounted, setMounted] = useState(false);
 
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem("theme", theme);
+  useEffect(() => {
+    setMounted(true);
+    // Read the actual theme from the DOM (set by your layout script)
+    const currentTheme = document.documentElement.dataset.theme as Theme;
+    if (currentTheme) {
+      setTheme(currentTheme);
     }
-  }, [theme]);
+  }, []);
+
+  // Sync theme changes to DOM and LocalStorage
+  useEffect(() => {
+    if (!mounted) return;
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem("theme", theme);
+  }, [theme, mounted]);
 
   const toggleTheme = () => {
-    const next: Theme = theme === "light" ? "dark" : "light";
-    setTheme(next);
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
@@ -71,12 +94,16 @@ export default function Header() {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.bar}>
-          {/* Logo / brand */}
-          <Link href="/" className={styles.logo}>
+          {/* LOGO */}
+          <Link
+            href="/"
+            className={styles.logo}
+            onClick={() => setMenuOpen(false)}
+          >
             Агро Експорт Импорт
           </Link>
 
-          {/* Desktop nav */}
+          {/* DESKTOP NAV */}
           <nav className={styles.navDesktop}>
             {NAV_LINKS.map((link) => (
               <Link
@@ -91,20 +118,24 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Actions: theme + hamburger */}
+          {/* ACTIONS */}
           <div className={styles.actions}>
+            {/* Theme Toggle - Only render icon after mount to prevent hydration error */}
             <button
               type="button"
               className={styles.themeToggle}
               onClick={toggleTheme}
               aria-label="Превключване на тема"
             >
-              <span className={styles.themeIcon}>
-                {theme === "light" ? "🌞" : "🌙"}
-              </span>
-              <span className={styles.themeLabel}>
-                {theme === "light" ? "Светла" : "Тъмна"}
-              </span>
+              {mounted ? (
+                theme === "light" ? (
+                  <SunIcon />
+                ) : (
+                  <MoonIcon />
+                )
+              ) : (
+                <SunIcon /> // Default placeholder matching server render
+              )}
             </button>
 
             <button
@@ -116,33 +147,33 @@ export default function Header() {
               aria-label="Меню"
             >
               <span className={styles.hamburgerLine} />
+              <span className={styles.hamburgerLine} />
+              <span className={styles.hamburgerLine} />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile drawer */}
+      {/* MOBILE DRAWER */}
       <div
         className={`${styles.navMobileWrapper} ${
           menuOpen ? styles.navMobileWrapperOpen : ""
         }`}
       >
-        <div className="container">
-          <nav className={styles.navMobile}>
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`${styles.navMobileLink} ${
-                  isActive(link.href) ? styles.navMobileLinkActive : ""
-                }`}
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
+        <nav className={styles.navMobile}>
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`${styles.navMobileLink} ${
+                isActive(link.href) ? styles.navMobileLinkActive : ""
+              }`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
       </div>
     </header>
   );

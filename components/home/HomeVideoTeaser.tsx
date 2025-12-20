@@ -1,6 +1,57 @@
 import Link from "next/link";
 import styles from "@styles/components/home/HomeVideoTeaser.module.css";
 
+/* --- ICONS --- */
+const Icons = {
+  Play: () => (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      style={{ marginLeft: "2px" }}
+    >
+      <polygon points="5 3 19 12 5 21 5 3" />
+    </svg>
+  ),
+  Clock: () => (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+  ),
+  Hourglass: () => (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M5 22h14" />
+      <path d="M5 2h14" />
+      <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" />
+      <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
+    </svg>
+  ),
+};
+
 type VideoItem = {
   slug: string;
   title: string;
@@ -13,34 +64,33 @@ type VideoItem = {
 const VIDEOS: VideoItem[] = [
   {
     slug: "/video/izbor-na-trevna-smes",
-    title: "Как да изберем правилната тревна смес за обекта",
+    title: "Как да изберем подходяща тревна смес GlobalGrass",
     description:
-      "Ръководство за озеленители: кога да използваме GlobalGrass Sport и кога Park Music според натоварването и слънцегреенето.",
+      "Ръководство за избор според натоварването – двор, спортен терен или парк.",
     status: "soon",
     category: "Тревни смеси",
     duration: "10 мин",
   },
   {
     slug: "/video/torfeni-substrati-durpeta",
-    title: "Оптимизация на разсадопроизводството с Durpeta",
+    title: "Тънкости при работа с професионални субстрати",
     description:
-      "Технически съвети за водозадържане и хранене на разсада при използване на професионалните субстрати Durpeta.",
+      "Практически съвети за поливане, торене и пикиране за максимален добив.",
     status: "soon",
     category: "Торфени субстрати",
     duration: "12 мин",
   },
   {
     slug: "/video/organizacia-na-proizvodstvoto",
-    title: "Ефективност в оранжерията: Саксии и форми",
-    description:
-      "Как изборът на правилната работна саксия (Soparco) намалява фирата и подобрява логистиката на растенията.",
+    title: "Оптимизация на производството със саксии",
+    description: "Преглед на логистични решения за разсадници и оранжерии.",
     status: "soon",
-    category: "Саксии и контейнери",
+    category: "Саксии",
     duration: "15 мин",
   },
 ];
 
-export default function HomeVideos() {
+export default function HomeVideoTeaser() {
   return (
     <section className={styles.section} aria-labelledby="videos-heading">
       <div className="container">
@@ -49,49 +99,36 @@ export default function HomeVideos() {
             Академия за партньори
           </h2>
           <p className={styles.subtitle}>
-            Вярваме, че информираният избор води до по-добри резултати. Скоро
-            тук ще намерите видео обучения, насочени към спецификите на нашите
-            продукти и най-добрите практики в бранша.
+            Вярваме, че информираният избор води до по-добри резултати.
+            Подготвяме серия от видео обучения за нашите продукти.
           </p>
         </header>
 
         <div className={styles.grid}>
           {VIDEOS.map((video) => (
             <article key={video.slug} className={styles.card}>
-              <div className={styles.metaRow}>
-                <span className={styles.category}>{video.category}</span>
-                <span
-                  className={
-                    video.status === "soon"
-                      ? `${styles.status} ${styles.statusSoon}`
-                      : `${styles.status} ${styles.statusLive}`
-                  }
-                >
-                  {video.status === "soon" ? "Очаквайте" : "На живо"}
-                </span>
+              {/* Visual Thumbnail Placeholder */}
+              <div className={styles.thumbnail}>
+                <div className={styles.playButton}>
+                  <Icons.Play />
+                </div>
               </div>
 
-              <h3 className={styles.cardTitle}>{video.title}</h3>
+              <div className={styles.content}>
+                <div className={styles.meta}>
+                  <span className={styles.category}>{video.category}</span>
+                  <span className={styles.status}>
+                    <Icons.Hourglass /> Очаквайте
+                  </span>
+                </div>
 
-              <p className={styles.cardText}>{video.description}</p>
+                <h3 className={styles.cardTitle}>{video.title}</h3>
+                <p className={styles.cardDesc}>{video.description}</p>
 
-              <div className={styles.footerRow}>
-                {video.duration && (
-                  <span className={styles.duration}>{video.duration}</span>
-                )}
-
-                <span className={styles.spacer} />
-
-                {video.status === "soon" ? (
-                  <span className={styles.soonLabel}>Скоро онлайн</span>
-                ) : (
-                  <Link href={video.slug} className={styles.watchLink}>
-                    <span className={styles.playIcon} aria-hidden="true">
-                      ▶
-                    </span>
-                    Гледайте видеото
-                  </Link>
-                )}
+                <div className={styles.footer}>
+                  <Icons.Clock />
+                  <span>{video.duration}</span>
+                </div>
               </div>
             </article>
           ))}
@@ -99,7 +136,7 @@ export default function HomeVideos() {
 
         <div className={styles.ctaWrapper}>
           <Link href="/video" className={styles.ctaButton}>
-            Към всички видео материали
+            Вижте всички теми
           </Link>
         </div>
       </div>

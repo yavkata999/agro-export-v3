@@ -1,40 +1,43 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ProductApplications } from "@components/product/ProductApplications";
-import { ProductCTA } from "@components/product/ProductCTA";
-import { ProductDescription } from "@components/product/ProductDescription";
-import { ProductHero } from "@components/product/ProductHero";
-import { ProductSpecs } from "@components/product/ProductSpecs";
 import { getProductById, getProductsByCategory } from "@lib/products";
 
-interface PageProps {
+// Components
+import { ProductHero } from "@components/product/ProductHero";
+import { ProductSpecs } from "@components/product/ProductSpecs";
+import { ProductApplications } from "@components/product/ProductApplications";
+import { ProductDescription } from "@components/product/ProductDescription";
+import { ProductCTA } from "@components/product/ProductCTA";
+
+type PageProps = {
   params: Promise<{ id: string }>;
+};
+
+// Optimization: Only generate static params for peat moss products
+export async function generateStaticParams() {
+  // We strictly fetch products belonging to this folder's category
+  const products = getProductsByCategory("torfeni-substrati");
+  return products.map((product) => ({
+    id: product.id,
+  }));
 }
 
-export function generateStaticParams() {
-  const torfeniProducts = getProductsByCategory("torfeni-substrati");
-  return torfeniProducts.map((product) => ({ id: product.id }));
-}
-
-export async function generateMetadata(
-  pageProps: PageProps
-): Promise<Metadata> {
-  const params = await pageProps.params;
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const params = await props.params;
   const product = getProductById(params.id);
 
-  if (!product) {
-    return { title: "Продуктът не беше намерен | Агро Експорт Импорт ООД" };
-  }
+  if (!product) return { title: "Продуктът не е намерен" };
 
   return {
-    title: `${product.name} | Агро Експорт Импорт ООД`,
-    description: product.longDescription || product.shortDescription,
+    title: `${product.name} | Агро Експорт Импорт`,
+    description: product.shortDescription,
   };
 }
 
-export default async function ProductPage(pageProps: PageProps) {
-  const params = await pageProps.params;
+export default async function TorfeniProductPage(props: PageProps) {
+  const params = await props.params;
   const product = getProductById(params.id);
+
   if (!product) return notFound();
 
   return (

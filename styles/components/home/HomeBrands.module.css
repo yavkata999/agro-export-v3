@@ -1,67 +1,69 @@
 .section {
-  padding: 4.2rem 0;
-  background: linear-gradient(180deg, var(--color-bg-soft), var(--color-bg));
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  padding: 6rem 0;
+  background-color: var(--color-bg);
+  position: relative;
 }
 
+/* Header centered */
 .header {
-  max-width: 48rem;
-  margin: 0 auto 2rem;
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
   text-align: center;
 }
 
 .title {
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
 }
 
 .subtitle {
-  color: var(--color-muted);
+  color: var(--color-text-muted);
   line-height: 1.6;
-  font-size: 0.96rem;
+  font-size: 1.1rem;
 }
 
 /* MAIN TRUST CARD */
 .card {
-  max-width: 960px;
+  max-width: 1000px;
   margin: 0 auto;
-  background: linear-gradient(120deg, var(--color-surface-elevated), var(--color-surface-accent));
-  border-radius: 1.4rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
   border: 1px solid var(--color-border);
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.16);
-  padding: 2rem 2.2rem;
+  box-shadow: var(--shadow-xl);
+  padding: 3rem;
   position: relative;
   overflow: hidden;
 }
 
+/* Decorative gradient accent at top */
 .card::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top right, rgba(21, 128, 61, 0.12), transparent 60%);
-  pointer-events: none;
-}
-
-.card > * {
-  position: relative;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
 }
 
 @media (min-width: 768px) {
   .card {
-    padding: 2.1rem 2.4rem;
+    padding: 3.5rem;
   }
 }
 
 .row {
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .row {
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+    grid-template-columns: 1.2fr 1.8fr;
     align-items: center;
+    gap: 4rem;
   }
 }
 
@@ -69,23 +71,22 @@
   max-width: 24rem;
 }
 
+/* Eyebrow label style */
 .rowLabel {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.15rem 0.75rem;
-  border-radius: 999px;
-  background-color: rgba(21, 128, 61, 0.12);
-  color: var(--color-primary-dark);
+  display: inline-block;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 0.4rem;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid var(--color-primary-light);
 }
 
 .rowText {
-  font-size: 0.9rem;
-  color: var(--color-muted);
+  font-size: 1rem;
+  color: var(--color-text-muted);
   line-height: 1.6;
 }
 
@@ -93,52 +94,51 @@
 .chipRow {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: 0.75rem;
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.3rem 1rem;
-  border-radius: 999px;
+  padding: 0.5rem 1.2rem;
+  border-radius: 99px;
   border: 1px solid var(--color-border);
-  background-color: var(--color-surface);
-  font-size: 0.88rem;
+  background-color: var(--color-bg-alt);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text);
   white-space: nowrap;
-  transition: border-color 0.15s ease, background-color 0.15s ease,
-    transform 0.1s ease;
+  transition: all 0.2s ease;
 }
 
+/* Featured brands get a slightly more prominent look */
 .chipLarge {
-  font-size: 0.95rem;
-  padding: 0.4rem 1.2rem;
+  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
   font-weight: 600;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
 }
 
 .chip:hover {
-  border-color: var(--color-primary-soft);
-  background-color: var(--color-surface-accent);
-  transform: translateY(-1px);
+  border-color: var(--color-primary);
+
+  /* FIX: Use Primary (Neon Green in Dark Mode) instead of Dark Green */
+  color: var(--color-primary);
+
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+
+  /* FIX: Do not use hardcoded #ffffff. Use a theme variable.
+     In Light Mode: Surface = White (Same look).
+     In Dark Mode: Surface = Dark Slate (Prevents blinding contrast issue). */
+  background-color: var(--color-surface);
 }
 
 /* Divider inside the card */
 .divider {
   height: 1px;
-  background: linear-gradient(
-    to right,
-    rgba(148, 163, 184, 0.35),
-    rgba(148, 163, 184, 0.08)
-  );
-  margin: 1.4rem 0 1.2rem;
-}
-
-/* Dark theme adjustments */
-:root[data-theme="dark"] .card {
-  background: linear-gradient(120deg, rgba(2, 6, 23, 0.95), rgba(7, 34, 23, 0.9));
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.85);
-}
-
-:root[data-theme="dark"] .chip {
-  background-color: var(--color-surface);
+  background: var(--color-border);
+  margin: 2.5rem 0;
 }

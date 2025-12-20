@@ -1,274 +1,288 @@
+/* --- SECTION WRAPPER --- */
 .heroSection {
-  padding-bottom: var(--space-section-y);
-}
-
-.heroCard {
-  display: grid;
-  gap: 2rem;
-  padding: 2.5rem;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(
-      135deg,
-      rgba(8, 74, 45, 0.08),
-      rgba(8, 74, 45, 0)
-    ),
-    var(--color-surface-elevated);
-  box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(8, 74, 45, 0.08);
-  color: var(--color-text);
-}
-
-.heroContent {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.brandBadge {
-  align-self: flex-start;
-  padding: 0.35rem 0.9rem;
-  border-radius: 999px;
-  background-color: rgba(21, 128, 61, 0.12);
-  color: var(--color-primary-dark);
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
-}
-
-.heroTitle {
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin: 0;
-}
-
-.metaGrid {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.metaItem {
-  padding: 0.85rem 1rem;
-  border-radius: var(--radius-md);
-  background-color: var(--color-surface-muted);
-  border: 1px solid rgba(8, 74, 45, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-}
-
-.metaLabel {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-muted);
-}
-
-.metaValue {
-  font-weight: 600;
-  color: var(--color-text);
-}
-
-.heroActions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.imageWrapper {
+  padding: 4rem 0 5rem 0;
   position: relative;
+  background-color: var(--color-bg);
+  /* Subtle grid pattern matching other pages */
+  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Fade out effect at bottom */
+.heroSection::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, var(--color-bg));
+  pointer-events: none;
+}
+
+/* --- MAIN CARD --- */
+.heroCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 960px) {
+  .heroCard {
+    grid-template-columns: 1.1fr 1fr; /* Image wider */
+    align-items: start;
+    padding: 3rem;
+  }
+}
+
+/* --- LEFT: IMAGE GALLERY --- */
+.imageWrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .imageSurface {
   position: relative;
   border-radius: var(--radius-lg);
-  background: radial-gradient(
-      circle at 20% 20%,
-      rgba(8, 74, 45, 0.12),
-      transparent 55%
-    )
-    var(--color-surface-elevated);
-  padding: 1.5rem;
+  background-color: var(--color-bg-alt); /* Subtle slate bg behind image */
+  border: 1px solid var(--color-border);
+  aspect-ratio: 4 / 3; /* Standard product ratio */
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(8, 74, 45, 0.08);
   overflow: hidden;
-}
-
-.imageViewport {
-  width: 100%;
-  max-width: 480px;
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .heroImage {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-soft);
-  background: var(--color-surface);
+  mix-blend-mode: multiply; /* Helps integrate white-bg product images */
+  transition: transform 0.3s ease;
   cursor: zoom-in;
-  transition: transform 200ms ease;
+}
+
+/* Dark mode fix for multiply blend mode */
+:global(:root[data-theme="dark"]) .heroImage {
+  mix-blend-mode: normal;
 }
 
 .heroImage:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
+/* Gallery Navigation Arrows */
 .navButton {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 999px;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
   color: var(--color-text);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 150ms ease, transform 150ms ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .navButton:hover {
-  background-color: rgba(0, 0, 0, 0.12);
-  transform: translateY(-50%) scale(1.05);
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
 }
 
 .navButtonPrev {
   left: 1rem;
 }
-
 .navButtonNext {
   right: 1rem;
 }
 
+/* Thumbnails */
 .thumbnailStrip {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
-  gap: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
 }
 
 .thumbnailButton {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
   padding: 0.25rem;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(8, 74, 45, 0.1);
-  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
   cursor: pointer;
-  transition: border-color 150ms ease, transform 150ms ease;
+  transition: all 0.2s ease;
 }
 
 .thumbnailButton:hover {
-  transform: translateY(-2px);
+  border-color: var(--color-primary-soft);
 }
 
 .thumbnailButtonActive {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.15);
+  box-shadow: 0 0 0 2px var(--color-primary-light);
 }
 
 .thumbnailImage {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
   border-radius: var(--radius-sm);
-  background: var(--color-surface);
 }
 
+/* --- RIGHT: PRODUCT INFO --- */
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brandBadge {
+  align-self: flex-start;
+  padding: 0.35rem 1rem;
+  border-radius: 99px;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.shortDesc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* Meta Data Grid (Packaging, etc.) */
+.metaGrid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: 640px) {
+  .metaGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metaLabel {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-light);
+  font-weight: 700;
+}
+
+.metaValue {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+/* Actions */
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* --- LIGHTBOX OVERLAY --- */
 .lightboxOverlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.85); /* Darker backdrop */
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 50;
+  z-index: 100; /* Must be highest */
   padding: 1rem;
+  animation: fadeIn 0.2s ease-out;
 }
 
 .lightboxContent {
   position: relative;
-  max-width: min(1024px, 96vw);
+  max-width: min(1200px, 95vw);
   width: 100%;
-  background: var(--color-surface-elevated);
-  padding: 1.5rem;
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: var(--shadow-strong);
-  display: grid;
+  background: transparent; /* Clean look */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
-  justify-items: center;
-}
-
-.lightboxContentZoomed {
-  max-height: 90vh;
-  overflow: auto;
 }
 
 .lightboxClose {
   position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
+  top: -3rem;
+  right: 0;
   border: none;
-  background: rgba(0, 0, 0, 0.08);
-  color: var(--color-text);
-  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  transition: background-color 150ms ease;
-}
-
-.lightboxClose:hover {
-  background: rgba(0, 0, 0, 0.16);
-}
-
-.lightboxNav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  font-weight: 600;
-  color: var(--color-text);
+  transition: background 0.2s;
 }
 
-.lightboxNav button {
-  border: none;
-  background: rgba(0, 0, 0, 0.08);
-  color: var(--color-text);
-  padding: 0.5rem 0.9rem;
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  transition: background-color 150ms ease;
-}
-
-.lightboxNav button:hover {
-  background: rgba(0, 0, 0, 0.16);
+.lightboxClose:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .lightboxImageFrame {
   position: relative;
+  background: var(--color-bg);
   border-radius: var(--radius-lg);
-  background: var(--color-surface);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  max-height: 85vh;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: min(960px, 88vw);
-  max-height: calc(90vh - 6rem);
-  width: 100%;
-  padding: 0.5rem;
-  overflow: hidden;
   cursor: zoom-in;
-  transition: transform 200ms ease;
 }
 
 .lightboxImageFrameZoomed {
@@ -277,57 +291,53 @@
 }
 
 .lightboxImage {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  max-height: 100%;
   object-fit: contain;
-  transition: transform 200ms ease;
+  max-width: 100%;
+  max-height: 85vh;
 }
 
-.lightboxContentZoomed .lightboxImageFrameZoomed .lightboxImage {
-  transform: scale(1.4);
+/* Navigation inside lightbox */
+.lightboxNav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.lightboxNav button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+}
+
+.lightboxNav button:hover {
+  background: white;
+  color: black;
 }
 
 .zoomHint {
   position: absolute;
-  bottom: 0.75rem;
-  right: 0.75rem;
-  padding: 0.35rem 0.65rem;
-  border-radius: var(--radius-sm);
-  background: rgba(0, 0, 0, 0.55);
+  bottom: 1rem;
+  background: rgba(0, 0, 0, 0.6);
   color: white;
-  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 99px;
+  font-size: 0.8rem;
   pointer-events: none;
 }
 
-:global(:root[data-theme="dark"]) .heroCard,
-:global(:root[data-theme="dark"]) .metaItem,
-:global(:root[data-theme="dark"]) .imageSurface {
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-:global(:root[data-theme="dark"]) .brandBadge {
-  color: #dcfce7;
-}
-
-:global(:root[data-theme="dark"]) .lightboxContent {
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-@media (min-width: 768px) {
-  .metaGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-}
-
-@media (min-width: 1024px) {
-  .heroCard {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: center;
-  }
-
-  .imageSurface {
-    padding: 2rem;
+  to {
+    opacity: 1;
   }
 }

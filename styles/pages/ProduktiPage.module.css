@@ -1,166 +1,212 @@
-.page {
-  padding: 2.5rem 0 3rem;
+/* --- PAGE WRAPPER --- */
+.pageWrapper {
+  background-color: var(--color-bg);
+  min-height: 100vh;
 }
 
-/* ---------------------------------------------
-   HEADER
----------------------------------------------- */
-
-.header {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2.25rem;
+/* --- HERO SECTION --- */
+.heroSection {
+  position: relative;
+  padding: 6rem 0 4rem 0;
+  /* Grid pattern background */
+  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  border-bottom: 1px solid var(--color-border);
 }
 
-.headerMain {
-  max-width: 44rem;
+/* Fade out at bottom */
+.heroSection::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, var(--color-bg));
+  pointer-events: none;
 }
 
-.title {
-  font-size: 1.7rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+.heroContent {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 3rem;
 }
 
-.subtitle {
-  font-size: 0.96rem;
-  color: var(--color-muted);
-  line-height: 1.7;
+@media (min-width: 960px) {
+  .heroContent {
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+  }
 }
 
-.headerSide {
-  max-width: 22rem;
-  padding: 1rem 1.25rem;
-  border-radius: var(--radius-lg);
+.heroMain {
+  max-width: 600px;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.heroText {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* --- SIDE CALLOUT (Glass Card) --- */
+.heroSide {
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
-  background: linear-gradient(
-    135deg,
-    rgba(187, 247, 208, 0.32),
-    rgba(249, 250, 251, 0.9)
-  );
-  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Green accent line on top */
+.heroSide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
 }
 
 .sideTitle {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-bottom: 0.35rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .sideText {
-  font-size: 0.9rem;
-  color: var(--color-muted);
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
   line-height: 1.6;
 }
 
-@media (min-width: 880px) {
-  .header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+/* --- CATEGORY GRID --- */
+.gridSection {
+  padding: 4rem 0 6rem 0;
 }
-
-/* ---------------------------------------------
-   CATEGORY GRID
----------------------------------------------- */
 
 .grid {
   display: grid;
-  gap: 1.25rem;
+  gap: 2rem;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 768px) {
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* CARD – whole card is a Link */
-
-.card {
-  text-decoration: none;
-  color: inherit;
-  background-color: var(--color-surface);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.14s ease, box-shadow 0.14s ease,
-    border-color 0.14s ease, background-color 0.14s ease;
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.cardInner {
-  padding: 1.15rem 1.3rem 1rem;
+/* --- CATEGORY CARD --- */
+.card {
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
-  min-height: 170px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 }
 
-.cardHeading {
-  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-  padding-bottom: 0.45rem;
-  margin-bottom: 0.1rem;
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-xl);
 }
 
-.cardTitle {
-  font-size: 1.06rem;
-  font-weight: 600;
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
 }
 
-.cardText {
-  font-size: 0.9rem;
-  color: var(--color-muted);
-  line-height: 1.6;
-  flex: 1;
-}
-
-/* CTA inside card */
-
-.cardCta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  margin-top: 0.2rem;
-  font-size: 0.88rem;
-  font-weight: 500;
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  background: var(--color-bg-alt);
   color: var(--color-primary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  transition: background 0.2s, color 0.2s;
+}
+
+.card:hover .iconWrapper {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
 }
 
 .cardArrow {
-  display: inline-block;
-  transform: translateX(0);
-  transition: transform 0.14s ease;
-}
-
-/* Hover state for whole card */
-
-.card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(22, 163, 74, 0.72);
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
-  background-color: rgba(248, 250, 252, 0.98);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  transition: all 0.2s;
 }
 
 .card:hover .cardArrow {
-  transform: translateX(2px);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: rotate(-45deg); /* Angled arrow effect */
 }
 
-/* Dark theme adjustments */
-
-:root[data-theme="dark"] .headerSide {
-  background: linear-gradient(
-    135deg,
-    rgba(12, 34, 23, 0.9),
-    rgba(15, 23, 42, 0.92)
-  );
-  border-color: var(--color-border-strong);
-  box-shadow: 0 16px 40px rgba(2, 6, 23, 0.7);
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
 }
 
-:root[data-theme="dark"] .card:hover {
-  background-color: #0f172a;
-  border-color: var(--color-border-strong);
-  box-shadow: 0 22px 55px rgba(2, 6, 23, 0.9);
+.cardDesc {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.cardMeta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }

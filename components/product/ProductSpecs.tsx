@@ -6,53 +6,71 @@ interface ProductSpecsProps {
   features?: string[];
 }
 
+const CheckIcon = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
+
 export function ProductSpecs({
   brand,
   packaging,
   features,
 }: ProductSpecsProps) {
-  const highlightItems = [
-    // "Производител" implies origin and quality assurance better than just "Марка"
+  const highlights = [
     brand ? { label: "Производител", value: brand } : null,
     packaging ? { label: "Налични опаковки", value: packaging } : null,
+    { label: "Качество", value: "Premium Class" }, // Добавен placeholder за баланс (по желание)
   ].filter(Boolean) as { label: string; value: string }[];
 
   const hasFeatures = Boolean(features && features.length > 0);
-  const hasHighlights = highlightItems.length > 0;
+  const hasHighlights = highlights.length > 0;
 
-  if (!hasFeatures && !hasHighlights) {
-    return null;
-  }
+  if (!hasFeatures && !hasHighlights) return null;
 
   return (
-    <section id="product-details" className={`section ${styles.specSection}`}>
-      <div className="container">
-        <div className={styles.headerRow}>
-          <div>
-            <p className={styles.overline}>Технически данни</p>
-            <h2>Спецификации</h2>
-          </div>
+    <section id="technical-specs" className={styles.section}>
+      <div className={styles.container}>
+        {/* Header */}
+        <div className={styles.header}>
+          <h2 className={styles.title}>Технически Спецификации</h2>
+          <p className={styles.subtitle}>
+            Детайлна информация и ключови предимства на продукта
+          </p>
         </div>
 
+        {/* The "Data Strip" (Highlights) */}
         {hasHighlights && (
-          <div className={styles.highlightGrid}>
-            {highlightItems.map((item) => (
-              <div key={item.label} className={styles.highlightCard}>
-                <span className={styles.highlightLabel}>{item.label}</span>
-                <span className={styles.highlightValue}>{item.value}</span>
+          <div className={styles.dataStrip}>
+            {highlights.map((item) => (
+              <div key={item.label} className={styles.dataItem}>
+                <span className={styles.dataLabel}>{item.label}</span>
+                <span className={styles.dataValue}>{item.value}</span>
               </div>
             ))}
           </div>
         )}
 
+        {/* The "Clean List" (Features) */}
         {hasFeatures && (
-          <div className={styles.featuresCard}>
-            <h3>Ключови предимства</h3>
-            <ul>
-              {features!.map((feature) => (
-                <li key={feature}>{feature}</li>
-              ))}
-            </ul>
+          <div className={styles.featuresGrid}>
+            {features!.map((feature, idx) => (
+              <div key={idx} className={styles.featureItem}>
+                <div className={styles.iconBox}>
+                  <CheckIcon />
+                </div>
+                <span className={styles.featureText}>{feature}</span>
+              </div>
+            ))}
           </div>
         )}
       </div>

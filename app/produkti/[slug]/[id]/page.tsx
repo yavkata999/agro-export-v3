@@ -1,40 +1,44 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ProductApplications } from "@components/product/ProductApplications";
-import { ProductCTA } from "@components/product/ProductCTA";
-import { ProductDescription } from "@components/product/ProductDescription";
+import { getProductById, getAllProductPaths } from "@lib/products";
+
+// Components
 import { ProductHero } from "@components/product/ProductHero";
 import { ProductSpecs } from "@components/product/ProductSpecs";
-import { getProductById, getProductsByCategory } from "@lib/products";
+import { ProductApplications } from "@components/product/ProductApplications";
+import { ProductDescription } from "@components/product/ProductDescription";
+import { ProductCTA } from "@components/product/ProductCTA";
 
 type PageProps = {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string; id: string }>;
 };
 
-export function generateStaticParams() {
-  const products = getProductsByCategory("gradinski-produkti");
-  return products.map((product) => ({ id: product.id }));
+// 1. Generate all product pages at build time
+export async function generateStaticParams() {
+  const paths = getAllProductPaths();
+  return paths;
 }
 
-export async function generateMetadata(
-  pageProps: PageProps
-): Promise<Metadata> {
-  const params = await pageProps.params;
+// 2. Dynamic SEO
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const params = await props.params;
   const product = getProductById(params.id);
 
   if (!product) {
-    return { title: "Продуктът не беше намерен | Агро Експорт Импорт ООД" };
+    return { title: "Продуктът не е намерен" };
   }
 
   return {
-    title: `${product.name} | Агро Експорт Импорт ООД`,
-    description: product.longDescription || product.shortDescription,
+    title: `${product.name} | Агро Експорт Импорт`,
+    description: product.shortDescription,
   };
 }
 
-export default async function ProductPage(pageProps: PageProps) {
-  const params = await pageProps.params;
+// 3. The Page Template
+export default async function ProductPage(props: PageProps) {
+  const params = await props.params;
   const product = getProductById(params.id);
+
   if (!product) return notFound();
 
   return (
