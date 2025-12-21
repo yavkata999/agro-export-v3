@@ -67,8 +67,8 @@ export function ProductCTA({ productId }: ProductCTAProps) {
 
             <p className={styles.contactText}>
               или ни пишете на
-              <Link className={styles.link} href="mailto:office@agroexport.bg">
-                office@agroexport.bg
+              <Link className={styles.link} href="mailto:agro_export@abv.bg">
+                agro_export@abv.bg
               </Link>
             </p>
           </div>

@@ -4,13 +4,13 @@ export const soparcoProducts: Product[] = [
   {
     id: "saksia-soparco-03l",
     category: "saksii-i-kontejneri-soparco",
-    name: "Саксия Soparco - 0,3 л",
+    name: "Саксия Soparco - 9 x 6,8 см",
     brand: "Soparco",
     shortDescription:
       "Професионална 9 см саксия за ранен разсад и вкореняване.",
     longDescription:
       "Част от серията DUO, тази саксия комбинира здрав външен слой с тъмен вътрешен, който предпазва корените от светлина. Дъното е с много нива, което гарантира перфектен дренаж и аерация – критично важно за младите растения. Идеална за автоматизирани линии.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n• Диаметър: 9 см\n• Височина: 6,8 см\n• Вместимост: 0,3 л\n• Цвят: Черен (Теракота и таупе по заявка)",
-    packaging: "Кашон: 1450 бр. / Палет: 23400 бр.",
+    packaging: "Кашон: 1450 бр. / Бокс палет: 23400 бр.",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1754376533/4411_DUO_9_5_LOW_BLACK_bc77ab037a.png",
     ],
@@ -29,13 +29,13 @@ export const soparcoProducts: Product[] = [
   {
     id: "saksia-soparco-036l",
     category: "saksii-i-kontejneri-soparco",
-    name: "Саксия Soparco - 0,36 л",
+    name: "Саксия Soparco - 9 x 8,9 см",
     brand: "Soparco",
     shortDescription:
       "Висока версия (High) на 9 см саксия за растения с дълбок корен.",
     longDescription:
       "Когато стандартната дълбочина не е достатъчна, този модел (8.9 см височина) осигурява нужното пространство за вертикално развитие на корена. Запазва компактния диаметър от 9 см, което пести място на стелажа, но увеличава обема на субстрата.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n• Диаметър: 9 см\n• Височина: 8,9 см\n• Вместимост: 0,36 л\n• Цвят: Сив",
-    packaging: "Кашон: 1334 бр. / Палет: 22464 бр.",
+    packaging: "Кашон: 1334 бр. / Бокс палет: 22464 бр.",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1754376693/4414_DUO_9_5_HIGH_GREY_2e1815cb72.png",
     ],
@@ -54,13 +54,13 @@ export const soparcoProducts: Product[] = [
   {
     id: "saksia-soparco-048l",
     category: "saksii-i-kontejneri-soparco",
-    name: "Саксия Soparco - 0,48 л",
+    name: "Саксия Soparco - 10,5 x 8 см",
     brand: "Soparco",
     shortDescription:
       "Стандартна саксия 10.5 см за масово производство на цветя.",
     longDescription:
       "Най-популярният размер за производство на едногодишни цветя. Широкият диаметър от 10.5 см позволява на растението да се разпростре, а здравият борд улеснява пренасянето. Дъното е проектирано за максимално оттичане на водата при поливни маси.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n• Диаметър: 10,5 см\n• Височина: 8 см\n• Вместимост: 0,48 л\n• Цвят: Черен (Теракота, таупе и сив по заявка)",
-    packaging: "Кашон: 920 бр. / Палет: 15840 бр.",
+    packaging: "Кашон: 920 бр. / Бокс палет: 15840 бр.",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1754376913/4432_DUO_10_5_X_5_LOW_BLACK_56ad34832e.png",
     ],
@@ -79,12 +79,12 @@ export const soparcoProducts: Product[] = [
   {
     id: "saksia-soparco-052l",
     category: "saksii-i-kontejneri-soparco",
-    name: "Саксия Soparco - 0,52 л",
+    name: "Саксия Soparco - 10,5 x 9,1 см",
     brand: "Soparco",
     shortDescription: "Висок профил 10.5 см за по-силни и развити растения.",
     longDescription:
       "Този модел предлага по-голям обем (0.52 л) при същия диаметър, осигурявайки повече хранителна среда и влага за растението. Това я прави подходяща за култури с по-дълъг цикъл на отглеждане или за по-големи разсади.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n• Диаметър: 10,5 см\n• Височина: 9,1 см\n• Вместимост: 0,52 л\n• Цвят: Черен (Теракота, таупе и сив по заявка)",
-    packaging: "Кашон: 880 бр. / Палет: 15400 бр.",
+    packaging: "Кашон: 880 бр. / Бокс палет: 15400 бр.",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1754377073/4437_DUO_10_5_X_5_HIGH_BLACK_7fd4850d6b.png",
     ],
@@ -103,12 +103,12 @@ export const soparcoProducts: Product[] = [
   {
     id: "saksia-soparco-050l",
     category: "saksii-i-kontejneri-soparco",
-    name: "Саксия Soparco - 0,50 л",
+    name: "Саксия Soparco - 11 x 8,5 см",
     brand: "Soparco",
     shortDescription: "Класическа саксия 11 см за стабилност и растеж.",
     longDescription:
       "Широката основа и ниският профил на тази 11 см саксия я правят изключително стабилна. Тя е перфектна за ниски, туфести растения като примули, които изискват добра аерация на повърхността.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n• Диаметър: 11 см\n• Височина: 8,5 см\n• Вместимост: 0,50 л\n• Цвят: Черен (Теракота, таупе и сив по заявка)",
-    packaging: "Кашон: 840 бр. / Палет: 12800 бр.",
+    packaging: "Кашон: 840 бр. / Бокс палет: 12800 бр.",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1754377259/4440_DUO_11_8_LOW_BLACK_c521fa0e33.png",
     ],
@@ -127,12 +127,12 @@ export const soparcoProducts: Product[] = [
   {
     id: "saksia-soparco-075l",
     category: "saksii-i-kontejneri-soparco",
-    name: "Саксия Soparco - 0,75 л",
+    name: "Саксия Soparco - 12 x 9,1 см",
     brand: "Soparco",
     shortDescription: "Професионален контейнер 12 см, стандарт за търговия.",
     longDescription:
       "Размерът 12 см е индустриалният стандарт за продажба на готови растения в градинските центрове. Обемът от 0.75 л е достатъчен за отглеждане на добре развити мушката, хризантеми и декоративни пипери.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n• Диаметър: 12 см\n• Височина: 9,1 см\n• Вместимост: 0,75 л\n• Цвят: Черен (Теракота, таупе и сив по заявка)",
-    packaging: "Кашон: 570 бр. / Палет: 9960 бр.",
+    packaging: "Кашон: 570 бр. / Бокс палет: 9960 бр.",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1754377457/4445_DUO_12_5_LOW_BLACK_d1424aaaf9.png",
     ],
@@ -147,13 +147,13 @@ export const soparcoProducts: Product[] = [
   {
     id: "saksia-soparco-1l-13cm",
     category: "saksii-i-kontejneri-soparco",
-    name: "Саксия Soparco - 1 л (Ø13)",
+    name: "Саксия Soparco - 13 x 11,5 см",
     brand: "Soparco",
     shortDescription:
       "Еднолитров контейнер с висок профил (13 см) за трайни насаждения.",
     longDescription:
       "Здрава и обемна саксия, предназначена за растения, които ще престоят по-дълго в контейнера. Високият профил насърчава дълбокото вкореняване, което е важно за многогодишните цветя и малките храсти.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n• Диаметър: 13 см\n• Височина: 11,5 см\n• Вместимост: 1 л\n• Цвят: Черен (Теракота, таупе и сив по заявка)",
-    packaging: "Кашон: 432 бр. / Палет: 8120 бр.",
+    packaging: "Кашон: 432 бр. / Бокс палет: 8120 бр.",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1754378822/4453_DUO_13_5_HIGH_BLACK_c6eadfb811.png",
     ],
@@ -172,12 +172,12 @@ export const soparcoProducts: Product[] = [
   {
     id: "saksia-soparco-1l-14cm",
     category: "saksii-i-kontejneri-soparco",
-    name: "Саксия Soparco - 1 л (Ø14)",
+    name: "Саксия Soparco - 14 x 10,7 см",
     brand: "Soparco",
     shortDescription: "Ниска и широка 1 л саксия (14 см) за богат вид.",
     longDescription:
       "Алтернативата на 13-сантиметровата саксия. По-широкият диаметър (14 см) позволява на растението да изглежда по-обемно и богато при продажба, което е търсен ефект в търговията на дребно.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n• Диаметър: 14 см\n• Височина: 10,7 см\n• Вместимост: 1 л\n• Цвят: Черен (Теракота и сив по заявка)",
-    packaging: "Кашон: 374 бр. / Палет: 8576 бр.",
+    packaging: "Кашон: 374 бр. / Бокс палет: 8576 бр.",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1754378975/4455_DUO_14_5_LOW_BLACK_4628a7d5d8.png",
     ],
@@ -196,12 +196,12 @@ export const soparcoProducts: Product[] = [
   {
     id: "saksia-soparco-2l",
     category: "saksii-i-kontejneri-soparco",
-    name: "Саксия Soparco - 2 л",
+    name: "Саксия Soparco - 17 x 13 см",
     brand: "Soparco",
     shortDescription: "Голям контейнер 2 литра за храсти и иглолистни.",
     longDescription:
       "Здрав контейнер за производство на по-големи растения. Устойчив на атмосферни влияния, което позволява отглеждане на открито (контейнерно поле). Идеален за пресаждане от по-малки размери.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n• Диаметър: 17 см\n• Височина: 13 см\n• Вместимост: 2 л\n• Цвят: Черен (Теракота и сив по заявка)",
-    packaging: "Кашон: 182 бр. / Палет: 4182 бр.",
+    packaging: "Кашон: 182 бр. / Бокс палет: 4182 бр.",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1754379160/4475_DUO_17_5_LOW_BLACK_33716b5718.png",
     ],
@@ -220,12 +220,12 @@ export const soparcoProducts: Product[] = [
   {
     id: "saksia-soparco-3l",
     category: "saksii-i-kontejneri-soparco",
-    name: "Саксия Soparco - 3 л",
+    name: "Саксия Soparco - 19 x 15 см",
     brand: "Soparco",
     shortDescription: "Обемен контейнер 3 литра за ландшафтни растения.",
     longDescription:
       "Солидна 3-литрова саксия, предназначена за професионално отглеждане на декоративни храсти, рози и плодни дръвчета. Осигурява достатъчно място за развитие на корените за поне един сезон.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n• Диаметър: 19 см\n• Височина: 15 см\n• Вместимост: 3 л\n• Цвят: Черен (Теракота и сив по заявка)",
-    packaging: "Кашон: 144 бр. / Палет: 2790 бр.",
+    packaging: "Кашон: 144 бр. / Бокс палет: 2790 бр.",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1754379254/4485_DUO_19_5_LOW_BLACK_8ed87abf9d.png",
     ],
@@ -244,12 +244,12 @@ export const soparcoProducts: Product[] = [
   {
     id: "saksia-soparco-5l",
     category: "saksii-i-kontejneri-soparco",
-    name: "Саксия Soparco - 5 л",
+    name: "Саксия Soparco - 23 x 18 см",
     brand: "Soparco",
     shortDescription: "Голям 5-литров контейнер за едри насаждения и дръвчета.",
     longDescription:
       "Максимален обем за серията. Тази 5-литрова саксия е стандарт за отглеждане на големи храсти, рози и млади дръвчета. Изключително здрава, подходяща за зимуване на открито.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n• Диаметър: 23 см\n• Височина: 18 см\n• Вместимост: 5 л\n• Цвят: Черен (Теракота и сив по заявка)",
-    packaging: "Кашон: 60 бр. / Палет: 1800 бр.",
+    packaging: "Кашон: 60 бр. / Бокс палет: 1800 бр.",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1754379368/4493_DUO_23_5_LOW_BLACK_08c97a1fbf.png",
     ],
@@ -264,7 +264,7 @@ export const soparcoProducts: Product[] = [
   {
     id: "visyashta-saksia-soparco-5l",
     category: "saksii-i-kontejneri-soparco",
-    name: "Висяща саксия + дръжка Soparco - 5 л",
+    name: "Висяща саксия Soparco + дръжка - 25 x 15,4 см",
     brand: "Soparco",
     shortDescription: "Елегантна висяща саксия за ампелни растения (5 л).",
     longDescription:
@@ -288,7 +288,7 @@ export const soparcoProducts: Product[] = [
   {
     id: "visyashta-saksia-soparco-6l",
     category: "saksii-i-kontejneri-soparco",
-    name: "Висяща саксия + дръжка Soparco - 6 л",
+    name: "Висяща саксия Soparco + дръжка - 27 x 16,2 см",
     brand: "Soparco",
     shortDescription:
       "Екстра голяма висяща саксия 6 литра за масивни цветни топки.",

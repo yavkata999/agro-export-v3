@@ -154,12 +154,12 @@
   background: var(--color-bg-alt);
 }
 
-.heroNote {
+/* .heroNote {
   font-size: 0.9rem;
   color: var(--color-text-light);
   margin-bottom: 3rem;
   font-style: italic;
-}
+} */
 
 /* --- STATS GRID --- */
 .heroStats {

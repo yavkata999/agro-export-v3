@@ -7,8 +7,8 @@ const HERO_STATS = [
     label: "години традиция",
   },
   {
-    value: "200+",
-    label: "активни артикула",
+    value: "Стотици",
+    label: "активни артикули",
   },
   {
     value: "100%",
@@ -46,9 +46,9 @@ export default function HomeHero() {
             </Link>
           </div>
 
-          <p className={styles.heroNote}>
+          {/* <p className={styles.heroNote}>
             *Работим само с юридически лица и клиенти на едро.
-          </p>
+          </p> */}
 
           <ul className={styles.heroStats}>
             {HERO_STATS.map((stat) => (

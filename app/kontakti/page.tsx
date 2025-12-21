@@ -119,8 +119,8 @@ type RegionalContact = {
 
 const regionalContacts: RegionalContact[] = [
   {
-    region: "София, Перник",
-    details: "Продажби и обслужване",
+    region: "София и съседни области",
+    details: "Продажби и обслужване и доставки до клиенти",
     phone: "0889 427 439",
   },
   {
@@ -130,13 +130,6 @@ const regionalContacts: RegionalContact[] = [
   },
   { region: "Добрич", details: "Агроцентър", phone: "0895 504 930" },
   { region: "Айтос", details: "Регионален дистрибутор", phone: "0897 963 118" },
-  { region: "Пловдив", details: "Градински центрове", phone: "0876 659 525" },
-  {
-    region: "Пловдив (с. Милево)",
-    details: "Регионален склад",
-    phone: "0886 133 684",
-  },
-  { region: "Сандански", details: "с. Ново Делчево", phone: "0899 676 567" },
   { region: "Гоце Делчев", details: "Дистрибутор", phone: "0884 553 650" },
   { region: "Харманли", details: "Дистрибутор", phone: "0897 963 109" },
 ];
