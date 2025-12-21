@@ -49,7 +49,11 @@
 /* --- INTRO CARD (Elevated) --- */
 .introCard {
   background-color: var(--color-surface-elevated);
-  border: 1px solid rgba(8, 74, 45, 0.08);
+
+  /* FIX: Use variable instead of hardcoded RGBA. 
+     Handles Dark Mode automatically. */
+  border: 1px solid var(--color-border);
+
   border-radius: var(--radius-xl);
   padding: 3rem;
   box-shadow: var(--shadow-soft);
@@ -110,12 +114,16 @@
 
 /* --- CROSS-LINK CARD (Bottom CTA) --- */
 .crossLinkCard {
-  background: radial-gradient(
-      circle at top right,
-      rgba(8, 74, 45, 0.12),
-      transparent 60%
-    )
-    var(--color-surface-muted);
+  /* FIX: Use 'bg-alt' because 'surface-muted' didn't exist in globals.css */
+  background-color: var(--color-bg-alt);
+
+  /* Optional: Subtle gradient using border color for texture */
+  background-image: radial-gradient(
+    circle at top right,
+    var(--color-border) 0%,
+    transparent 60%
+  );
+
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: 3rem;
@@ -139,8 +147,6 @@
   margin-bottom: 1rem;
 }
 
-/* Dark mode overrides */
-:global(:root[data-theme="dark"]) .introCard,
-:global(:root[data-theme="dark"]) .crossLinkCard {
-  border-color: rgba(255, 255, 255, 0.1);
-}
+/* FIX: Removed the manual :global(:root[data-theme="dark"]) overrides 
+   because we are now using variables (var(--color-border)) that 
+   automatically adjust for dark mode. Cleaner code! */

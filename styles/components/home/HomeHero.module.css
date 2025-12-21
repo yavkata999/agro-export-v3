@@ -52,17 +52,19 @@
 
 /* --- TYPOGRAPHY --- */
 .heroTitle {
-  /* CHANGED: Lowered minimum from 2.8rem to 2rem */
-  font-size: clamp(2rem, 7vw, 4.5rem);
+  /* CHANGED: Lower minimum to 1.75rem (approx 28px) so long words fit */
+  font-size: clamp(1.75rem, 6vw, 4.5rem);
+
   font-weight: 800;
-  line-height: 1.15; /* Increased slightly for better readability */
+  line-height: 1.15;
   margin-bottom: 1.5rem;
   color: var(--color-text);
   letter-spacing: -0.02em;
 
-  /* ADDED: Ensures long words don't overflow horizontally */
-  overflow-wrap: break-word;
-  hyphens: auto;
+  /* CHANGED: Prevent word breaking */
+  overflow-wrap: normal;
+  word-break: keep-all; /* Tries to keep words together */
+  hyphens: none; /* Disables the automatic hyphenation */
 }
 
 .heroTitleAccent {

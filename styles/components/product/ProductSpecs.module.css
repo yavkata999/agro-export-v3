@@ -73,7 +73,8 @@
 /* Horizontal divider on mobile */
 @media (max-width: 639px) {
   .dataItem:not(:last-child) {
-    border-bottom: 1px solid var(--color-border-hover);
+    /* Changed from border-hover to standard border for consistency */
+    border-bottom: 1px solid var(--color-border);
   }
 }
 
@@ -116,6 +117,7 @@
   width: 24px;
   height: 24px;
   flex-shrink: 0;
+  /* Primary color is Neon Green in Dark Mode, which looks great on dark bg */
   color: var(--color-primary);
   margin-top: 2px;
 }
@@ -127,7 +129,5 @@
   font-weight: 500;
 }
 
-/* Dark mode adjustments */
-:global(:root[data-theme="dark"]) .dataStrip {
-  border-color: var(--color-border);
-}
+/* REMOVED: The manual dark mode override for borders. 
+   Since you use var(--color-border) above, it updates automatically. */

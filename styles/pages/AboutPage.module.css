@@ -39,8 +39,11 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 1rem;
+
+  /* FIX: Use dynamic contrast variables */
   background: var(--color-primary-light);
   color: var(--color-primary-dark);
+
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -110,7 +113,8 @@
 
 .highlightCard:hover {
   transform: translateY(-8px);
-  border-color: var(--color-primary);
+  /* FIX: Use primary-light for border in dark mode to avoid neon glare */
+  border-color: var(--color-primary-light);
   box-shadow: var(--shadow-xl), var(--shadow-glow);
 }
 
@@ -172,6 +176,7 @@
   display: block;
   font-size: 3.5rem;
   font-weight: 800;
+  /* FIX: Use Primary (Neon in Dark Mode) */
   color: var(--color-primary);
   line-height: 1;
   margin-bottom: 0.5rem;
@@ -352,7 +357,7 @@
   color: var(--color-text-muted);
 }
 
-/* --- CTA SECTION --- */
+/* --- FINAL CTA SECTION (Matched to BrandsPage Style) --- */
 .ctaSection {
   padding: 8rem 0;
   background: var(--color-bg);
@@ -390,32 +395,88 @@
   }
 }
 
-.ctaText h2 {
-  color: white;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.ctaContent {
+  max-width: 600px;
 }
 
-.ctaText p {
-  color: rgba(255, 255, 255, 0.9);
+.ctaEyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  color: var(--color-on-primary);
+  opacity: 0.8;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.ctaContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-on-primary);
+}
+
+.ctaContent p {
   font-size: 1.25rem;
+  color: var(--color-on-primary);
+  opacity: 0.9;
   max-width: 500px;
 }
 
-.ctaButton {
-  display: inline-block;
-  background: white;
-  color: var(--color-primary-dark);
-  font-weight: 700;
-  padding: 1rem 2.5rem;
+.ctaActions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 200px;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .ctaActions {
+    margin-top: 0;
+    flex-direction: row;
+  }
+}
+
+.ctaButtonPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
   border-radius: 99px;
+  background: #fff;
+  /* Deep Green Text for contrast */
+  color: #14532d;
+  font-weight: 700;
   transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+
+  /* ADDED: Forces text to stay on one line */
   white-space: nowrap;
 }
 
-.ctaButton:hover {
+.ctaButtonPrimary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  background: #f0fdf4;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.ctaButtonSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--color-on-primary);
+  font-weight: 600;
+  transition: background 0.2s;
+  text-decoration: none;
+
+  /* ADDED: Forces text to stay on one line */
+  white-space: nowrap;
+}
+
+.ctaButtonSecondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-on-primary);
 }

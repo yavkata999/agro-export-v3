@@ -86,12 +86,12 @@
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--color-border-hover);
+  border-color: var(--color-primary-light);
 }
 
 .cardThumbnail {
   aspect-ratio: 16 / 9;
-  background-color: var(--color-surface-muted);
+  background-color: var(--color-bg-alt);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,6 +108,13 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-border);
+  transition: all 0.2s;
+}
+
+.card:hover .playIconWrapper {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-color: var(--color-primary);
 }
 
 .cardBody {
@@ -144,55 +151,116 @@
   border-top: 1px solid var(--color-border);
 }
 
-/* --- CTA SECTION --- */
+/* --- FINAL CTA SECTION (Matched to BrandsPage Style) --- */
 .ctaSection {
-  padding-bottom: 4rem;
+  padding: 6rem 0 8rem 0;
+  background: var(--color-bg);
 }
 
 .ctaCard {
-  background-color: var(--color-primary);
-  color: white;
   border-radius: var(--radius-xl);
-  padding: 3rem 1.5rem;
+  background: var(--color-primary-dark);
+  color: #fff;
+  padding: 4rem;
   text-align: center;
   background-image: radial-gradient(
-    circle at top right,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
+      circle at 0% 0%,
+      rgba(255, 255, 255, 0.1),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(34, 197, 94, 0.2),
+      transparent 40%
+    );
+  box-shadow: var(--shadow-xl);
+}
+
+@media (min-width: 768px) {
+  .ctaCard {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .ctaContent {
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 600px;
 }
 
-.ctaContent h3 {
-  font-size: 1.75rem;
-  font-weight: 800;
+.ctaEyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  color: var(--color-on-primary);
+  opacity: 0.8;
+  font-weight: 700;
   margin-bottom: 1rem;
+  display: block;
 }
 
-.ctaContent p {
+.ctaCard h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-on-primary);
+}
+
+.ctaCard p {
+  font-size: 1.2rem;
+  color: var(--color-on-primary);
   opacity: 0.9;
   line-height: 1.6;
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
 }
 
-.ctaButton {
-  display: inline-block;
-  background-color: white;
-  color: var(--color-primary-dark);
+.ctaActions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 200px;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .ctaActions {
+    margin-top: 0;
+    flex-direction: row;
+  }
+}
+
+.ctaButtonPrimary {
+  padding: 1rem 2rem;
+  border-radius: 99px;
+  background: #fff;
+  /* Hardcode Deep Green for contrast on white button */
+  color: #14532d;
   font-weight: 700;
-  padding: 0.75rem 2rem;
-  border-radius: var(--radius-md);
+  text-align: center;
+  transition: transform 0.2s;
+  display: inline-block;
   text-decoration: none;
-  transition: transform 0.1s ease;
 }
 
-.ctaButton:hover {
-  transform: scale(1.05);
+.ctaButtonPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.ctaButtonSecondary {
+  padding: 1rem 2rem;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--color-on-primary);
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.2s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.ctaButtonSecondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-on-primary);
 }
 
 @keyframes pulse {

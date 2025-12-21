@@ -39,21 +39,6 @@ const Icons = {
       <polyline points="12 6 12 12 16 14" />
     </svg>
   ),
-  Video: () => (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m22 8-6 4 6 4V8Z" />
-      <rect width="14" height="12" x="2" y="6" rx="2" ry="2" />
-    </svg>
-  ),
 };
 
 const UPCOMING_TOPICS = [
@@ -119,17 +104,27 @@ export default function VideoPage() {
           </div>
         </section>
 
-        {/* CTA */}
+        {/* --- FINAL CTA (Updated Structure) --- */}
         <section className={styles.ctaSection}>
           <div className={styles.ctaCard}>
             <div className={styles.ctaContent}>
-              <h3>Имате конкретен въпрос?</h3>
+              <span className={styles.ctaEyebrow}>ИМАТЕ ВЪПРОСИ?</span>
+              <h3>Започнете с професионалните решения</h3>
               <p>
-                Не е нужно да чакате видеата. На разположение сме за консултация
-                още сега.
+                Не е нужно да чакате видеата. На разположение сме за лична
+                консултация още сега.
               </p>
-              <Link href="/kontakti" className={styles.ctaButton}>
+            </div>
+
+            <div className={styles.ctaActions}>
+              {/* Primary Button */}
+              <Link href="/kontakti" className={styles.ctaButtonPrimary}>
                 Свържете се с нас
+              </Link>
+
+              {/* Secondary Button */}
+              <Link href="/produkti" className={styles.ctaButtonSecondary}>
+                Вижте продуктите
               </Link>
             </div>
           </div>

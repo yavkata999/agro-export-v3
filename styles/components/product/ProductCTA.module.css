@@ -48,7 +48,11 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.8);
+
+  /* FIX: Use dynamic contrast color */
+  color: var(--color-on-primary);
+  opacity: 0.8;
+
   font-weight: 700;
   margin-bottom: 0.75rem;
   display: block;
@@ -59,13 +63,19 @@
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.25rem;
-  color: #ffffff;
+
+  /* FIX: Use dynamic contrast color */
+  color: var(--color-on-primary);
 }
 
 .text {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+
+  /* FIX: Use dynamic contrast color */
+  color: var(--color-on-primary);
+  opacity: 0.9;
+
   margin-bottom: 2.5rem;
   max-width: 540px;
 }
@@ -82,7 +92,10 @@
   align-items: center;
   gap: 0.75rem;
   font-weight: 500;
-  color: #ffffff;
+
+  /* FIX: Use dynamic contrast color */
+  color: var(--color-on-primary);
+
   font-size: 1rem;
 }
 
@@ -128,7 +141,10 @@
   padding: 1rem 2.5rem;
   border-radius: 99px;
   background-color: #ffffff;
-  color: var(--color-primary-dark);
+
+  /* FIX: Hardcode to Deep Green to ensure readability on White Button */
+  color: #14532d;
+
   font-weight: 700;
   font-size: 1rem;
   transition: all 0.2s ease;
@@ -145,11 +161,15 @@
 
 .contactText {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.7);
+  /* FIX: Use dynamic contrast color */
+  color: var(--color-on-primary);
+  opacity: 0.7;
 }
 
 .link {
-  color: #ffffff;
+  /* FIX: Use dynamic contrast color */
+  color: var(--color-on-primary);
+
   text-decoration: underline;
   text-underline-offset: 4px;
   font-weight: 600;
@@ -158,5 +178,6 @@
 }
 
 .link:hover {
-  color: #dcfce7;
+  /* Slightly brighter or standard white on hover */
+  color: #ffffff;
 }

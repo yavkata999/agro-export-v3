@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Над 34 години опит във вноса и дистрибуцията на градински продукти...",
 };
 
-/* --- ICONS (Inline for zero dependencies) --- */
+/* --- ICONS --- */
 const Icons = {
   Award: () => (
     <svg
@@ -58,51 +58,6 @@ const Icons = {
       <path d="M15 15a6 6 0 0 0-8-8" />
       <path d="M5 16a6 6 0 0 0 8-8" />
       <path d="M5 20a4 4 0 0 1 4-4" />
-    </svg>
-  ),
-  Leaf: () => (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
-      <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
-    </svg>
-  ),
-  Check: () => (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-      <polyline points="22 4 12 14.01 9 11.01" />
-    </svg>
-  ),
-  Chart: () => (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-      <polyline points="17 6 23 6 23 12" />
     </svg>
   ),
 };
@@ -270,20 +225,27 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 6. CTA */}
+      {/* 6. CTA (Matched to Marki/Video Page) */}
       <section className={styles.ctaSection}>
         <div className="container">
           <div className={styles.ctaCard}>
-            <div className={styles.ctaText}>
+            <div className={styles.ctaContent}>
+              <span className={styles.ctaEyebrow}>ГОТОВИ ЗА РАСТЕЖ?</span>
               <h2>Търсите надежден доставчик?</h2>
               <p>
                 Свържете се с нас, за да обсъдим как можем да подкрепим вашия
                 бизнес с качествени продукти и гъвкави условия.
               </p>
             </div>
-            <Link href="/kontakti" className={styles.ctaButton}>
-              Свържете се с нас
-            </Link>
+
+            <div className={styles.ctaActions}>
+              <Link href="/kontakti" className={styles.ctaButtonPrimary}>
+                Свържете се с нас
+              </Link>
+              <Link href="/marki" className={styles.ctaButtonSecondary}>
+                Вижте нашите марки
+              </Link>
+            </div>
           </div>
         </div>
       </section>

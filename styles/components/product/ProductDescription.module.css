@@ -67,6 +67,31 @@
 
 /* Highlight bold text in the brand color for emphasis */
 .body strong {
-  color: var(--color-primary-dark);
+  /* FIX: Use 'primary' instead of 'primary-dark'.
+     Deep green text on a black background (Dark Mode) is invisible. 
+     'primary' usually switches to a brighter green in dark mode. */
+  color: var(--color-primary);
   font-weight: 700;
+}
+
+/* ADDED: List styles (Essential for product features) */
+.body ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  color: var(--color-text-muted);
+}
+
+.body li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Optional: Add spacing between paragraphs if using raw HTML content */
+.body p {
+  margin-bottom: 1.5rem;
+}
+
+.body p:last-child {
+  margin-bottom: 0;
 }

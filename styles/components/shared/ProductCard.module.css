@@ -13,7 +13,8 @@
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--color-primary-soft);
+  /* FIX: Use 'primary-light' instead of 'primary-soft' */
+  border-color: var(--color-primary-light);
 }
 
 /* Image Container */
@@ -82,7 +83,10 @@
   padding: 0.65rem 1rem;
   border-radius: 999px;
   background-color: var(--color-surface);
-  color: var(--color-primary-dark);
+
+  /* Use simple primary color for default state */
+  color: var(--color-primary);
+
   font-weight: 600;
   font-size: 0.9rem;
   border: 1px solid var(--color-border);
@@ -93,6 +97,11 @@
 
 .card:hover .button {
   background-color: var(--color-primary);
-  color: white;
+
+  /* FIX: Use dynamic contrast color.
+     Light Mode: White text.
+     Dark Mode: Dark text (on neon bg). */
+  color: var(--color-on-primary);
+
   border-color: var(--color-primary);
 }

@@ -41,11 +41,12 @@
   line-height: 1;
   margin-bottom: 0;
 
-  /* Градиентен текст */
+  /* FIX: Use solid colors for gradient. 
+     'primary-light' is transparent in dark mode, causing text to vanish. */
   background: linear-gradient(
     135deg,
-    var(--color-primary-dark),
-    var(--color-primary-light)
+    var(--color-primary),
+    var(--color-primary-dark)
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -86,7 +87,10 @@
   padding: 0.85rem 2rem;
   border-radius: 99px;
   background: var(--color-primary);
-  color: #fff;
+
+  /* FIX: Use dynamic variable so text is readable in Dark Mode */
+  color: var(--color-on-primary);
+
   font-weight: 700;
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
@@ -94,6 +98,8 @@
 .buttonPrimary:hover {
   transform: translateY(-2px);
   background: var(--color-primary-dark);
+  /* Ensure hover text is readable */
+  color: var(--color-on-primary);
   box-shadow: 0 10px 20px rgba(22, 163, 74, 0.25);
 }
 
@@ -111,7 +117,8 @@
 
 .buttonSecondary:hover {
   background: var(--color-bg-alt);
-  border-color: var(--color-primary-soft);
+  /* FIX: 'primary-soft' doesn't exist in globals. Use primary. */
+  border-color: var(--color-primary);
 }
 
 /* --- ANIMATIONS --- */

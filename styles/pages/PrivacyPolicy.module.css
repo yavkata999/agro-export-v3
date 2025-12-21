@@ -21,6 +21,10 @@
   color: var(--color-text);
   margin-bottom: 1rem;
   line-height: 1.1;
+
+  /* ADDED: Prevents long legal words from causing horizontal scroll on mobile */
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .lastUpdated {
@@ -42,6 +46,9 @@
   margin-bottom: 1rem;
   border-left: 4px solid var(--color-primary);
   padding-left: 1rem;
+
+  /* ADDED: Safety for mobile */
+  overflow-wrap: break-word;
 }
 
 .block p {
@@ -72,14 +79,18 @@
 
 .contactBox h3 {
   margin-top: 0;
+  color: var(--color-text);
 }
 
 .contactLink {
   color: var(--color-primary);
   font-weight: 600;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .contactLink:hover {
+  /* ADDED: Slight color shift + underline for better accessibility feedback */
+  color: var(--color-primary-dark);
   text-decoration: underline;
 }

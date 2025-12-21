@@ -9,18 +9,17 @@
   /* Glass effect base */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background-color: rgba(255, 255, 255, 0.85); /* Light mode default */
+
+  /* Light mode default with transparency */
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 /* Dark mode override */
-html[data-theme="dark"] .header {
-  background-color: rgba(
-    2,
-    6,
-    23,
-    0.85
-  ); /* Matches --color-bg #020617 with opacity */
-  border-bottom: 1px solid rgba(30, 41, 59, 0.7);
+/* We use global selector to catch the data-theme attribute on HTML */
+:global(html[data-theme="dark"]) .header {
+  /* Matches --color-bg #020617 with opacity */
+  background-color: rgba(2, 6, 23, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .bar {
@@ -68,8 +67,10 @@ html[data-theme="dark"] .header {
 }
 
 .navLinkActive {
+  /* FIX: Don't change font-weight to 600 here. 
+     It causes "layout shift" (jitter) when clicking. 
+     The color + dot is enough indication. */
   color: var(--color-text);
-  font-weight: 600;
 }
 
 /* Green dot for active state */
@@ -77,7 +78,7 @@ html[data-theme="dark"] .header {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: 0;
+  bottom: -2px; /* Moved slightly lower */
   width: 4px;
   height: 4px;
   background-color: var(--color-primary);
@@ -159,7 +160,12 @@ html[data-theme="dark"] .header {
   top: 100%;
   left: 0;
   right: 0;
-  background-color: var(--color-surface);
+
+  /* Glass effect for mobile menu too */
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
   border-bottom: 1px solid var(--color-border);
   overflow: hidden;
   max-height: 0;
@@ -168,8 +174,14 @@ html[data-theme="dark"] .header {
   box-shadow: var(--shadow-lg);
 }
 
+/* Dark mode override for mobile menu */
+:global(html[data-theme="dark"]) .navMobileWrapper {
+  background-color: rgba(2, 6, 23, 0.95);
+}
+
 .navMobileWrapperOpen {
-  max-height: 400px;
+  /* FIX: Increased to cover larger menus if needed */
+  max-height: 100vh;
   opacity: 1;
 }
 

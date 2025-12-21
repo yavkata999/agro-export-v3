@@ -60,7 +60,9 @@
   border-radius: var(--radius-xl);
   padding: 2.5rem;
   box-shadow: var(--shadow-xl);
-  border: 1px solid rgba(8, 74, 45, 0.08);
+
+  /* FIX: Use variable for border */
+  border: 1px solid var(--color-border);
 }
 
 .heroBadge {
@@ -106,7 +108,8 @@
 
 .sectionAlt {
   padding: 6rem 0;
-  background-color: var(--color-surface-muted);
+  /* FIX: Use 'bg-alt' instead of 'surface-muted' */
+  background-color: var(--color-bg-alt);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -146,7 +149,10 @@
   padding: 2rem;
   border-radius: var(--radius-lg);
   background-color: var(--color-surface-elevated);
-  border: 1px solid rgba(8, 74, 45, 0.08);
+
+  /* FIX: Use variable for border */
+  border: 1px solid var(--color-border);
+
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -317,13 +323,8 @@
   padding: 0 1.25rem 1.25rem 1.25rem;
   color: var(--color-text-muted);
   line-height: 1.6;
-  border-top: 1px solid var(--color-border-soft);
+  border-top: 1px solid var(--color-border);
 }
 
-/* Dark mode overrides */
-:global(:root[data-theme="dark"]) .heroCard,
-:global(:root[data-theme="dark"]) .featureCard,
-:global(:root[data-theme="dark"]) .useCaseCard,
-:global(:root[data-theme="dark"]) .faqItem {
-  border-color: rgba(255, 255, 255, 0.1);
-}
+/* FIX: Removed the manual :global overrides at the bottom.
+   Since we used var(--color-border) above, dark mode works automatically. */

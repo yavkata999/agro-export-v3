@@ -56,7 +56,10 @@
 
 .buttonAccept {
   background-color: var(--color-primary);
-  color: white;
+
+  /* FIX: Use dynamic contrast color (Dark text on Neon Green) */
+  color: var(--color-on-primary);
+
   border: 1px solid transparent;
   padding: 0.6rem 1.2rem;
   font-size: 0.9rem;
@@ -80,7 +83,8 @@
 /* This class is added conditionally via React */
 .pulse {
   animation: gentlePulse 2s infinite;
-  box-shadow: 0 0 0 0 rgba(8, 74, 45, 0.7); /* Using your primary green */
+  /* FIX: Use dynamic variable instead of hardcoded dark green */
+  box-shadow: 0 0 0 0 var(--color-primary);
 }
 
 .buttonDecline {
@@ -114,14 +118,17 @@
 @keyframes gentlePulse {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(8, 74, 45, 0.7);
+    /* FIX: Use dynamic variable. Note: Alpha fading is hard with simple vars, 
+       so we rely on the spread expansion (10px) to dissipate it visually. */
+    box-shadow: 0 0 0 0 var(--color-primary);
   }
   70% {
     transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(8, 74, 45, 0);
+    /* Fade out by expanding shadow to transparency */
+    box-shadow: 0 0 0 10px transparent;
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(8, 74, 45, 0);
+    box-shadow: 0 0 0 0 transparent;
   }
 }

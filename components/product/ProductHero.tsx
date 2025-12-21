@@ -134,7 +134,7 @@ export function ProductHero({
               )}
 
               <div className={styles.metaItem}>
-                <span className={styles.metaLabel}>Доставка</span>
+                <span className={styles.metaLabel}>Отговор</span>
                 <span className={styles.metaValue}>В рамките на 24 часа</span>
               </div>
             </div>
