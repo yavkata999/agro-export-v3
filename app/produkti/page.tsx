@@ -3,10 +3,18 @@ import Link from "next/link";
 import { categories } from "@content/categories";
 import styles from "@styles/pages/ProduktiPage.module.css";
 
+// --- UPDATED METADATA ---
 export const metadata: Metadata = {
-  title: "Продуктов Каталог | Агро Експорт Импорт",
+  title: "Продуктов Каталог | Агро Експорт Импорт - Субстрати, Торове и Саксии",
   description:
-    "Пълна гама професионални решения за градинарството: субстрати, тревни смеси, торове и производствени консумативи. Внос и дистрибуция на едро.",
+    "Разгледайте пълната гама професионални решения за градинарството: торф, тревни смеси, торове и производствени консумативи. Внос и дистрибуция на едро.",
+  openGraph: {
+    title: "Продуктов Каталог | Агро Експорт Импорт",
+    description:
+      "Всичко за професионалния агробизнес. Субстрати Durpeta, тревни смеси GlobalGrass, торове Florovit и саксии Soparco.",
+    type: "website",
+    locale: "bg_BG",
+  },
 };
 
 /* --- ICONS --- */

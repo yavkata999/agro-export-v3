@@ -2,10 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "@styles/pages/VideoPage.module.css";
 
+// --- UPDATED METADATA ---
 export const metadata: Metadata = {
-  title: "Видео Академия | Агро Експорт Импорт ООД",
+  title: "Видео Академия | Агро Експорт Импорт - Обучения за Партньори",
   description:
-    "Предстоящи видео обучения и продуктови презентации за търговски партньори.",
+    "Специализирана библиотека с видео обучения и продуктови презентации. Научете тънкостите при работа с Durpeta, Florovit и Soparco за по-високи продажби.",
+  openGraph: {
+    title: "Видео Академия | Агро Експорт Импорт",
+    description:
+      "Предстоящи видео обучения и ръководства за нашите търговски партньори.",
+    type: "website",
+    locale: "bg_BG",
+  },
 };
 
 const Icons = {

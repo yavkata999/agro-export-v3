@@ -2,10 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "@styles/pages/MarkiPage.module.css";
 
+// --- UPDATED METADATA ---
 export const metadata: Metadata = {
   title: "Марки и Партньори | Агро Експорт Импорт ООД",
   description:
-    "Официален вносител на Durpeta, Soparco, GlobalGrass и Florovit за България. Вижте пълното портфолио от професионални градински марки.",
+    "Официален вносител на Durpeta, Soparco, GlobalGrass и Florovit за България. Разгледайте нашето портфолио от професионални торфове, саксии и торове.",
+  openGraph: {
+    title: "Марки и Партньори | Агро Експорт Импорт",
+    description:
+      "Директен внос от водещи европейски производители. Гарантирано качество за вашия бизнес.",
+    type: "website",
+    locale: "bg_BG",
+  },
 };
 
 /* --- ICONS (Zero Deps) --- */
@@ -136,7 +144,7 @@ const HERO_FEATURES = [
 
 const STATS = [
   { value: "6+", label: "Ексклузивни бранда" },
-  { value: "Стотици", label: "активни артикули" },
+  { value: "Стотици", label: "активни артикули" }, // Confirmed plural
   { value: "100%", label: "Гарантиран произход" },
 ];
 

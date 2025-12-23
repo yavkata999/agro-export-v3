@@ -8,9 +8,28 @@ import ProductCard from "@components/shared/ProductCard";
 import { getProductById } from "@lib/products";
 import styles from "@styles/pages/TorfeniSegmentPage.module.css";
 
+// --- UPDATED METADATA ---
 export const metadata: Metadata = {
-  title: `${torfeniSegmentHobby.title} | Агро Експорт Импорт ООД`,
-  description: torfeniSegmentHobby.description,
+  title: `${torfeniSegmentHobby.title} | Агро Експорт Импорт`,
+  description:
+    "Висококачествени торфени субстрати за дома и градината. Готови смеси за цветя, разсад и зеленчуци в удобни опаковки за любители.",
+  keywords: [
+    "хоби торф",
+    "субстрат за цветя",
+    "почва за разсад",
+    "градинска пръст",
+    "Durpeta хоби",
+    "торф за домати",
+    "универсален субстрат",
+  ],
+  openGraph: {
+    title: `${torfeniSegmentHobby.title} | Агро Експорт Импорт`,
+    description: torfeniSegmentHobby.description,
+    type: "website",
+    locale: "bg_BG",
+    // FIX: Updated slug to 'hobi'
+    url: "https://agro-export.com/produkti/torfeni-substrati/hobi",
+  },
 };
 
 // Reusable Check Icon
@@ -30,7 +49,7 @@ const CheckIcon = () => (
 );
 
 export default function TorfeniHobiPage() {
-  const segment = torfeniSegmentHobby; // For Hobby Page
+  const segment = torfeniSegmentHobby;
 
   // Resolve product data
   const resolvedProducts = segment.products.flatMap((item) => {

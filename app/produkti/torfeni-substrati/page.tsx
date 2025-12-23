@@ -1,5 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+
+// 1. UPDATED IMPORT: Use the lib helper instead of direct content import
+import { getCategory } from "@lib/products";
+
 import {
   torfeniFaq,
   torfeniHero,
@@ -9,6 +13,27 @@ import {
   torfeniUseCases,
 } from "@content/torfeni-substrati";
 import styles from "@styles/pages/TorfeniSubstratiPage.module.css";
+
+// 2. Fetch data via the helper
+const category = getCategory("torfeni-substrati");
+
+// 3. Define Metadata using the fetched category data
+// We use optional chaining (?) just in case, though we know this slug exists.
+export const metadata: Metadata = {
+  title:
+    category?.seoTitle || "Торфени субстрати Durpeta | Агро Експорт Импорт",
+  description:
+    category?.seoDescription ||
+    "Внос и дистрибуция на висококачествени литовски торфени субстрати.",
+  keywords: category?.keywords || ["торф", "субстрати"],
+  openGraph: {
+    title: category?.seoTitle,
+    description: category?.seoDescription,
+    type: "website",
+    locale: "bg_BG",
+    url: "https://agro-export.com/produkti/torfeni-substrati",
+  },
+};
 
 // Reusable Icon for lists
 const CheckIcon = () => (
@@ -28,21 +53,18 @@ const CheckIcon = () => (
 
 const segments = [torfeniSegmentProfessional, torfeniSegmentHobby];
 
-export const metadata: Metadata = {
-  title: "Торфени субстрати Durpeta | Агро Експорт Импорт ООД",
-  description:
-    "Премиум торфени субстрати за професионални производители и хоби градинари. Контролирано pH, структурирани фракции и специализирани рецепти.",
-};
-
 export default function TorfeniSubstratiHubPage() {
   // JSON-LD Schema
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Торфени субстрати Durpeta",
-    description:
-      "Внос и дистрибуция на висококачествени литовски торфени субстрати.",
+    name: category?.name || "Торфени субстрати Durpeta",
+    description: category?.seoDescription,
     url: "https://agro-export.com/produkti/torfeni-substrati",
+    brand: {
+      "@type": "Brand",
+      name: "Durpeta",
+    },
   };
 
   return (
@@ -109,7 +131,7 @@ export default function TorfeniSubstratiHubPage() {
         </div>
       </section>
 
-      {/* --- HIGHLIGHTS (Why Durpeta?) --- */}
+      {/* --- HIGHLIGHTS --- */}
       <section className={styles.section}>
         <div className="container">
           <div className={styles.headerCentered}>
@@ -135,7 +157,7 @@ export default function TorfeniSubstratiHubPage() {
         </div>
       </section>
 
-      {/* --- SEGMENTS (The Split) --- */}
+      {/* --- SEGMENTS --- */}
       <section className={styles.sectionAlt}>
         <div className="container">
           <div className={styles.headerCentered}>
@@ -179,7 +201,7 @@ export default function TorfeniSubstratiHubPage() {
         </div>
       </section>
 
-      {/* --- USE CASES / APPLICATIONS --- */}
+      {/* --- USE CASES --- */}
       <section className={styles.section}>
         <div className="container">
           <div className={styles.headerCentered}>
@@ -206,7 +228,6 @@ export default function TorfeniSubstratiHubPage() {
       <section className={styles.sectionAlt}>
         <div className="container">
           <div className={styles.faqGrid}>
-            {/* FAQ Intro */}
             <div>
               <span className={styles.overline}>Въпроси и Отговори</span>
               <h2 className={styles.sectionTitle}>Често задавани въпроси</h2>
@@ -219,7 +240,6 @@ export default function TorfeniSubstratiHubPage() {
               </Link>
             </div>
 
-            {/* FAQ List */}
             <div className={styles.faqList}>
               {torfeniFaq.map((item, index) => (
                 <details key={index} className={styles.faqItem}>

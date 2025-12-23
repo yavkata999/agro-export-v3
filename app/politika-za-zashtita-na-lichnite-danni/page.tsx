@@ -2,10 +2,28 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "@styles/pages/PrivacyPolicy.module.css";
 
+// --- UPDATED METADATA ---
 export const metadata: Metadata = {
-  title: "Политика за защита на личните данни | Агро Експорт Импорт ООД",
+  title: "Политика за защита на личните данни | Агро Експорт Импорт",
   description:
-    "Задължителна информация за правата на лицата по защита на личните данни (GDPR).",
+    "Информация за правата на лицата по защита на личните данни (GDPR). Научете как събираме, обработваме и съхраняваме вашите данни.",
+  keywords: [
+    "GDPR",
+    "лични данни",
+    "политика за поверителност",
+    "защита на данни",
+    "Агро Експорт Импорт",
+    "права на потребителя",
+  ],
+  openGraph: {
+    title: "Политика за защита на личните данни | Агро Експорт Импорт",
+    description:
+      "Пълна информация за обработката на лични данни и вашите права съгласно GDPR.",
+    type: "website",
+    locale: "bg_BG",
+    // FIX: Updated to the correct path
+    url: "https://agro-export.com/politika-za-zashtita-na-lichnite-danni",
+  },
 };
 
 export default function PrivacyPolicyPage() {
@@ -86,7 +104,6 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <strong>Уеб сайт:</strong>{" "}
-                {/* External links should remain as <a> tags */}
                 <a
                   href="https://www.cpdp.bg"
                   target="_blank"
@@ -240,8 +257,6 @@ export default function PrivacyPolicyPage() {
               убеждения, здравословно състояние и др.).
             </p>
           </div>
-
-          {/* ... Rest of the legal text (Articles 4-17) remains unchanged as it is strictly text ... */}
 
           <div className={styles.block}>
             <h2>Срок на съхранение на личните Ви данни</h2>

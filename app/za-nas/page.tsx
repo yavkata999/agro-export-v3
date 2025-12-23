@@ -2,10 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "@styles/pages/AboutPage.module.css";
 
+// --- UPDATED METADATA ---
 export const metadata: Metadata = {
-  title: "За Нас | История и Ценности на Агро Експорт Импорт",
+  title: "За Нас | Агро Експорт Импорт - Лидер в градинските продукти",
   description:
-    "Над 34 години опит във вноса и дистрибуцията на градински продукти...",
+    "Агро Експорт Импорт ООД – доверен партньор на българския агробизнес от 1989 г. Официален представител на Durpeta, Florovit и Soparco. Научете повече за нашата история и мисия.",
+  openGraph: {
+    title: "За Нас | Агро Експорт Импорт",
+    description:
+      "Над 34 години опит във вноса и дистрибуцията на професионални градински продукти.",
+    type: "website",
+    locale: "bg_BG",
+  },
 };
 
 /* --- ICONS --- */

@@ -19,7 +19,7 @@ export async function generateStaticParams() {
   return paths;
 }
 
-// 2. Dynamic SEO
+// 2. Dynamic SEO with Smart Keywords
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const params = await props.params;
   const product = getProductById(params.id);
@@ -28,9 +28,57 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     return { title: "Продуктът не е намерен" };
   }
 
+  const title = `${product.name} | ${product.brand} | Агро Експорт Импорт`;
+  const description = product.shortDescription;
+  const url = `https://agro-export.com/produkti/${params.slug}/${params.id}`;
+
+  // --- DYNAMIC KEYWORD GENERATION ---
+  const rawKeywords = [
+    // 1. Specific Product Details
+    product.name,
+    product.brand, // This might be undefined, causing the error
+    `${product.brand} ${product.id}`,
+
+    // 2. Category Context
+    params.slug.replace(/-/g, " "),
+
+    // 3. Product Applications
+    ...(product.applications || []),
+
+    // 4. Standard Business Terms
+    "цена на едро",
+    "дистрибуция",
+    "склад Варна",
+    "Агро Експорт Импорт",
+  ];
+
+  // FIX: Filter out any undefined/null/empty strings to satisfy TypeScript
+  const keywords = rawKeywords.filter(
+    (k): k is string => !!k && k.trim() !== ""
+  );
+
   return {
-    title: `${product.name} | Агро Експорт Импорт`,
-    description: product.shortDescription,
+    title,
+    description,
+    keywords: keywords,
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "website",
+      locale: "bg_BG",
+      images:
+        product.images && product.images.length > 0
+          ? [
+              {
+                url: product.images[0],
+                width: 800,
+                height: 600,
+                alt: product.name,
+              },
+            ]
+          : [],
+    },
   };
 }
 

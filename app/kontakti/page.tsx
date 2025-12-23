@@ -3,12 +3,19 @@ import Link from "next/link";
 import styles from "@styles/pages/Kontakti.module.css";
 
 export const metadata: Metadata = {
-  title: "Контакти | Агро Експорт Импорт ООД",
+  title: "Контакти | Агро Експорт Импорт - Офис и Дистрибуция",
   description:
-    "Свържете се с нас за поръчки, дистрибуция и професионални консултации.",
+    "Свържете се с нас за поръчки на едро, дистрибуция и професионални консултации. Централен офис във Варна и национална търговска мрежа.",
+  openGraph: {
+    title: "Контакти | Агро Експорт Импорт ООД",
+    description:
+      "Адрес, телефони и форма за запитване. Свържете се с нашия екип за партньорство.",
+    type: "website",
+    locale: "bg_BG",
+  },
 };
 
-/* --- INLINE ICONS --- */
+/* --- ICONS --- */
 const Icons = {
   MapPin: () => (
     <svg
@@ -137,6 +144,7 @@ const regionalContacts: RegionalContact[] = [
 export default function KontaktiPage() {
   return (
     <div className={styles.pageWrapper}>
+      {/* 1. HERO */}
       <section className={styles.heroSection}>
         <div className={styles.heroContainer}>
           <h1 className={styles.heroTitle}>Контакти</h1>
@@ -147,6 +155,7 @@ export default function KontaktiPage() {
         </div>
       </section>
 
+      {/* 2. MAIN CONTENT */}
       <div className="container">
         <div className={styles.mainSection}>
           <div className={styles.mainGrid}>
@@ -157,11 +166,12 @@ export default function KontaktiPage() {
                 Използвайте тези контакти за всички търговски запитвания.
               </p>
 
-              {/* Group 1: Office */}
+              {/* Group 1: Administration */}
               <div className={styles.contactGroup}>
                 <div className={styles.groupLabel}>
                   <Icons.Building /> Администрация
                 </div>
+
                 <div className={styles.contactItem}>
                   <div className={styles.iconWrapper}>
                     <Icons.Phone />
@@ -173,6 +183,7 @@ export default function KontaktiPage() {
                     </Link>
                   </div>
                 </div>
+
                 <div className={styles.contactItem}>
                   <div className={styles.iconWrapper}>
                     <Icons.Mail />
@@ -187,6 +198,7 @@ export default function KontaktiPage() {
                     </Link>
                   </div>
                 </div>
+
                 <div className={styles.contactItem}>
                   <div className={styles.iconWrapper}>
                     <Icons.Clock />
@@ -200,11 +212,12 @@ export default function KontaktiPage() {
                 </div>
               </div>
 
-              {/* Group 2: Warehouse */}
+              {/* Group 2: Logistics */}
               <div className={styles.contactGroup}>
                 <div className={styles.groupLabel}>
                   <Icons.Truck /> Логистика и Склад
                 </div>
+
                 <div className={styles.contactItem}>
                   <div className={styles.iconWrapper}>
                     <Icons.Phone />
@@ -216,6 +229,7 @@ export default function KontaktiPage() {
                     </Link>
                   </div>
                 </div>
+
                 <div className={styles.contactItem}>
                   <div className={styles.iconWrapper}>
                     <Icons.MapPin />
@@ -250,6 +264,7 @@ export default function KontaktiPage() {
                       id="name"
                       className={styles.input}
                       placeholder="Вашето име"
+                      required
                     />
                   </div>
                   <div className={styles.formField}>
@@ -271,6 +286,7 @@ export default function KontaktiPage() {
                       id="email"
                       className={styles.input}
                       placeholder="name@company.com"
+                      required
                     />
                   </div>
                   <div className={styles.formField}>
@@ -284,10 +300,14 @@ export default function KontaktiPage() {
                   </div>
                 </div>
 
-                {/* ADDED MISSING FIELD: TOPIC */}
                 <div className={styles.formField}>
                   <label htmlFor="topic">Тема</label>
-                  <select id="topic" className={styles.select} defaultValue="">
+                  <select
+                    id="topic"
+                    className={styles.select}
+                    defaultValue=""
+                    required
+                  >
                     <option value="" disabled>
                       Изберете тема на запитването...
                     </option>
@@ -304,6 +324,7 @@ export default function KontaktiPage() {
                     id="message"
                     className={styles.textarea}
                     placeholder="Как можем да ви помогнем?"
+                    required
                   ></textarea>
                 </div>
 
@@ -319,7 +340,7 @@ export default function KontaktiPage() {
           </div>
         </div>
 
-        {/* REGIONAL CONTACTS */}
+        {/* 3. REGIONAL CONTACTS */}
         <section className={styles.regionalSection}>
           <div className={styles.regionalHeader}>
             <h2>Регионални партньори</h2>
@@ -334,13 +355,9 @@ export default function KontaktiPage() {
               <div key={rc.region} className={styles.regionalCard}>
                 <h3 className={styles.regionName}>{rc.region}</h3>
                 <p className={styles.regionDetails}>{rc.details}</p>
+
                 <div className={styles.regionContact}>
-                  <div
-                    className={styles.iconWrapper}
-                    style={{ width: 18, height: 18 }}
-                  >
-                    <Icons.Phone />
-                  </div>
+                  <Icons.Phone />
                   <Link href={`tel:${rc.phone.replace(/\s+/g, "")}`}>
                     {rc.phone}
                   </Link>

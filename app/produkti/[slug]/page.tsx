@@ -19,17 +19,34 @@ export async function generateStaticParams() {
     .map((slug) => ({ slug }));
 }
 
+// --- UPDATED METADATA WITH KEYWORDS ---
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const params = await props.params;
   const category = getCategory(params.slug);
 
   if (!category) return { title: "Категорията не е намерена" };
 
+  const title =
+    category.seoTitle ||
+    `${category.name} | Професионални решения | Агро Експорт Импорт`;
+
+  const description =
+    category.seoDescription ||
+    category.shortDescription ||
+    `Разгледайте нашата селекция от ${category.name.toLowerCase()}. Високо качество, директен внос и конкурентни цени за търговци.`;
+
   return {
-    title:
-      category.seoTitle ||
-      `Всички продукти – ${category.name} | Агро Експорт Импорт`,
-    description: category.seoDescription || category.shortDescription,
+    title,
+    description,
+    // ADDED: Inject specific keywords from the category data
+    keywords: category.keywords,
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      locale: "bg_BG",
+      url: `https://agro-export.com/produkti/${params.slug}`,
+    },
   };
 }
 

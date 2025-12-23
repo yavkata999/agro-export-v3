@@ -8,6 +8,29 @@ import ProductCard from "@components/shared/ProductCard";
 import { getProductById } from "@lib/products";
 import styles from "@styles/pages/TorfeniSegmentPage.module.css";
 
+// --- UPDATED METADATA ---
+export const metadata: Metadata = {
+  title: `${torfeniSegmentProfessional.title} | Агро Експорт Импорт`,
+  description:
+    "Професионални субстрати Durpeta за оранжерии и разсадници. Big Bale опаковки, контролирано pH и специализирани рецепти за масово производство.",
+  keywords: [
+    "професионален торф",
+    "субстрати за оранжерии",
+    "торф на едро",
+    "big bale торф",
+    "Durpeta професионални",
+    "субстрат за разсад",
+    "торф за контейнери",
+  ],
+  openGraph: {
+    title: `${torfeniSegmentProfessional.title} | Агро Експорт Импорт`,
+    description: torfeniSegmentProfessional.description,
+    type: "website",
+    locale: "bg_BG",
+    url: "https://agro-export.com/produkti/torfeni-substrati/profesionalisti",
+  },
+};
+
 // Reusable Check Icon
 const CheckIcon = () => (
   <svg
@@ -24,13 +47,10 @@ const CheckIcon = () => (
   </svg>
 );
 
-export const metadata: Metadata = {
-  title: `${torfeniSegmentProfessional.title} | Агро Експорт Импорт ООД`,
-  description: torfeniSegmentProfessional.description,
-};
-
 export default function TorfeniProfesionalistiPage() {
   const segment = torfeniSegmentProfessional;
+
+  // Resolve product data
   const resolvedProducts = segment.products.flatMap((item) => {
     const product = getProductById(item.productId);
     return product ? [{ ...item, product }] : [];
