@@ -1,6 +1,7 @@
-import type { Product } from "./types";
+import type { Product } from "../types";
 
 export const soparcoProducts: Product[] = [
+  // 1. (JSON ID 1166)
   {
     id: "saksia-soparco-03l",
     category: "saksii-i-kontejneri-soparco",
@@ -9,7 +10,7 @@ export const soparcoProducts: Product[] = [
     shortDescription:
       "Професионална 9 см саксия за ранен разсад и вкореняване.",
     longDescription:
-      "Част от серията DUO, тази саксия комбинира здрав външен слой с тъмен вътрешен, който предпазва корените от светлина. Дъното е с много нива, което гарантира перфектен дренаж и аерация – критично важно за младите растения. Идеална за автоматизирани линии.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n• Диаметър: 9 см\n• Височина: 6,8 см\n• Вместимост: 0,3 л\n• Цвят: Черен (Теракота и таупе по заявка)",
+      "Част от серията DUO, тази саксия комбира здрав външен слой с тъмен вътрешен, който предпазва корените от светлина. Дъното е с много нива, което гарантира перфектен дренаж и аерация – критично важно за младите растения. Идеална за автоматизирани линии.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n• Диаметър: 9 см\n• Височина: 6,8 см\n• Вместимост: 0,3 л\n• Цвят: Черен (Теракота и таупе по заявка)",
     packaging: "Кашон: 1450 бр. / Бокс палет: 23400 бр.",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1754376533/4411_DUO_9_5_LOW_BLACK_bc77ab037a.png",
@@ -26,6 +27,7 @@ export const soparcoProducts: Product[] = [
       "Вкореняване на резници",
     ],
   },
+  // 2. (JSON ID 1167)
   {
     id: "saksia-soparco-036l",
     category: "saksii-i-kontejneri-soparco",
@@ -51,6 +53,7 @@ export const soparcoProducts: Product[] = [
       "Млади многогодишни растения",
     ],
   },
+  // 3. (JSON ID 1168)
   {
     id: "saksia-soparco-048l",
     category: "saksii-i-kontejneri-soparco",
@@ -76,6 +79,7 @@ export const soparcoProducts: Product[] = [
       "Билки и подправки",
     ],
   },
+  // 4. (JSON ID 1169)
   {
     id: "saksia-soparco-052l",
     category: "saksii-i-kontejneri-soparco",
@@ -100,6 +104,7 @@ export const soparcoProducts: Product[] = [
       "Професионални разсадници",
     ],
   },
+  // 5. (JSON ID 1170)
   {
     id: "saksia-soparco-050l",
     category: "saksii-i-kontejneri-soparco",
@@ -124,6 +129,7 @@ export const soparcoProducts: Product[] = [
       "Масово производство",
     ],
   },
+  // 6. (JSON ID 1171)
   {
     id: "saksia-soparco-075l",
     category: "saksii-i-kontejneri-soparco",
@@ -144,6 +150,7 @@ export const soparcoProducts: Product[] = [
     ],
     applications: ["Мушкато и пеларгониум", "Хризантеми", "Декоративни пипери"],
   },
+  // 7. (JSON ID 1172)
   {
     id: "saksia-soparco-1l-13cm",
     category: "saksii-i-kontejneri-soparco",
@@ -169,6 +176,7 @@ export const soparcoProducts: Product[] = [
       "Зеленчуци за балконско отглеждане",
     ],
   },
+  // 8. (JSON ID 1173)
   {
     id: "saksia-soparco-1l-14cm",
     category: "saksii-i-kontejneri-soparco",
@@ -193,6 +201,7 @@ export const soparcoProducts: Product[] = [
       "Градински центрове",
     ],
   },
+  // 9. (JSON ID 1174)
   {
     id: "saksia-soparco-2l",
     category: "saksii-i-kontejneri-soparco",
@@ -217,6 +226,7 @@ export const soparcoProducts: Product[] = [
       "Контейнерно производство",
     ],
   },
+  // 10. (JSON ID 1175)
   {
     id: "saksia-soparco-3l",
     category: "saksii-i-kontejneri-soparco",
@@ -241,6 +251,7 @@ export const soparcoProducts: Product[] = [
       "Ландшафтни проекти",
     ],
   },
+  // 11. (JSON ID 1176)
   {
     id: "saksia-soparco-5l",
     category: "saksii-i-kontejneri-soparco",
@@ -261,6 +272,7 @@ export const soparcoProducts: Product[] = [
     ],
     applications: ["Дървета и големи храсти", "Рози", "Борса за цветя"],
   },
+  // 12. (JSON ID 1177)
   {
     id: "visyashta-saksia-soparco-5l",
     category: "saksii-i-kontejneri-soparco",
@@ -285,6 +297,7 @@ export const soparcoProducts: Product[] = [
       "Декорация на тераси",
     ],
   },
+  // 13. (JSON ID 1178)
   {
     id: "visyashta-saksia-soparco-6l",
     category: "saksii-i-kontejneri-soparco",
@@ -310,6 +323,7 @@ export const soparcoProducts: Product[] = [
       "Професионално производство на висящи кошници",
     ],
   },
+  // 14. (JSON ID 1179)
   {
     id: "fiksator-rastenia-12",
     category: "saksii-i-kontejneri-soparco",
@@ -335,6 +349,7 @@ export const soparcoProducts: Product[] = [
       "Професионални разсадници",
     ],
   },
+  // 15. (JSON ID 1180)
   {
     id: "fiksator-rastenia-13",
     category: "saksii-i-kontejneri-soparco",

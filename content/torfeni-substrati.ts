@@ -1,30 +1,6 @@
 import { torfeniSubstratiHobiProducts } from "@content/products/torfeni-substrati-hobi";
 import { torfeniSubstratiProfesionalniProducts } from "./products/torfeni-substrati-profesionalni";
-
-export type TorfeniSegmentProduct = {
-  id: string;
-  name: string;
-  description: string;
-  productId: string;
-  packaging?: string;
-  features?: string[];
-};
-
-export type TorfeniSegment = {
-  slug: string;
-  title: string;
-  audience: string;
-  description: string;
-  highlights: string[];
-  ctaLabel: string;
-  ctaHref: string;
-  products: TorfeniSegmentProduct[];
-};
-
-export type TorfeniFaq = {
-  question: string;
-  answer: string;
-};
+import type { TorfeniSegment, TorfeniFaq } from "./types";
 
 export const torfeniSegmentProfessional: TorfeniSegment = {
   slug: "/produkti/torfeni-substrati/profesionalisti",

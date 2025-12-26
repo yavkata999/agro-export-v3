@@ -1,6 +1,7 @@
-import type { Product } from "./types";
+import type { Product } from "../types";
 
 export const formiZaRazsadTurciaProducts: Product[] = [
+  // 1. (JSON ID 58)
   {
     id: "formi-turcia-24-square",
     category: "formi-za-razsad-turcziya",
@@ -22,6 +23,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Домати и пипер", "Патладжан", "Декоративни храсти"],
   },
+  // 2. (JSON ID 59)
   {
     id: "formi-turcia-24-round",
     category: "formi-za-razsad-turcziya",
@@ -42,6 +44,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Зеленчуков разсад", "Саксийни цветя", "Горски видове"],
   },
+  // 3. (JSON ID 60)
   {
     id: "formi-turcia-28-round",
     category: "formi-za-razsad-turcziya",
@@ -62,6 +65,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Зеленчукопроизводство", "Цветарство", "Оранжерии"],
   },
+  // 4. (JSON ID 61)
   {
     id: "formi-turcia-32-round",
     category: "formi-za-razsad-turcziya",
@@ -82,6 +86,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Пипер и домати", "Зеле", "Декоративни растения"],
   },
+  // 5. (JSON ID 62)
   {
     id: "formi-turcia-35-round",
     category: "formi-za-razsad-turcziya",
@@ -103,6 +108,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Зеленчуци", "Билки", "Ягоди от семе"],
   },
+  // 6. (JSON ID 63)
   {
     id: "formi-turcia-45-round",
     category: "formi-za-razsad-turcziya",
@@ -123,6 +129,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Марули и салати", "Цветя (Тагетес, Петуния)", "Подправки"],
   },
+  // 7. (JSON ID 64)
   {
     id: "formi-turcia-48-square",
     category: "formi-za-razsad-turcziya",
@@ -148,6 +155,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
       "Разсадници",
     ],
   },
+  // 8. (JSON ID 65)
   {
     id: "formi-turcia-60-round",
     category: "formi-za-razsad-turcziya",
@@ -168,6 +176,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Листни зеленчуци", "Ранен разсад", "Цветя от семена"],
   },
+  // 9. (JSON ID 66)
   {
     id: "formi-turcia-70-square-long",
     category: "formi-za-razsad-turcziya",
@@ -188,6 +197,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Горски разсад", "Лози и овошки", "Рози"],
   },
+  // 10. (JSON ID 67)
   {
     id: "formi-turcia-84-square",
     category: "formi-za-razsad-turcziya",
@@ -208,6 +218,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Салати и марули", "Целина", "Дребни цветя"],
   },
+  // 11. (JSON ID 68)
   {
     id: "formi-turcia-104-round-long",
     category: "formi-za-razsad-turcziya",
@@ -228,6 +239,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Тютюн", "Лекарствени растения", "Горски видове от семе"],
   },
+  // 12. (JSON ID 69)
   {
     id: "formi-turcia-50-square",
     category: "formi-za-razsad-turcziya",
@@ -248,6 +260,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Домати", "Пипер", "Краставици"],
   },
+  // 13. (JSON ID 70)
   {
     id: "formi-turcia-72-square",
     category: "formi-za-razsad-turcziya",
@@ -268,6 +281,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Зеле и карфиол", "Салати", "Цветя"],
   },
+  // 14. (JSON ID 71)
   {
     id: "formi-turcia-77-square-long",
     category: "formi-za-razsad-turcziya",
@@ -288,6 +302,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Дървесни видове", "Специфични зеленчуци", "Резници"],
   },
+  // 15. (JSON ID 72)
   {
     id: "formi-turcia-128-square",
     category: "formi-za-razsad-turcziya",
@@ -309,6 +324,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Тютюн", "Праз лук", "Целина"],
   },
+  // 16. (JSON ID 73)
   {
     id: "formi-turcia-podlojka",
     category: "formi-za-razsad-turcziya",
@@ -329,6 +345,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
     ],
     applications: ["Поливане на разсад", "Транспорт", "Хигиена в оранжерията"],
   },
+  // 17. (JSON ID 74)
   {
     id: "formi-turcia-20-separatable",
     category: "formi-za-razsad-turcziya",
@@ -353,6 +370,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
       "Любителски разсад",
     ],
   },
+  // 18. (JSON ID 75)
   {
     id: "formi-turcia-45-separatable",
     category: "formi-za-razsad-turcziya",
@@ -377,6 +395,7 @@ export const formiZaRazsadTurciaProducts: Product[] = [
       "Градински центрове",
     ],
   },
+  // 19. (JSON ID 76)
   {
     id: "formi-turcia-48-separatable",
     category: "formi-za-razsad-turcziya",

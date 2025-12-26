@@ -1,6 +1,7 @@
-import type { Product } from "./types";
+import type { Product } from "../types";
 
 export const formiZaRazsadProducts: Product[] = [
+  // 1. (JSON ID 20)
   {
     id: "podlojka-za-formi",
     category: "formi-za-razsad",
@@ -22,6 +23,7 @@ export const formiZaRazsadProducts: Product[] = [
     ],
     applications: ["Транспорт на разсад", "Хидропоника", "Оранжерии"],
   },
+  // 2. (JSON ID 21)
   {
     id: "formi-za-razsad-4-gnezda",
     category: "formi-za-razsad",
@@ -47,6 +49,7 @@ export const formiZaRazsadProducts: Product[] = [
       "Продажба на дребно",
     ],
   },
+  // 3. (JSON ID 22)
   {
     id: "formi-za-razsad-8-gnezda",
     category: "formi-za-razsad",
@@ -67,6 +70,7 @@ export const formiZaRazsadProducts: Product[] = [
     ],
     applications: ["Пикиране", "Цветя", "Балконски растения"],
   },
+  // 4. (JSON ID 23)
   {
     id: "formi-za-razsad-10-gnezda",
     category: "formi-za-razsad",
@@ -87,6 +91,7 @@ export const formiZaRazsadProducts: Product[] = [
     ],
     applications: ["Зеленчукопроизводство", "Агроаптеки", "Пазари"],
   },
+  // 5. (JSON ID 24)
   {
     id: "formi-za-razsad-21-gnezda",
     category: "formi-za-razsad",
@@ -105,8 +110,9 @@ export const formiZaRazsadProducts: Product[] = [
       "Отлична аерация",
       "Здравина",
     ],
-    applications: ["Ранни домати", "Патладжан", "Дини и пъпеши"],
+    applications: ["Ранни домати", "Патладжани", "Дини и пъпеши"],
   },
+  // 6. (JSON ID 25)
   {
     id: "formi-za-razsad-32-gnezda",
     category: "formi-za-razsad",
@@ -127,6 +133,7 @@ export const formiZaRazsadProducts: Product[] = [
     ],
     applications: ["Домати", "Пипер", "Краставици", "Цветя"],
   },
+  // 7. (JSON ID 26)
   {
     id: "formi-za-razsad-32h-gnezda",
     category: "formi-za-razsad",
@@ -152,6 +159,7 @@ export const formiZaRazsadProducts: Product[] = [
       "Горски разсад",
     ],
   },
+  // 8. (JSON ID 27)
   {
     id: "formi-za-razsad-40-gnezda",
     category: "formi-za-razsad",
@@ -170,8 +178,9 @@ export const formiZaRazsadProducts: Product[] = [
       "Лесно поливане",
       "Универсална употреба",
     ],
-    applications: ["Пипер", "Патладжан", "Декоративно зеле", "Цветя"],
+    applications: ["Пипер", "Патладжани", "Декоративно зеле", "Цветя"],
   },
+  // 9. (JSON ID 28)
   {
     id: "formi-za-razsad-50-gnezda",
     category: "formi-za-razsad",
@@ -193,6 +202,7 @@ export const formiZaRazsadProducts: Product[] = [
     ],
     applications: ["Професионално зеленчукопроизводство", "Цветарство"],
   },
+  // 10. (JSON ID 29)
   {
     id: "formi-za-razsad-50h-gnezda",
     category: "formi-za-razsad",
@@ -217,6 +227,7 @@ export const formiZaRazsadProducts: Product[] = [
       "Дългоплодни зеленчуци",
     ],
   },
+  // 11. (JSON ID 30)
   {
     id: "formi-za-razsad-72-gnezda",
     category: "formi-za-razsad",
@@ -237,6 +248,7 @@ export const formiZaRazsadProducts: Product[] = [
     ],
     applications: ["Марули и салати", "Зелеви култури", "Билки", "Цветя"],
   },
+  // 12. (JSON ID 31)
   {
     id: "formi-za-razsad-98-gnezda",
     category: "formi-za-razsad",
@@ -257,6 +269,7 @@ export const formiZaRazsadProducts: Product[] = [
     ],
     applications: ["Листни зеленчуци", "Семеначета за пикиране", "Подправки"],
   },
+  // 13. (JSON ID 32)
   {
     id: "formi-za-razsad-105-gnezda",
     category: "formi-za-razsad",
@@ -277,6 +290,7 @@ export const formiZaRazsadProducts: Product[] = [
     ],
     applications: ["Полско производство (зеле, целина)", "Цветя"],
   },
+  // 14. (JSON ID 33)
   {
     id: "formi-za-razsad-128-gnezda",
     category: "formi-za-razsad",
@@ -297,6 +311,7 @@ export const formiZaRazsadProducts: Product[] = [
     ],
     applications: ["Зеле", "Карфиол", "Броколи", "Тютюн"],
   },
+  // 15. (JSON ID 34)
   {
     id: "formi-za-razsad-162-gnezda",
     category: "formi-za-razsad",
@@ -317,6 +332,7 @@ export const formiZaRazsadProducts: Product[] = [
     ],
     applications: ["Целина", "Праз", "Лук от семе", "Дребни цветя"],
   },
+  // 16. (JSON ID 35)
   {
     id: "formi-za-razsad-200-gnezda",
     category: "formi-za-razsad",
@@ -337,6 +353,7 @@ export const formiZaRazsadProducts: Product[] = [
     ],
     applications: ["Тютюн", "Индустриални разсади", "Билки"],
   },
+  // 17. (JSON ID 36)
   {
     id: "formi-za-razsad-288-gnezda",
     category: "formi-za-razsad",
@@ -358,6 +375,7 @@ export const formiZaRazsadProducts: Product[] = [
     ],
     applications: ["Автоматизирано производство", "Тютюн", "Семеначета"],
   },
+  // 18. (JSON ID 37)
   {
     id: "formi-za-razsad-390-gnezda",
     category: "formi-za-razsad",
@@ -378,6 +396,7 @@ export const formiZaRazsadProducts: Product[] = [
     ],
     applications: ["Микро растения (Microgreens)", "Ориз", "Начален разсад"],
   },
+  // 19. (JSON ID 38)
   {
     id: "formi-za-razsad-512-gnezda",
     category: "formi-za-razsad",

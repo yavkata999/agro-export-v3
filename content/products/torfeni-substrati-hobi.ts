@@ -1,6 +1,7 @@
-import type { Product } from "./types";
+import type { Product } from "../types";
 
 export const torfeniSubstratiHobiProducts: Product[] = [
+  // 1. (JSON ID 1181)
   {
     id: "torfen-substrat-za-cvetya",
     category: "torfeni-substrati",
@@ -28,6 +29,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Подобряване на градинска почва",
     ],
   },
+  // 2. (JSON ID 1182)
   {
     id: "torfen-substrat-za-dekorativni-rasteniya",
     category: "torfeni-substrati",
@@ -49,6 +51,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
     ],
     applications: ["Декоративни храсти", "Млади дръвчета", "Озеленяване"],
   },
+  // 3. (JSON ID 1183)
   {
     id: "torfen-substrat-za-staini-rasteniya",
     category: "torfeni-substrati",
@@ -73,6 +76,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Зимни градини",
     ],
   },
+  // 4. (JSON ID 1184)
   {
     id: "torfen-substrat-za-zelenchuci",
     category: "torfeni-substrati",
@@ -98,6 +102,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Зеленчукови лехи",
     ],
   },
+  // 5. (JSON ID 1185)
   {
     id: "universal-torfen-substrat",
     category: "torfeni-substrati",
@@ -125,6 +130,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Подобряване на почвата",
     ],
   },
+  // 6. (JSON ID 1186)
   {
     id: "torfen-substrat-za-zasyavane-na-semena",
     category: "torfeni-substrati",
@@ -150,6 +156,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Млади зеленчукови растения",
     ],
   },
+  // 7. (JSON ID 1187)
   {
     id: "torfen-substrat-za-kaktusi",
     category: "torfeni-substrati",
@@ -170,6 +177,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
     ],
     applications: ["Кактуси", "Сукуленти", "Скалнти кътове"],
   },
+  // 8. (JSON ID 1188)
   {
     id: "torfen-substrat-za-azaliya-i-rododendron",
     category: "torfeni-substrati",
@@ -190,6 +198,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
     ],
     applications: ["Рододендрони", "Азалии", "Киселолюбиви храсти"],
   },
+  // 9. (JSON ID 1189)
   {
     id: "torfen-substrat-za-gradinski-balkonski-cvetya",
     category: "torfeni-substrati",
@@ -214,6 +223,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Балконски сандъчета",
     ],
   },
+  // 10. (JSON ID 1190)
   {
     id: "torfen-substrat-za-otglezhdane-na-domati-i-piper",
     category: "torfeni-substrati",
@@ -234,6 +244,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
     ],
     applications: ["Домати", "Пипер", "Патладжан"],
   },
+  // 11. (JSON ID 1191)
   {
     id: "torfen-substrat-za-zatrevyavane",
     category: "torfeni-substrati",
@@ -255,6 +266,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
     ],
     applications: ["Тревни площи", "Спортни терени", "Паркове и градини"],
   },
+  // 12. (JSON ID 1192)
   {
     id: "bio-torfen-substrat-ekodurpeta",
     category: "torfeni-substrati",
@@ -279,6 +291,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Чисто производство",
     ],
   },
+  // 13. (JSON ID 1193)
   {
     id: "torfen-substrat-za-dekoraciya-na-grobishtni-parkove",
     category: "torfeni-substrati",
@@ -305,6 +318,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Оформяне на паметници",
     ],
   },
+  // 14. (JSON ID 1194)
   {
     id: "torfen-substrat-za-zasajdane-na-grobishtni-parkove",
     category: "torfeni-substrati",
@@ -331,6 +345,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Поддръжка на зелени площи",
     ],
   },
+  // 15. (JSON ID 1195)
   {
     id: "universalna-opakovka",
     category: "torfeni-substrati",
@@ -351,6 +366,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
     ],
     applications: ["Професионално градинарство", "Големи обекти", "Разсадници"],
   },
+  // 16. (JSON ID 1196)
   {
     id: "dekorativen-mulch",
     category: "torfeni-substrati",
@@ -371,6 +387,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
     ],
     applications: ["Цветни лехи", "Алеи и пътеки", "Около дървета и храсти"],
   },
+  // 17. (JSON ID 1197)
   {
     id: "torfen-mulch",
     category: "torfeni-substrati",
@@ -396,6 +413,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Мулчиране на почвата",
     ],
   },
+  // 18. (JSON ID 1198)
   {
     id: "torfen-substrat-za-orhideya",
     category: "torfeni-substrati",
@@ -420,6 +438,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Екзотични цветя",
     ],
   },
+  // 19. (JSON ID 1199)
   {
     id: "bio-torfen-substrat-za-bilki",
     category: "torfeni-substrati",
@@ -444,6 +463,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Саксийни подправки",
     ],
   },
+  // 20. (JSON ID 1200)
   {
     id: "torfen-substrat-za-erika",
     category: "torfeni-substrati",
@@ -464,6 +484,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
     ],
     applications: ["Ерика и Калуна", "Камелии", "Киселолюбиви алпинеуми"],
   },
+  // 21. (JSON ID 1201)
   {
     id: "torfen-substrat-za-yagodi",
     category: "torfeni-substrati",
@@ -488,6 +509,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Плододаващи насаждения",
     ],
   },
+  // 22. (JSON ID 1202)
   {
     id: "torfen-substrat-za-iglolistni",
     category: "torfeni-substrati",
@@ -513,6 +535,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Вечнозелени храсти",
     ],
   },
+  // 23. (JSON ID 1203)
   {
     id: "pochven-kompost",
     category: "torfeni-substrati",
@@ -540,6 +563,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Обогатяване на почва",
     ],
   },
+  // 24. (JSON ID 1204)
   {
     id: "torfen-substrat-za-borovinki",
     category: "torfeni-substrati",

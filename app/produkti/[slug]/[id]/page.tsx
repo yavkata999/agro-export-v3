@@ -34,25 +34,17 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
   // --- DYNAMIC KEYWORD GENERATION ---
   const rawKeywords = [
-    // 1. Specific Product Details
     product.name,
-    product.brand, // This might be undefined, causing the error
+    product.brand,
     `${product.brand} ${product.id}`,
-
-    // 2. Category Context
     params.slug.replace(/-/g, " "),
-
-    // 3. Product Applications
     ...(product.applications || []),
-
-    // 4. Standard Business Terms
     "цена на едро",
     "дистрибуция",
     "склад Варна",
     "Агро Експорт Импорт",
   ];
 
-  // FIX: Filter out any undefined/null/empty strings to satisfy TypeScript
   const keywords = rawKeywords.filter(
     (k): k is string => !!k && k.trim() !== ""
   );
@@ -111,6 +103,7 @@ export default async function ProductPage(props: PageProps) {
       <ProductDescription
         shortDescription={product.shortDescription}
         longDescription={product.longDescription}
+        downloads={product.downloads}
       />
 
       <ProductCTA productId={product.id} />

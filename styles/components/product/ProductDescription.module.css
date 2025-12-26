@@ -67,14 +67,11 @@
 
 /* Highlight bold text in the brand color for emphasis */
 .body strong {
-  /* FIX: Use 'primary' instead of 'primary-dark'.
-     Deep green text on a black background (Dark Mode) is invisible. 
-     'primary' usually switches to a brighter green in dark mode. */
   color: var(--color-primary);
   font-weight: 700;
 }
 
-/* ADDED: List styles (Essential for product features) */
+/* List styles */
 .body ul {
   list-style: disc;
   padding-left: 1.5rem;
@@ -87,11 +84,74 @@
   padding-left: 0.5rem;
 }
 
-/* Optional: Add spacing between paragraphs if using raw HTML content */
 .body p {
   margin-bottom: 1.5rem;
 }
 
 .body p:last-child {
   margin-bottom: 0;
+}
+
+/* --- DOWNLOADS SECTION --- */
+.downloadsContainer {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.downloadsTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.downloadsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.downloadLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--color-bg); /* Or var(--color-surface) if defined */
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.downloadLink:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.downloadLink:hover span {
+  color: var(--color-primary);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  transition: all 0.2s ease;
+}
+
+.downloadLink:hover .iconWrapper {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary, #fff); /* Fallback to white if var missing */
 }

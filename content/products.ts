@@ -1,4 +1,4 @@
-import type { Product } from "./products/types";
+import type { Product } from "./types"; // Changed import to use the central types file
 import { gradinskiProdukti } from "./products/gradinski-produkti";
 import { formiZaRazsadProducts } from "./products/formi-za-razsad";
 import { formiZaRazsadTurciaProducts } from "./products/formi-za-razsad-turcziya";
@@ -9,8 +9,6 @@ import { soparcoProducts } from "./products/saksii-i-kontejneri-soparco";
 import { rabotniSaksiiProducts } from "./products/rabotni-saksii-i-kontejneri";
 import { mrezhiIFoliaProducts } from "./products/mrezhi-i-folia";
 import { perlitVermikulitProducts } from "./products/perlit-i-vermikulit";
-
-export type { Product } from "./products/types";
 
 export const products: Product[] = [
   ...trevniSmesiProducts,

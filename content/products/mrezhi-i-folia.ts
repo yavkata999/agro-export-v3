@@ -1,6 +1,7 @@
-import type { Product } from "./types";
+import type { Product } from "../types";
 
 export const mrezhiIFoliaProducts: Product[] = [
+  // 1. (JSON ID 1012)
   {
     id: "mreji-protiv-pleveli",
     category: "mrezhi-i-folia",
@@ -27,6 +28,7 @@ export const mrezhiIFoliaProducts: Product[] = [
       "Оранжерийно производство",
     ],
   },
+  // 2. (JSON ID 1013)
   {
     id: "mreji-za-zasenchvane",
     category: "mrezhi-i-folia",
@@ -53,6 +55,7 @@ export const mrezhiIFoliaProducts: Product[] = [
       "Строителни обекти и огради",
     ],
   },
+  // 3. (JSON ID 1014)
   {
     id: "mreji-protiv-ptici",
     category: "mrezhi-i-folia",

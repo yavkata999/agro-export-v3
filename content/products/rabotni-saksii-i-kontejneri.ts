@@ -1,6 +1,7 @@
-import type { Product } from "./types";
+import type { Product } from "../types";
 
 export const rabotniSaksiiProducts: Product[] = [
+  // 1. (JSON ID 35)
   {
     id: "rabotna-saksia-9x7",
     category: "rabotni-saksii-i-kontejneri",
@@ -22,6 +23,7 @@ export const rabotniSaksiiProducts: Product[] = [
     ],
     applications: ["Пикиране на зеленчуци", "Летни цветя", "Билки"],
   },
+  // 2. (JSON ID 36)
   {
     id: "rabotna-saksia-9x8",
     category: "rabotni-saksii-i-kontejneri",
@@ -47,6 +49,7 @@ export const rabotniSaksiiProducts: Product[] = [
       "Вкореняване",
     ],
   },
+  // 3. (JSON ID 37)
   {
     id: "rabotna-saksia-9x9",
     category: "rabotni-saksii-i-kontejneri",
@@ -72,6 +75,7 @@ export const rabotniSaksiiProducts: Product[] = [
       "Специфични зеленчуци",
     ],
   },
+  // 4. (JSON ID 38)
   {
     id: "rabotna-saksia-10-5x8-5",
     category: "rabotni-saksii-i-kontejneri",
@@ -93,6 +97,7 @@ export const rabotniSaksiiProducts: Product[] = [
     ],
     applications: ["Петунии и сурфинии", "Теменужки", "Бегонии"],
   },
+  // 5. (JSON ID 39)
   {
     id: "rabotna-saksia-12x8",
     category: "rabotni-saksii-i-kontejneri",
@@ -114,6 +119,7 @@ export const rabotniSaksiiProducts: Product[] = [
     ],
     applications: ["Сукуленти и кактуси", "Примули", "Почвопокривни растения"],
   },
+  // 6. (JSON ID 40)
   {
     id: "rabotna-saksia-12x9-5",
     category: "rabotni-saksii-i-kontejneri",
@@ -139,6 +145,7 @@ export const rabotniSaksiiProducts: Product[] = [
       "Декоративни пипери",
     ],
   },
+  // 7. (JSON ID 41)
   {
     id: "rabotna-saksia-12x10-5",
     category: "rabotni-saksii-i-kontejneri",
@@ -160,6 +167,7 @@ export const rabotniSaksiiProducts: Product[] = [
     ],
     applications: ["Хризантеми", "Малки иглолистни", "Многогодишни треви"],
   },
+  // 8. (JSON ID 42)
   {
     id: "rabotna-saksia-13x11",
     category: "rabotni-saksii-i-kontejneri",
@@ -181,6 +189,7 @@ export const rabotniSaksiiProducts: Product[] = [
     ],
     applications: ["Градински хибискус", "Големи бегонии", "Зеленчуков разсад"],
   },
+  // 9. (JSON ID 43)
   {
     id: "rabotna-saksia-13x17",
     category: "rabotni-saksii-i-kontejneri",
@@ -202,6 +211,7 @@ export const rabotniSaksiiProducts: Product[] = [
     ],
     applications: ["Рози", "Лози", "Овощни дръвчета и храсти"],
   },
+  // 10. (JSON ID 44)
   {
     id: "rabotna-saksia-14x11",
     category: "rabotni-saksii-i-kontejneri",
@@ -223,6 +233,7 @@ export const rabotniSaksiiProducts: Product[] = [
     ],
     applications: ["Хризантеми", "Големи мушката", "Лавандула и билки"],
   },
+  // 11. (JSON ID 45)
   {
     id: "rabotna-saksia-15x13",
     category: "rabotni-saksii-i-kontejneri",
@@ -247,6 +258,7 @@ export const rabotniSaksiiProducts: Product[] = [
       "Овощни разсади",
     ],
   },
+  // 12. (JSON ID 46)
   {
     id: "rabotna-saksia-17x13-5",
     category: "rabotni-saksii-i-kontejneri",
@@ -271,6 +283,7 @@ export const rabotniSaksiiProducts: Product[] = [
       "Едроразмерни цветя",
     ],
   },
+  // 13. (JSON ID 47)
   {
     id: "rabotna-saksia-20x12",
     category: "rabotni-saksii-i-kontejneri",
@@ -296,6 +309,7 @@ export const rabotniSaksiiProducts: Product[] = [
       "Висящи композиции",
     ],
   },
+  // 14. (JSON ID 48)
   {
     id: "rabotna-saksia-kvadrat-8x8x7",
     category: "rabotni-saksii-i-kontejneri",
@@ -321,6 +335,7 @@ export const rabotniSaksiiProducts: Product[] = [
       "Вкореняване на резници",
     ],
   },
+  // 15. (JSON ID 49)
   {
     id: "rabotna-saksia-kvadrat-8x8x8",
     category: "rabotni-saksii-i-kontejneri",
@@ -341,6 +356,7 @@ export const rabotniSaksiiProducts: Product[] = [
     ],
     applications: ["Билки и подправки", "Многогодишни цветя", "Дребни храсти"],
   },
+  // 16. (JSON ID 50)
   {
     id: "rabotna-saksia-kvadrat-8x8x9",
     category: "rabotni-saksii-i-kontejneri",
@@ -361,6 +377,7 @@ export const rabotniSaksiiProducts: Product[] = [
     ],
     applications: ["Горски разсад", "Дълбококоренни растения", "Лози"],
   },
+  // 17. (JSON ID 51)
   {
     id: "rabotna-saksia-kvadrat-9x9x9",
     category: "rabotni-saksii-i-kontejneri",
@@ -385,6 +402,7 @@ export const rabotniSaksiiProducts: Product[] = [
       "Ягоди",
     ],
   },
+  // 18. (JSON ID 52)
   {
     id: "rabotna-saksia-kvadrat-9x9x10",
     category: "rabotni-saksii-i-kontejneri",
@@ -405,6 +423,7 @@ export const rabotniSaksiiProducts: Product[] = [
     ],
     applications: ["Рози от резник", "Клематис", "Увивни растения"],
   },
+  // 19. (JSON ID 53)
   {
     id: "rabotna-saksia-kvadrat-10x10x10",
     category: "rabotni-saksii-i-kontejneri",
@@ -429,6 +448,7 @@ export const rabotniSaksiiProducts: Product[] = [
       "Зеленчуков разсад в напреднала фаза",
     ],
   },
+  // 20. (JSON ID 54)
   {
     id: "rabotna-saksia-visyashta-f19",
     category: "rabotni-saksii-i-kontejneri",

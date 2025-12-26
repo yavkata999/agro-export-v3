@@ -1,26 +1,4 @@
-export type CategorySlug =
-  | "trevni-smesi"
-  | "torfeni-substrati"
-  | "saksii-i-kontejneri-soparco"
-  | "rabotni-saksii-i-kontejneri"
-  | "formi-za-razsad"
-  | "formi-za-razsad-turcziya"
-  | "perlit-i-vermikulit"
-  | "mrezhi-i-folia"
-  | "gradinski-produkti";
-
-export type Category = {
-  slug: CategorySlug;
-  name: string;
-  rootPath: string;
-  productsPath: string;
-  shortDescription: string;
-  longDescription?: string;
-  seoTitle: string;
-  seoDescription: string;
-  // ADDED: Specific keywords for better SEO
-  keywords: string[];
-};
+import type { Category } from "./types";
 
 export const categories: Category[] = [
   {

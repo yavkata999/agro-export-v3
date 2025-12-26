@@ -1,6 +1,7 @@
-import type { Product } from "./types";
+import type { Product } from "../types";
 
 export const trevniSmesiProducts: Product[] = [
+  // 1. (JSON ID 1019)
   {
     id: "universal-grass",
     category: "trevni-smesi",
@@ -26,6 +27,7 @@ export const trevniSmesiProducts: Product[] = [
       "Възстановяване на терени",
     ],
   },
+  // 2. (JSON ID 1020)
   {
     id: "relaxing-grass",
     category: "trevni-smesi",
@@ -52,6 +54,7 @@ export const trevniSmesiProducts: Product[] = [
       "Открити пространства",
     ],
   },
+  // 3. (JSON ID 1021)
   {
     id: "garden-extra",
     category: "trevni-smesi",
@@ -77,6 +80,7 @@ export const trevniSmesiProducts: Product[] = [
       "Любителски спортни кътове",
     ],
   },
+  // 4. (JSON ID 1022)
   {
     id: "shady-garden",
     category: "trevni-smesi",
@@ -102,6 +106,7 @@ export const trevniSmesiProducts: Product[] = [
       "Северни изложения",
     ],
   },
+  // 5. (JSON ID 1023)
   {
     id: "sport-garden",
     category: "trevni-smesi",
@@ -122,6 +127,7 @@ export const trevniSmesiProducts: Product[] = [
     ],
     applications: ["Спортни площадки", "Зони за игри", "Натоварени паркове"],
   },
+  // 6. (JSON ID 1024)
   {
     id: "universal-smart-seed",
     category: "trevni-smesi",
@@ -143,6 +149,7 @@ export const trevniSmesiProducts: Product[] = [
     ],
     applications: ["Нови градини", "Бедни почви", "Екологично градинарство"],
   },
+  // 7. (JSON ID 1025)
   {
     id: "renovation-universal",
     category: "trevni-smesi",
@@ -167,6 +174,7 @@ export const trevniSmesiProducts: Product[] = [
       "Градски паркове",
     ],
   },
+  // 8. (JSON ID 1026)
   {
     id: "renovation-mosskiller",
     category: "trevni-smesi",
@@ -191,6 +199,7 @@ export const trevniSmesiProducts: Product[] = [
       "Проблемни терени",
     ],
   },
+  // 9. (JSON ID 1027)
   {
     id: "multirenovator-4in1-decorative-sport",
     category: "trevni-smesi",
@@ -216,6 +225,7 @@ export const trevniSmesiProducts: Product[] = [
       "Декоративни градини",
     ],
   },
+  // 10. (JSON ID 1028)
   {
     id: "universal-inteligent",
     category: "trevni-smesi",
@@ -241,6 +251,7 @@ export const trevniSmesiProducts: Product[] = [
       "Трудни за поливане места",
     ],
   },
+  // 11. (JSON ID 1029)
   {
     id: "californium-golf",
     category: "trevni-smesi",
@@ -262,6 +273,7 @@ export const trevniSmesiProducts: Product[] = [
     ],
     applications: ["Луксозни имения", "Голф игрища", "Представителни площи"],
   },
+  // 12. (JSON ID 1030)
   {
     id: "flowers-grass-nature",
     category: "trevni-smesi",
@@ -282,6 +294,7 @@ export const trevniSmesiProducts: Product[] = [
     ],
     applications: ["Еко зони", "Цветни ливади", "Крайградски къщи"],
   },
+  // 13. (JSON ID 1031)
   {
     id: "winston",
     category: "trevni-smesi",
@@ -303,6 +316,7 @@ export const trevniSmesiProducts: Product[] = [
     ],
     applications: ["Професионално озеленяване", "Паркове", "Спортни терени"],
   },
+  // 14. (JSON ID 1032)
   {
     id: "camel",
     category: "trevni-smesi",
@@ -328,6 +342,7 @@ export const trevniSmesiProducts: Product[] = [
       "Ваканционни имоти",
     ],
   },
+  // 15. (JSON ID 1033)
   {
     id: "sport",
     category: "trevni-smesi",
@@ -349,6 +364,7 @@ export const trevniSmesiProducts: Product[] = [
     ],
     applications: ["Стадиони", "Професионални игрища", "Училищни дворове"],
   },
+  // 16. (JSON ID 1034)
   {
     id: "park-music",
     category: "trevni-smesi",
@@ -369,6 +385,7 @@ export const trevniSmesiProducts: Product[] = [
     ],
     applications: ["Градски паркове", "Гористи местности", "Сенчести алеи"],
   },
+  // 17. (JSON ID 1035)
   {
     id: "naturgrass",
     category: "trevni-smesi",
