@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-// 1. REMOVE: Script import is no longer needed for Cookiebot
 import "@styles/globals.css";
 import Header from "@components/layout/Header";
 import Footer from "@components/layout/Footer";
-// 2. IMPORT: Your new component
 import CookieConsent from "@components/shared/CookieConsent";
-
-// 3. REMOVE: GoogleTagManager import (It is now handled inside CookieConsent)
-// import { GoogleTagManager } from "@next/third-parties/google";
 
 const THEME_BOOTSTRAP_SCRIPT = `(() => {
   const stored = window.localStorage.getItem("theme");

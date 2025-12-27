@@ -1,6 +1,7 @@
-import type { NextConfig } from "next";
+// next.config.js
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   // Cloudinary Configuration
   images: {
     remotePatterns: [
@@ -71,4 +72,5 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// Use module.exports instead of export default for cPanel compatibility
+module.exports = nextConfig;
