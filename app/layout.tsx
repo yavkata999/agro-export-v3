@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     siteName: "Агро Експорт Импорт",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/agro-export-logo.png",
+        width: 1100,
+        height: 270,
         alt: "Агро Експорт Импорт Склад",
       },
     ],

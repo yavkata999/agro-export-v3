@@ -17,7 +17,7 @@ const initialValues: FormValues = {
   company: "",
   email: "",
   phone: "",
-  topic: "Общи въпроси",
+  topic: "",
   message: "",
 };
 
@@ -41,13 +41,19 @@ export default function ContactForm() {
     setError(null);
     setSuccess(null);
 
-    if (!values.name.trim() || !values.email.trim() || !values.message.trim()) {
-      setError("Моля, попълнете задължителните полета, маркирани със *.");
+    // 1. UPDATED VALIDATION: Added phone check
+    if (
+      !values.name.trim() ||
+      !values.email.trim() ||
+      !values.phone.trim() ||
+      !values.message.trim()
+    ) {
+      setError("Моля, попълнете всички задължителни полета.");
       return;
     }
 
-    if (values.message.trim().length < 10) {
-      setError("Съобщението трябва да е поне 10 символа.");
+    if (!values.topic) {
+      setError("Моля, изберете тема на запитването.");
       return;
     }
 
@@ -56,43 +62,37 @@ export default function ContactForm() {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        setError(
-          typeof data?.error === "string"
-            ? data.error
-            : "Възникна грешка при изпращане. Моля, опитайте отново."
-        );
-        return;
+        throw new Error(data.error || "Възникна грешка.");
       }
 
       setSuccess("Вашето запитване беше изпратено успешно.");
       setValues(initialValues);
-    } catch {
-      setError("Възникна грешка при изпращане. Моля, опитайте отново.");
+    } catch (err: any) {
+      setError(
+        err.message || "Възникна грешка при изпращане. Моля, опитайте отново."
+      );
     } finally {
       setSubmitting(false);
     }
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit} noValidate>
+    <form className={styles.formGrid} onSubmit={handleSubmit} noValidate>
       <div className={styles.formRow}>
         <div className={styles.formField}>
-          <label htmlFor="name">
-            Име *<span aria-hidden="true"></span>
-          </label>
+          <label htmlFor="name">Име *</label>
           <input
             id="name"
             name="name"
             type="text"
+            className={styles.input}
             placeholder="Вашето име"
             value={values.name}
             onChange={handleChange}
@@ -106,6 +106,7 @@ export default function ContactForm() {
             id="company"
             name="company"
             type="text"
+            className={styles.input}
             placeholder="Име на фирма"
             value={values.company}
             onChange={handleChange}
@@ -115,14 +116,13 @@ export default function ContactForm() {
 
       <div className={styles.formRow}>
         <div className={styles.formField}>
-          <label htmlFor="email">
-            Имейл *<span aria-hidden="true"></span>
-          </label>
+          <label htmlFor="email">Имейл *</label>
           <input
             id="email"
             name="email"
             type="email"
-            placeholder="example@domain.com"
+            className={styles.input}
+            placeholder="name@company.com"
             value={values.email}
             onChange={handleChange}
             required
@@ -130,47 +130,48 @@ export default function ContactForm() {
         </div>
 
         <div className={styles.formField}>
-          <label htmlFor="phone">Телефон</label>
+          {/* UPDATED LABEL AND INPUT */}
+          <label htmlFor="phone">Телефон *</label>
           <input
             id="phone"
             name="phone"
             type="tel"
-            placeholder="+359 ..."
+            className={styles.input}
+            placeholder="088..."
             value={values.phone}
             onChange={handleChange}
+            required
           />
         </div>
       </div>
 
       <div className={styles.formField}>
-        <label htmlFor="topic">Тип запитване</label>
+        <label htmlFor="topic">Тема</label>
         <select
           id="topic"
           name="topic"
+          className={styles.select}
           value={values.topic}
           onChange={handleChange}
+          required
         >
-          <option value="Общи въпроси">Общи въпроси</option>
-          <option value="Асортимент и наличности">
-            Асортимент и наличности
+          <option value="" disabled>
+            Изберете тема на запитването...
           </option>
-          <option value="Цени и търговски условия">
-            Цени и търговски условия
-          </option>
-          <option value="Доставки и логистика">Доставки и логистика</option>
+          <option value="Поръчка на едро">Поръчка на едро</option>
+          <option value="Стани дистрибутор">Стани дистрибутор</option>
+          <option value="Логистика и доставки">Логистика и доставки</option>
           <option value="Друго">Друго</option>
         </select>
       </div>
 
       <div className={styles.formField}>
-        <label htmlFor="message">
-          Съобщение *<span aria-hidden="true"></span>
-        </label>
+        <label htmlFor="message">Съобщение *</label>
         <textarea
           id="message"
           name="message"
-          rows={4}
-          placeholder="Опишете накратко какво ви интересува – продукти, количества, период на доставка..."
+          className={styles.textarea}
+          placeholder="Как можем да ви помогнем?"
           value={values.message}
           onChange={handleChange}
           required
@@ -182,10 +183,10 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className={`button ${styles.contactSubmit}`}
+        className={styles.submitButton}
         disabled={submitting}
       >
-        {submitting ? "Изпращане..." : "Изпратете запитване"}
+        {submitting ? "Изпращане..." : "Изпрати запитване"}
       </button>
     </form>
   );

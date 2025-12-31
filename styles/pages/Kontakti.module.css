@@ -204,6 +204,28 @@
   color: var(--color-text);
 }
 
+.formSuccess {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgba(16, 185, 129, 0.1); /* Light Green bg */
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #059669; /* Green text */
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.formError {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgba(239, 68, 68, 0.1); /* Light Red bg */
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #dc2626; /* Red text */
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 /* SHARED INPUT STYLES */
 .input,
 .textarea,

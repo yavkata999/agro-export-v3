@@ -12,7 +12,8 @@ const MAX_REQUESTS_PER_IP = 3; // 3 requests per minute
 
 // --- REGEX PATTERNS ---
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i;
-const PHONE_PATTERN = /^[0-9+()\\s-]{6,20}$/;
+// Fixed regex: changed \\s to \s for correct whitespace matching in literals
+const PHONE_PATTERN = /^[0-9+()\s-]{6,20}$/;
 const XSS_PATTERN = /<\s*script|<\s*iframe|<\s*object|on\w+\s*=|javascript:/i;
 const SQL_INJECTION_PATTERN =
   /(\bunion\b.*\bselect\b|\bdrop\b\s+\btable\b|--;|\bupdate\b.*\bset\b)/i;
@@ -29,7 +30,8 @@ type ContactPayload = {
 };
 
 // --- RATE LIMITER STORAGE ---
-// Changed to store an ARRAY of numbers (timestamps) per IP
+// Note: In serverless (Vercel), this Map resets on cold starts.
+// It is "best effort" protection, which is usually enough for contact forms.
 const rateLimitMap = new Map<string, number[]>();
 
 // Helper to sanitize basic inputs (trimming)
@@ -44,10 +46,11 @@ const validatePayload = (payload: ContactPayload) => {
   const message = sanitize(payload.message ?? "");
 
   // 1. Check Required Fields
-  if (!name || !email || !message) {
+  if (!name || !email || !phone || !message) {
     return {
       ok: false,
-      error: "Моля, попълнете задължителните полета (Име, Имейл, Съобщение).",
+      error:
+        "Моля, попълнете задължителните полета (Име, Имейл, Телефон, Съобщение).",
     };
   }
 
@@ -106,19 +109,17 @@ const buildEmailBody = (data: ContactPayload) =>
 
 export async function POST(request: Request) {
   try {
-    // --- Rate Limiting Logic (FIXED) ---
+    // --- Rate Limiting Logic ---
     const ip = request.headers.get("x-forwarded-for") || "unknown";
     const now = Date.now();
 
-    // Get existing timestamps for this IP, or empty array if none
     let requestTimestamps = rateLimitMap.get(ip) || [];
 
-    // Filter out timestamps that are older than the window (older than 1 minute)
+    // Filter out timestamps older than the window
     requestTimestamps = requestTimestamps.filter(
       (timestamp) => now - timestamp < RATE_LIMIT_WINDOW
     );
 
-    // Check if the user has reached the limit
     if (requestTimestamps.length >= MAX_REQUESTS_PER_IP) {
       return NextResponse.json(
         { error: "Прекалено много заявки. Моля, изчакайте малко." },
@@ -126,7 +127,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Add the current timestamp to the list and update the map
     requestTimestamps.push(now);
     rateLimitMap.set(ip, requestTimestamps);
 

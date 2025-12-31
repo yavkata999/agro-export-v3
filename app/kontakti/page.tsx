@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "@styles/pages/Kontakti.module.css";
+import ContactForm from "@/components/forms/ContactForm";
 
 export const metadata: Metadata = {
   title: "Контакти | Агро Експорт Импорт - Офис и Дистрибуция",
@@ -255,83 +256,8 @@ export default function KontaktiPage() {
                 <p>Ще се свържем с вас в рамките на един работен ден.</p>
               </div>
 
-              <form className={styles.formGrid}>
-                <div className={styles.formRow}>
-                  <div className={styles.formField}>
-                    <label htmlFor="name">Име</label>
-                    <input
-                      type="text"
-                      id="name"
-                      className={styles.input}
-                      placeholder="Вашето име"
-                      required
-                    />
-                  </div>
-                  <div className={styles.formField}>
-                    <label htmlFor="company">Фирма</label>
-                    <input
-                      type="text"
-                      id="company"
-                      className={styles.input}
-                      placeholder="Име на фирма"
-                    />
-                  </div>
-                </div>
-
-                <div className={styles.formRow}>
-                  <div className={styles.formField}>
-                    <label htmlFor="email">Имейл</label>
-                    <input
-                      type="email"
-                      id="email"
-                      className={styles.input}
-                      placeholder="name@company.com"
-                      required
-                    />
-                  </div>
-                  <div className={styles.formField}>
-                    <label htmlFor="phone">Телефон</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      className={styles.input}
-                      placeholder="088..."
-                    />
-                  </div>
-                </div>
-
-                <div className={styles.formField}>
-                  <label htmlFor="topic">Тема</label>
-                  <select
-                    id="topic"
-                    className={styles.select}
-                    defaultValue=""
-                    required
-                  >
-                    <option value="" disabled>
-                      Изберете тема на запитването...
-                    </option>
-                    <option value="order">Поръчка на едро</option>
-                    <option value="distribution">Стани дистрибутор</option>
-                    <option value="logistics">Логистика и доставки</option>
-                    <option value="other">Друго</option>
-                  </select>
-                </div>
-
-                <div className={styles.formField}>
-                  <label htmlFor="message">Съобщение</label>
-                  <textarea
-                    id="message"
-                    className={styles.textarea}
-                    placeholder="Как можем да ви помогнем?"
-                    required
-                  ></textarea>
-                </div>
-
-                <button type="submit" className={styles.submitButton}>
-                  Изпрати запитване
-                </button>
-              </form>
+              {/* 3. Implementation of the ContactForm */}
+              <ContactForm />
 
               <div className={styles.formFooter}>
                 *Вашите данни са защитени и ще бъдат използвани само за отговор.
