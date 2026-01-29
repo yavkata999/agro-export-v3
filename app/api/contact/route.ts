@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 // --- CONFIGURATION ---
-const RECIPIENT_EMAIL = "agroexport69@gmail.com";
+const RECIPIENT_EMAIL = "agro_export@abv.bg";
 
 // Limits
 const MAX_FIELD_LENGTH = 200;
