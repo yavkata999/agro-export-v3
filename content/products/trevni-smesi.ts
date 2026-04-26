@@ -11,9 +11,11 @@ export const trevniSmesiProducts: Product[] = [
       "Класическа универсална смес за бързо и трайно озеленяване.",
     longDescription:
       "Най-популярният избор за домашни градини и обществени площи. Тази смес е създадена да бъде „работен кон“ – непретенциозна към почвата, бързо поникваща и устойчива на утъпкване. Идеална за възстановяване на стари терени или създаване на нови морави, които трябва да изглеждат добре без прекалено сложна поддръжка.\n\nПОДХОДЯЩА ЗА: Всички видове почви и изложения.",
-    packaging: "1 кг",
+    packaging: "1 кг, 5 кг, 9 кг",
     images: [
-      "https://res.cloudinary.com/dggelqxji/image/upload/v1729840389/universal_grass_1_kg_e5e8699007.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777193173/universal_grass_1kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777193172/universal_grass_5kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187317/universal_9kg.png"
     ],
     features: [
       "Вирее в почти всяка почва",
@@ -37,9 +39,12 @@ export const trevniSmesiProducts: Product[] = [
       "Естетична и бавнорастяща смес за представителни зони и отдих.",
     longDescription:
       "Създайте своето зелено убежище с Relaxing Grass. Тази смес е проектирана за места, където естетиката е водеща – около басейни, в представителни градини и зони за релакс. Отличава се с по-бавен растеж (по-рядко косене) и фини листа, които създават мек и плътен килим, приятен за ходене боси.\n\nПРЕДИМСТВА: Висока декоративна стойност и намалена нужда от косене.",
-    packaging: "1 кг",
+    packaging: "1 кг, 5 кг, 9 кг",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1729844180/relaxing_grass_1kg_9a06532386.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777190949/relaxing_grass_1kg_nova_opakovka.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777190947/relaxing_grass_5kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187317/universal_9kg.png"
     ],
     features: [
       "Многофункционална смес",
@@ -64,9 +69,12 @@ export const trevniSmesiProducts: Product[] = [
       "Премиум смес за луксозни градини с отлична зимоустойчивост.",
     longDescription:
       "GARDEN EXTRA е решението за тези, които не правят компромис с визията. Тази смес комбинира елегантността на декоративните треви с издръжливостта на спортните. Специално селектирана за висока устойчивост на замръзване, тя гарантира, че вашата морава ще изглежда перфектно през всички сезони. Подходяща за дворове, където играят деца, но се търси и представителен вид.\n\nХАРАКТЕРИСТИКИ: Плътен чим и наситено зелен цвят.",
-    packaging: "1 кг",
+    packaging: "1 кг, 5 кг, 9 кг",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1729844221/garden_extra_1kg_6ecb59ba74.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777189993/garden_extra_1kg_nova_opakovka.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777189992/garden_extra_5kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187317/universal_9kg.png"
     ],
     features: [
       "Устойчива на замръзване",
@@ -90,9 +98,12 @@ export const trevniSmesiProducts: Product[] = [
       "Специализирано решение за плътна сянка и зони под дървета.",
     longDescription:
       "Забравете за голите петна под ореха или до северната стена на къщата. SHADY GARDEN съдържа специални сенколюбиви сортове (като Deschampsia и фини власатки), които процъфтяват при недостиг на слънчева светлина. Създава плътен, тънколистен килим с наситен тъмнозелен цвят там, където другите треви загиват.\n\nСЪВЕТ: Не косете твърде ниско на сянка (дръжте височина 5-6 см).",
-    packaging: "1 кг",
+    packaging: "1 кг, 5 кг, 9 кг",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1729844273/shady_garden_1kg_0c095fcd49.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777192521/shady_garden_1kg_nova_opakovka.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777192488/shady_garden_5kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187317/universal_9kg.png",
     ],
     features: [
       "Идеална за шарена сянка",
@@ -115,9 +126,12 @@ export const trevniSmesiProducts: Product[] = [
     shortDescription: "Изключително здрава смес за активни игри и натоварване.",
     longDescription:
       "Проектирана за дворове, които се използват активно! SPORT GARDEN съдържа сортове с мощна коренова система и способност за бързо възстановяване след тъпкане. Идеалният избор за семейства с деца, домашни любимци или за любителски спортни площадки в двора. Издържа на интензивно натоварване и запазва добрия си вид.\n\nКЛЮЧОВ ЕЛЕМЕНТ: Бърза регенерация.",
-    packaging: "1 кг",
+    packaging: "1 кг, 5 кг, 9 кг",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1729844387/sport_garden_1kg_f9b7e37d97.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777193007/sport_garden_1kg_nova_opakovka.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777192916/sport_garden_5kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187317/universal_9kg.png",
     ],
     features: [
       "Висока устойчивост на отъпкване",
@@ -158,9 +172,13 @@ export const trevniSmesiProducts: Product[] = [
     shortDescription: "SOS решение за тревни площи и петна от домашни любимци.",
     longDescription:
       "Специализирана смес за бърз ремонт на повредени участъци. Формулата съдържа неутрализатори, които помагат на тревата да поникне дори в зони, увредени от киселинността на кучешката урина. Бързо покълващите сортове затварят дупките и възстановяват плътността на килима за минимално време.\n\nИДЕАЛНА ЗА: Собственици на кучета.",
-    packaging: "0,5 кг, 1 кг",
+    packaging: "0,5 кг, 1 кг, 5 кг, 9 кг",
     images: [
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777191724/renovation_universal_0.5kg.png",
       "https://res.cloudinary.com/dggelqxji/image/upload/v1729844517/renovation_universal_1kg_ede092a424.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777191724/renovation_universal_1kg_nova_opakovka.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777191723/renovation_universal_5kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187317/universal_9kg.png",
     ],
     features: [
       "Устойчивост на кучешка урина",
@@ -284,7 +302,7 @@ export const trevniSmesiProducts: Product[] = [
       "Превърнете част от градината си в цветна поляна. Тази смес комбинира бавнорастящи треви с богат микс от полски цветя. Резултатът е красив, постоянно променящ се пейзаж, който не изисква косене цял сезон (освен веднъж късно наесен). Привлича пчели и пеперуди и създава екологично равновесие.\n\nПОДДРЪЖКА: Без косене до есента.",
     packaging: "1 кг",
     images: [
-      "https://res.cloudinary.com/dggelqxji/image/upload/v1729845144/large_flowers_grass_nature_1kg_c9ff280484.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777189681/flowers_grass_nature_1kg.png",
     ],
     features: [
       "Съдържа семена на цветя",
@@ -304,9 +322,11 @@ export const trevniSmesiProducts: Product[] = [
       "Професионална смес с микориза: по-силни корени, по-рядко косене.",
     longDescription:
       "WINSTON е изборът на професионалистите за терени с трудна поддръжка. Обогатена с микориза (полезни гъби), тази смес развива мощна коренова система, която черпи вода от дълбочина. Това прави тревата устойчива на суша и бедни почви. Сортовете са подбрани за бавен растеж, което намалява нуждата от често косене.\n\nПРЕДИМСТВО: Микориза за здраве и издръжливост.",
-    packaging: "1 кг",
+    packaging: "1 кг, 5 кг, 9 кг",
     images: [
-      "https://res.cloudinary.com/dggelqxji/image/upload/v1729845185/large_winston_1kg_c1641ca280.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777188315/winston_1kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777188315/winston_5kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187317/universal_9kg.png",
     ],
     features: [
       "Обогатена с микориза",
@@ -326,9 +346,11 @@ export const trevniSmesiProducts: Product[] = [
       "Шампионът по сухоустойчивост за горещи и слънчеви места.",
     longDescription:
       "Както подсказва името, CAMEL е създадена да оцелява без вода. Базирана на сортове с дълбоки корени, тази смес е идеална за южни склонове, песъчливи почви и райони с ограничено поливане. Расте бавно, което я прави лесна за поддръжка, като същевременно запазва декоративния си вид дори в летните жеги.\n\nИДЕАЛНА ЗА: Сухи и горещи терени.",
-    packaging: "1 кг",
+    packaging: "1 кг, 5 кг, 9 кг",
     images: [
-      "https://res.cloudinary.com/dggelqxji/image/upload/v1729845238/large_camel_1kg_7bac9c9d04.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187304/camel_1kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187310/camel_5kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187317/universal_9kg.png",
     ],
     features: [
       "Висока сухоустойчивост",
@@ -352,9 +374,11 @@ export const trevniSmesiProducts: Product[] = [
       "Екстремна издръжливост за професионални стадиони и интензивен спорт.",
     longDescription:
       "Безкомпромисна смес за терени, подложени на най-тежки натоварвания. Използва се за футболни стадиони и спортни комплекси. Образува плътна, еластична дерна, която издържа на разкъсване и се възстановява агресивно след повреда. Изисква редовна поддръжка за върхови резултати.\n\nПРЕДНАЗНАЧЕНИЕ: Максимално натоварване.",
-    packaging: "1 кг",
+    packaging: "0,9 кг, 5 кг, 9 кг",
     images: [
-      "https://res.cloudinary.com/dggelqxji/image/upload/v1729845278/large_sport_1kg_01c743b32d.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187708/sport_0.9kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187707/sport_5kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187317/universal_9kg.png",
     ],
     features: [
       "Екстремна устойчивост на натоварване",
@@ -373,9 +397,11 @@ export const trevniSmesiProducts: Product[] = [
     shortDescription: "Сянка или слънце? Тази смес се справя и с двете.",
     longDescription:
       "Универсално решение за паркове и градини с променливи условия. Park Music процъфтява както на открити поляни, така и под сянката на дърветата. Съставена е от сортове, които не изискват често косене, което я прави икономичен избор за големи обществени площи и домашни градини с дървесна растителност.\n\nПРЕДИМСТВО: Адаптивност към светлината.",
-    packaging: "1 кг",
+    packaging: "1 кг, 5 кг, 9 кг",
     images: [
-      "https://res.cloudinary.com/dggelqxji/image/upload/v1729845324/large_park_music_1kg_7d56411617.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187886/park_music_1kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187882/park_music_5kg.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1777187317/universal_9kg.png",
     ],
     features: [
       "Сенколюбива",

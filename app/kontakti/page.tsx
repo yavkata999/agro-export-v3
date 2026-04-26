@@ -139,7 +139,6 @@ const regionalContacts: RegionalContact[] = [
   { region: "Добрич", details: "Агроцентър", phone: "0895 504 930" },
   { region: "Айтос", details: "Регионален дистрибутор", phone: "0897 963 118" },
   { region: "Гоце Делчев", details: "Дистрибутор", phone: "0884 553 650" },
-  { region: "Харманли", details: "Дистрибутор", phone: "0897 963 109" },
 ];
 
 export default function KontaktiPage() {
