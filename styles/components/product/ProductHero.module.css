@@ -35,7 +35,8 @@
 
 @media (min-width: 960px) {
   .heroCard {
-    grid-template-columns: 1.1fr 1fr; /* Image wider */
+    grid-template-columns: 1.1fr 1fr;
+    /* Image wider */
     align-items: start;
     padding: 3rem;
   }
@@ -51,9 +52,11 @@
 .imageSurface {
   position: relative;
   border-radius: var(--radius-lg);
-  background-color: var(--color-bg-alt); /* Subtle slate bg behind image */
+  background-color: var(--color-bg-alt);
+  /* Subtle slate bg behind image */
   border: 1px solid var(--color-border);
-  aspect-ratio: 4 / 3; /* Standard product ratio */
+  aspect-ratio: 4 / 3;
+  /* Standard product ratio */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +67,8 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  mix-blend-mode: multiply; /* Helps integrate white-bg product images */
+  mix-blend-mode: multiply;
+  /* Helps integrate white-bg product images */
   transition: transform 0.3s ease;
   cursor: zoom-in;
 }
@@ -110,6 +114,7 @@
 .navButtonPrev {
   left: 1rem;
 }
+
 .navButtonNext {
   right: 1rem;
 }
@@ -180,6 +185,47 @@
   margin: 0;
 }
 
+/* --- PREMIUM PRICE BLOCK --- */
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  /* Tighter gap so the note visually attaches to the price */
+  margin: 1.5rem 0 2rem 0;
+  /* Keeps the breathing room above and below */
+}
+
+.priceMain {
+  display: flex;
+  align-items: baseline;
+}
+
+.priceValue {
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.priceNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  /* Uses your muted text variable for subtlety */
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Keeps the icon perfectly aligned with the text */
+.priceNote svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  opacity: 0.6;
+}
+
 .shortDesc {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -234,12 +280,14 @@
 .lightboxOverlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.85); /* Darker backdrop */
+  background-color: rgba(0, 0, 0, 0.85);
+  /* Darker backdrop */
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100; /* Must be highest */
+  z-index: 100;
+  /* Must be highest */
   padding: 1rem;
   animation: fadeIn 0.2s ease-out;
 }
@@ -248,7 +296,8 @@
   position: relative;
   max-width: min(1200px, 95vw);
   width: 100%;
-  background: transparent; /* Clean look */
+  background: transparent;
+  /* Clean look */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -342,6 +391,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

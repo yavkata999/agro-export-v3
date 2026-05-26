@@ -62,13 +62,13 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       images:
         product.images && product.images.length > 0
           ? [
-              {
-                url: product.images[0],
-                width: 800,
-                height: 600,
-                alt: product.name,
-              },
-            ]
+            {
+              url: product.images[0],
+              width: 800,
+              height: 600,
+              alt: product.name,
+            },
+          ]
           : [],
     },
   };
@@ -90,8 +90,11 @@ export default async function ProductPage(props: PageProps) {
         shortDescription={product.shortDescription}
         packaging={product.packaging}
         images={product.images}
+        price={product.price}
+        priceNote={product.priceNote}
       />
 
+      {/* Останалите компоненти остават същите */}
       <ProductSpecs
         brand={product.brand}
         packaging={product.packaging}

@@ -12,6 +12,8 @@ interface ProductHeroProps {
   shortDescription: string;
   packaging?: string;
   images?: string[];
+  price?: string;
+  priceNote?: string;
 }
 
 export function ProductHero({
@@ -21,6 +23,8 @@ export function ProductHero({
   shortDescription,
   packaging,
   images,
+  price,
+  priceNote,
 }: ProductHeroProps) {
   const galleryImages = useMemo(
     () => (images && images.length > 0 ? images : ["/placeholder.png"]),
@@ -95,9 +99,8 @@ export function ProductHero({
                   <button
                     key={src + index}
                     type="button"
-                    className={`${styles.thumbnailButton} ${
-                      index === activeIndex ? styles.thumbnailButtonActive : ""
-                    }`}
+                    className={`${styles.thumbnailButton} ${index === activeIndex ? styles.thumbnailButtonActive : ""
+                      }`}
                     onClick={() => {
                       setActiveIndex(index);
                       setIsZoomed(false);
@@ -122,6 +125,26 @@ export function ProductHero({
             {brand && <span className={styles.brandBadge}>{brand}</span>}
 
             <h1 className={styles.heroTitle}>{name}</h1>
+
+            {/* Modern Price Card */}
+            {price && (
+              <div className={styles.priceContainer}>
+                <div className={styles.priceMain}>
+                  <span className={styles.priceValue}>{price}</span>
+                </div>
+                {priceNote && (
+                  <div className={styles.priceNote}>
+                    {/* SVG info icon for a professional touch */}
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="16" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    {priceNote}
+                  </div>
+                )}
+              </div>
+            )}
 
             <p className={styles.shortDesc}>{shortDescription}</p>
 
@@ -178,9 +201,8 @@ export function ProductHero({
             </button>
 
             <div
-              className={`${styles.lightboxImageFrame} ${
-                isZoomed ? styles.lightboxImageFrameZoomed : ""
-              }`}
+              className={`${styles.lightboxImageFrame} ${isZoomed ? styles.lightboxImageFrameZoomed : ""
+                }`}
               onClick={() => setIsZoomed(!isZoomed)}
             >
               <Image

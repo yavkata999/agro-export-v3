@@ -36,6 +36,8 @@ export type Product = {
   shortDescription: string;
   longDescription?: string;
   packaging?: string;
+  price?: string;
+  priceNote?: string;
   images: string[];
   features?: string[];
   applications?: string[];

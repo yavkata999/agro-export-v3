@@ -66,13 +66,13 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       images:
         product.images && product.images.length > 0
           ? [
-              {
-                url: product.images[0],
-                width: 800,
-                height: 600,
-                alt: product.name,
-              },
-            ]
+            {
+              url: product.images[0],
+              width: 800,
+              height: 600,
+              alt: product.name,
+            },
+          ]
           : [],
     },
   };
@@ -93,6 +93,8 @@ export default async function TorfeniProductPage(props: PageProps) {
         shortDescription={product.shortDescription}
         packaging={product.packaging}
         images={product.images}
+        price={product.price}
+        priceNote={product.priceNote}
       />
 
       <ProductSpecs

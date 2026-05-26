@@ -9,9 +9,11 @@ export const trevniSmesiProducts: Product[] = [
     brand: "GlobalGrass",
     shortDescription:
       "Класическа универсална смес за бързо и трайно озеленяване.",
+    price: "От 7.22 лв. / 3.69 € с ДДС",
+    priceNote: "Цената е за 1 бр. с ДДС за разфасовка от 1 кг (валидна при закупуване на стек от 10 бр.).",
     longDescription:
       "Най-популярният избор за домашни градини и обществени площи. Тази смес е създадена да бъде „работен кон“ – непретенциозна към почвата, бързо поникваща и устойчива на утъпкване. Идеална за възстановяване на стари терени или създаване на нови морави, които трябва да изглеждат добре без прекалено сложна поддръжка.\n\nПОДХОДЯЩА ЗА: Всички видове почви и изложения.",
-    packaging: "1 кг, 5 кг, 9 кг",
+    packaging: "1 кг (10 бр./стек), 5 кг, 9 кг",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1777193173/universal_grass_1kg.png",
       "https://res.cloudinary.com/dggelqxji/image/upload/v1777193172/universal_grass_5kg.png",
@@ -151,9 +153,11 @@ export const trevniSmesiProducts: Product[] = [
       "Иновация с вулканичен лапилус за дълготрайно самоподхранване.",
     longDescription:
       "Това не е просто тревна смес, а технология. Семената са комбинирани с Лапилус – пореста вулканична скала, която действа като резервоар за вода и хранителни вещества. Тя се разлага бавно в почвата, осигурявайки на корените необходимите елементи години наред. Резултатът е по-здрава трева с по-малко нужда от торене.\n\nПРЕДИМСТВО: Постоянно подхранване от самата почва.",
-    packaging: "1 кг",
+    packaging: "1 кг, 5 кг",
     images: [
       "https://res.cloudinary.com/dggelqxji/image/upload/v1729844434/universal_smart_seed_1kg_3acb5c56dd.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1778160068/universal_smart_seed_1kg_new.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1778160072/universal_smart_seed_5kg.png",
     ],
     features: [
       "Съдържа естествен тор (лапилус)",
