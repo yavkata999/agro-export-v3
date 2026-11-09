@@ -53,6 +53,31 @@ export const torfeniSubstratiHobiProducts: Product[] = [
   },
   // 3. (JSON ID 1183)
   {
+    id: "torfen-substrat-za-staini-rasteniya-s-perlit",
+    category: "torfeni-substrati",
+    name: "Торфен субстрат за стайни растения с перлит",
+    brand: "Durpeta",
+    shortDescription:
+      "Дишаща структура с перлит, биостимулант и сапропел за здрави корени и обилен цъфтеж.",
+    longDescription:
+      "Саксийните растения имат нужда от лека и въздухопропусклива среда, за да развият силна коренова система. Този специализиран субстрат съдържа добавен перлит за отлична аерация и предотвратяване на сбиването. Допълнително е обогатен със сапропел, биостимулант, микроелементи и агент за задържане на влага, които осигуряват оптимално хранене и предпазват от засушаване. Идеален за стайни, балконски и терасни цветя.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n\n• Влажност: 55% - 65%\n• pH (H2O): 5,5 - 6,5\n• NPK: 210-260, 240-290, 270-320 мг/л\n• Електропроводимост: 1,2 - 1,7 mS/cm\n• Агент за задържане на влага: 0,15 л/м3\n• Добавки: Перлит, сапропел, биостимулант и микроелементи",
+    packaging: "10 л",
+    images: [
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1749471160/gardin_torfen_substrat_s_perlit_za_staini_10l_487cbdc542.png",
+    ],
+    features: [
+      "Добавен перлит за аерация",
+      "Съдържа сапропел и биостимулант",
+      "Агент за задържане на влага",
+      "Пълен набор микроелементи",
+    ],
+    applications: [
+      "Стайни растения",
+      "Балконски цветя",
+      "Растения в кашпи",
+    ],
+  },
+  {
     id: "torfen-substrat-za-staini-rasteniya",
     category: "torfeni-substrati",
     name: "Торфен субстрат за стайни растения",
@@ -62,7 +87,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Вашите стайни растения заслужават най-доброто. Този субстрат е фин, чист и обогатен с агент за задържане на влага (Fiba Zorb), което намалява стреса от засушаване в домашни условия. Осигурява буен растеж и наситено зелени листа.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n\n• Влажност: до 65%\n• pH (H2O): 5,5 - 6,5\n• NPK: 100-150, 120-200, 150-350 мг/л.\n• Микроелементи: Fe, Mn, Cu, B, Zn и др.\n• Fiba Zorb: 100 - 200 мл./м3\n• Електропроводимост: 1,5 - 2,0 mS/cм",
     packaging: "20 л",
     images: [
-      "https://res.cloudinary.com/dggelqxji/image/upload/v1729766944/staini_rasteniya_20l_b38f5bed89.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1789283496/staini_rasteniya_20l_b38f5bed89.png",
     ],
     features: [
       "Оптимално pH 5.5 - 6.5",
@@ -209,7 +234,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Балконските цветя като петунии и мушката са изключително взискателни към храната. Тази смес е обогатена с желязо и хранителни вещества, за да поддържа обилен цъфтеж през целия сезон, дори и на силно слънце.\n\nТЕХНИЧЕСКИ ХАРАКТЕРИСТИКИ:\n\n• Влажност: до 65%\n• pH (H2O): 5,5 - 6,5\n• NPK: 100-200, 120-250, 150-400 мг/л.\n• Микроелементи: Fe (0,1 - 0,2 кг./м3), Mn, Cu, B, Zn\n• Fiba Zorb: 100 - 200 мл./м3\n• Електропроводимост: 1,5 - 2,2 mS/cм",
     packaging: "20 л",
     images: [
-      "https://res.cloudinary.com/dggelqxji/image/upload/v1729767576/gradinski_balkonski_zvetya_20l_10d94b6e01.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1789283661/gradinski_balkonski_zvetya_20l_10d94b6e01.png",
     ],
     features: [
       "Добавено желязо (Fe)",
@@ -379,7 +404,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Декоративният мулч е повече от украса. Той създава изолационен слой, който задържа до 60% от влагата в почвата и предпазва корените от летните жеги. Освен това спира растежа на плевелите по екологичен начин.\n\nХАРАКТЕРИСТИКИ:\n• Задържа влага\n• Естествен вид",
     packaging: "50 л",
     images: [
-      "https://res.cloudinary.com/dggelqxji/image/upload/v1729768026/dekorativen_mulch_50l_65f92e8986.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1789284596/dekorativen_mulch_50l_65f92e8986.png",
     ],
     features: [
       "Задържа влагата до 60%",
@@ -426,7 +451,7 @@ export const torfeniSubstratiHobiProducts: Product[] = [
       "Орхидеите са епифити и се нуждаят от въздух около корените. Този субстрат е съставен от едра борова кора, сфагнум мъх и перлит, което предотвратява задушаването и загниването на корените, като същевременно поддържа нужната влажност.\n\nСЪСТАВ:\nБорова кора, Агроперлит, Сфагнум мъх.",
     packaging: "5 л",
     images: [
-      "https://res.cloudinary.com/dggelqxji/image/upload/v1729768150/medium_orhideya_5l_22412035a4.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1789283242/orhideya_5l_22412035a4.png",
     ],
     features: [
       "Висока въздухопропускливост",
@@ -449,9 +474,9 @@ export const torfeniSubstratiHobiProducts: Product[] = [
     shortDescription: "Чиста органика за ароматни подправки на прозореца.",
     longDescription:
       "Когато отглеждате нещо за ядене, искате почвата да е чиста. Този БИО субстрат е идеален за босилек, мента, магданоз и други билки в саксия. Фината му структура и органичният тор гарантират здрави и ароматни растения.\n\nСЪСТАВ:\nХумусен торф, органични торове.",
-    packaging: "5 л",
+    packaging: "10 л",
     images: [
-      "https://res.cloudinary.com/dggelqxji/image/upload/v1729768190/large_bilki_5l_9d74f4fa8e.png",
+      "https://res.cloudinary.com/dggelqxji/image/upload/v1789283066/bilki_5l_9d74f4fa8e.png",
     ],
     features: [
       "100% Органичен състав",
@@ -588,4 +613,5 @@ export const torfeniSubstratiHobiProducts: Product[] = [
     ],
     applications: ["Боровинки", "Брусници", "Горски плодове"],
   },
+
 ];
